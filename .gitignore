@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.Python
+env/
+venv/
+.venv/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Environment variables (never commit these!)
+.env
+.env.local
+.env.*.local
+*.env
+
+# API Keys and secrets
+*secret*
+*credentials*
+*.pem
+*.key
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MCP build artifacts
+mcps/servers/*/dist/
+mcps/servers/*/node_modules/
+

@@ -1,0 +1,30 @@
+# PM Toolkit Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Data analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Statistics
+scipy>=1.10.0
+statsmodels>=0.14.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# NLP / Sentiment Analysis
+textblob>=0.17.0
+nltk>=3.8.0
+
+# HTTP requests (for API integrations)
+requests>=2.28.0
+
+# Jupyter notebooks
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Utilities
+python-dateutil>=2.8.0
+tqdm>=4.65.0
+
