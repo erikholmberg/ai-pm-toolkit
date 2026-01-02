@@ -25,7 +25,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 ## 🎯 Quick Start
 
 ### Using Prompts
-All prompt files end in `.prompt.md`. Copy the prompt content and use it with your preferred AI assistant (Claude, ChatGPT, etc.).
+All prompt files end in `.prompt.md`. Copy the prompt content and use it with your preferred AI assistant (Claude, ChatGPT, Copilot, etc.).
 
 ```bash
 # Example: Generate a PRD
