@@ -91,7 +91,7 @@ This toolkit is open for contributions. If you have prompts, templates, or tools
 
 ## 📄 License
 
-MIT License - Use freely, attribution appreciated.
+MIT License - Use freely, and attribution appreciated.
 
 ---
 
