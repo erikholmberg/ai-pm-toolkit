@@ -9,6 +9,9 @@ MCP (Model Context Protocol) allows AI assistants like Claude to interact with e
 - 📋 Manage Jira tickets and sprints
 - 📝 Search and create Confluence documentation
 - 🔧 Interact with GitHub issues and pull requests
+- 💬 Search Slack messages, extract action items, get channel summaries
+- 🧪 Query Braintrust experiments and eval results
+- 📊 Analyze LangSmith runs, traces, and project metrics
 
 ## Available Servers
 
@@ -17,6 +20,9 @@ MCP (Model Context Protocol) allows AI assistants like Claude to interact with e
 | [jira-pm-assistant](./servers/jira-pm-assistant/) | Create tickets, query sprints, generate release notes | Ready |
 | [confluence-docs](./servers/confluence-docs/) | Search docs, publish PRDs, create meeting notes | Ready |
 | [github-pm-tools](./servers/github-pm-tools/) | Track issues, generate release notes from PRs | Ready |
+| [slack-pm-assistant](./servers/slack-pm-assistant/) | Search messages, extract action items, channel summaries | Ready |
+| [braintrust-pm-tools](./servers/braintrust-pm-tools/) | Query experiments, eval results, datasets, logs | Ready |
+| [langsmith-pm-tools](./servers/langsmith-pm-tools/) | Analyze runs, traces, project stats, eval results | Ready |
 
 ## Prerequisites
 
