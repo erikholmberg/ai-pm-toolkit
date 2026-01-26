@@ -1,0 +1,20 @@
+{
+  "name": "slack-pm-assistant",
+  "version": "1.0.0",
+  "description": "MCP server for Slack PM workflows - search, summarize, and interact with Slack",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "@slack/web-api": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}
