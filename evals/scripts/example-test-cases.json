@@ -1,0 +1,49 @@
+[
+  {
+    "id": "tc1",
+    "input": "What is the capital of France?",
+    "output": "The capital of France is Paris, a beautiful city known for its art, culture, and history.",
+    "expected_output": "Paris",
+    "category": "geography",
+    "metadata": {
+      "difficulty": "easy"
+    }
+  },
+  {
+    "id": "tc2",
+    "input": "Explain quantum computing in simple terms.",
+    "output": "Quantum computing is a type of computing that uses quantum mechanical phenomena like superposition and entanglement to perform calculations. Unlike classical computers that use bits (0 or 1), quantum computers use quantum bits or qubits that can exist in multiple states simultaneously.",
+    "category": "science",
+    "metadata": {
+      "difficulty": "medium"
+    }
+  },
+  {
+    "id": "tc3",
+    "input": "Write a haiku about coding.",
+    "output": "Lines of code flow like\nRivers through the digital\nLandscape of logic",
+    "category": "creative",
+    "metadata": {
+      "difficulty": "medium"
+    }
+  },
+  {
+    "id": "tc4",
+    "input": "What are the main causes of climate change?",
+    "output": "The main causes of climate change include greenhouse gas emissions from burning fossil fuels, deforestation, industrial processes, and agricultural practices. These activities increase the concentration of carbon dioxide and other greenhouse gases in the atmosphere, trapping heat and warming the planet.",
+    "category": "science",
+    "metadata": {
+      "difficulty": "medium"
+    }
+  },
+  {
+    "id": "tc5",
+    "input": "Summarize the plot of Romeo and Juliet in one sentence.",
+    "output": "Two young lovers from feuding families fall in love, secretly marry, and tragically die due to a series of misunderstandings and miscommunications, ultimately bringing their families together in grief.",
+    "expected_output": "Two young lovers from feuding families fall in love and die tragically, ending their families' feud.",
+    "category": "literature",
+    "metadata": {
+      "difficulty": "easy"
+    }
+  }
+]

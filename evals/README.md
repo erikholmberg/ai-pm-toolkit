@@ -38,6 +38,12 @@ Use [templates/golden-dataset-template.md](./templates/golden-dataset-template.m
 
 Use scripts in [scripts/](./scripts/) or your preferred eval framework.
 
+**Available Scripts:**
+- **[llm-as-judge-evaluator.py](./scripts/llm-as-judge-evaluator.py)** - Use a stronger LLM to evaluate outputs on multiple dimensions
+- **[prompt-eval-harness.py](./scripts/prompt-eval-harness.py)** - Evaluate and compare prompt versions
+
+See [scripts/README.md](./scripts/README.md) for usage instructions.
+
 ### 5. Report Results
 
 Use [templates/eval-results-template.md](./templates/eval-results-template.md) for stakeholder communication.
@@ -51,6 +57,7 @@ Use [templates/eval-results-template.md](./templates/eval-results-template.md) f
 | **A/B Test** | Measuring real-world impact |
 | **Regression Test** | Catching quality drops |
 | **Human Eval** | Subjective quality assessment |
+| **LLM-as-Judge** | Scalable quality assessment using stronger models |
 | **Safety Eval** | Testing for harmful outputs |
 
 ## Tools We Recommend

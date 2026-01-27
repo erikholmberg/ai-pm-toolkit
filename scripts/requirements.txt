@@ -28,3 +28,7 @@ ipykernel>=6.0.0
 python-dateutil>=2.8.0
 tqdm>=4.65.0
 
+# LLM APIs (for evaluation scripts)
+openai>=1.0.0
+anthropic>=0.18.0
+
