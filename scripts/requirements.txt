@@ -32,3 +32,6 @@ tqdm>=4.65.0
 openai>=1.0.0
 anthropic>=0.18.0
 
+# Eval metrics (BLEU, ROUGE)
+rouge-score>=0.1.2
+

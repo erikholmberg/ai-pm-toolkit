@@ -1,0 +1,42 @@
+[
+  {
+    "id": "tc_001",
+    "input": "What is the capital of France?",
+    "output": "",
+    "expected_output": "Paris",
+    "category": "geography",
+    "metadata": { "difficulty": "easy", "source": "manual" }
+  },
+  {
+    "id": "tc_002",
+    "input": "Explain quantum computing in one sentence.",
+    "output": "",
+    "expected_output": "Quantum computing uses quantum mechanics to process information in ways that classical computers cannot.",
+    "category": "science",
+    "metadata": { "difficulty": "medium" }
+  },
+  {
+    "id": "tc_003",
+    "input": "Summarize the plot of Romeo and Juliet in one sentence.",
+    "output": "",
+    "expected_output": "Two young lovers from feuding families fall in love and die tragically, ending their families' feud.",
+    "category": "literature",
+    "metadata": { "difficulty": "easy" }
+  },
+  {
+    "id": "tc_004",
+    "input": "What are the main causes of climate change?",
+    "output": "",
+    "expected_output": "Greenhouse gas emissions from burning fossil fuels, deforestation, and industrial and agricultural activities.",
+    "category": "science",
+    "metadata": { "difficulty": "medium" }
+  },
+  {
+    "id": "tc_005",
+    "input": "Write a haiku about coding.",
+    "output": "",
+    "expected_output": "",
+    "category": "creative",
+    "metadata": { "difficulty": "medium", "no_reference": true }
+  }
+]

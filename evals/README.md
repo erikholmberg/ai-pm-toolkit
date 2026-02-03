@@ -8,8 +8,10 @@ Frameworks, scripts, and templates for evaluating AI/ML products.
 |-----------|-------------|
 | [frameworks/](./frameworks/) | Evaluation methodologies |
 | [scripts/](./scripts/) | Python tools for running evals |
-| [templates/](./templates/) | Documents for planning and reporting |
+| [templates/](./templates/) | Eval plan, golden dataset, and reporting |
 | [metrics/](./metrics/) | What to measure and why |
+
+**Templates:** [eval-plan-template.md](./templates/eval-plan-template.md), [golden-dataset-template.md](./templates/golden-dataset-template.md)
 
 ## Why Evals Matter
 
@@ -32,7 +34,7 @@ Reference [metrics/ai-product-metrics.md](./metrics/ai-product-metrics.md) for w
 
 ### 3. Build Test Cases
 
-Use [templates/golden-dataset-template.md](./templates/golden-dataset-template.md) to structure test data.
+Use [templates/golden-dataset-template.md](./templates/golden-dataset-template.md) to structure test data. Example: [golden-dataset-example.json](./templates/golden-dataset-example.json).
 
 ### 4. Run Evals
 
@@ -41,12 +43,16 @@ Use scripts in [scripts/](./scripts/) or your preferred eval framework.
 **Available Scripts:**
 - **[llm-as-judge-evaluator.py](./scripts/llm-as-judge-evaluator.py)** - Use a stronger LLM to evaluate outputs on multiple dimensions
 - **[prompt-eval-harness.py](./scripts/prompt-eval-harness.py)** - Evaluate and compare prompt versions
+- **[automated-metrics.py](./scripts/automated-metrics.py)** - BLEU, ROUGE, exact match, and related reference-based metrics
+- **[eval-cost-calculator.py](./scripts/eval-cost-calculator.py)** - Estimate eval cost (tokens × model price)
+- **[regression-runner.py](./scripts/regression-runner.py)** - Compare new results to baseline and flag regressions
+- **[eval-report-generator.py](./scripts/eval-report-generator.py)** - Turn results JSON into markdown or HTML reports
 
 See [scripts/README.md](./scripts/README.md) for usage instructions.
 
 ### 5. Report Results
 
-Use [templates/eval-results-template.md](./templates/eval-results-template.md) for stakeholder communication.
+Use [eval-report-generator.py](./scripts/eval-report-generator.py) to generate markdown or HTML reports from results JSON.
 
 ## Common Eval Types
 

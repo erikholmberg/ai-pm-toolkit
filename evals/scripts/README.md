@@ -88,12 +88,62 @@ python prompt-eval-harness.py --interactive
 python prompt-eval-harness.py --config eval_config.json
 ```
 
+### `automated-metrics.py`
+
+Compute BLEU, ROUGE (1/2/L), exact match, contains-reference, and length ratio for reference-based evals.
+
+**Usage:**
+
+```bash
+python automated-metrics.py --input test_cases.json --output metrics.json
+python automated-metrics.py --input test_cases.json --reference-field expected_output --no-rouge
+```
+
+**Requirements:** `nltk`, `rouge-score`. Run once: `python -c "import nltk; nltk.download('punkt')"`
+
+### `eval-cost-calculator.py`
+
+Estimate the cost of running evals (tokens × model price). Supports planning and post-run cost from results JSON.
+
+**Usage:**
+
+```bash
+python eval-cost-calculator.py --cases 500 --avg-input 200 --avg-output 300 --model claude-3-sonnet-20240229
+python eval-cost-calculator.py --results results.json
+python eval-cost-calculator.py --interactive
+python eval-cost-calculator.py --list-models
+```
+
+### `regression-runner.py`
+
+Compare new eval results to a baseline and flag regressions (e.g. score drops by more than X%).
+
+**Usage:**
+
+```bash
+python regression-runner.py --baseline baseline.json --new new.json
+python regression-runner.py --baseline baseline.json --new new.json --threshold 5 --metric overall
+python regression-runner.py --baseline baseline.json --new new.json --output comparison.json --fail-on-regression
+```
+
+### `eval-report-generator.py`
+
+Generate markdown or HTML reports from eval results JSON (summary stats and per-case table).
+
+**Usage:**
+
+```bash
+python eval-report-generator.py --input results.json --output report.md
+python eval-report-generator.py --input results.json --output report.html --format html --title "Q2 Eval Report"
+```
+
 ## Requirements
 
 Install dependencies:
 
 ```bash
-pip install openai anthropic pandas tqdm
+pip install openai anthropic pandas tqdm nltk rouge-score
+python -c "import nltk; nltk.download('punkt')"
 ```
 
 Or use the main requirements file:
