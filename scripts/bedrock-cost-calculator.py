@@ -20,16 +20,16 @@ from typing import Dict, Tuple
 # Source: https://aws.amazon.com/bedrock/pricing/ (verify for your region)
 BEDROCK_PRICING: Dict[str, Tuple[float, float]] = {
     # Anthropic
-    "anthropic.claude-3-5-sonnet-v2": (6.00, 3.00),
-    "anthropic.claude-3-5-sonnet": (6.00, 3.00),
+    "anthropic.claude-3-5-sonnet-v2": (3.00, 15.00),
+    "anthropic.claude-3-5-sonnet": (3.00, 15.00),
     "anthropic.claude-3-sonnet": (3.00, 15.00),
     "anthropic.claude-3-haiku": (0.25, 1.25),
     "anthropic.claude-3-opus": (15.00, 75.00),
-    "claude-3-5-sonnet": (6.00, 3.00),
+    "claude-3-5-sonnet": (3.00, 15.00),
     "claude-3-sonnet": (3.00, 15.00),
     "claude-3-haiku": (0.25, 1.25),
     "claude-3-opus": (15.00, 75.00),
-    "claude": (6.00, 3.00),
+    "claude": (3.00, 15.00),
     # Amazon
     "amazon.titan-text-express": (0.80, 3.20),
     "amazon.titan-text-lite": (0.30, 0.40),
@@ -68,7 +68,7 @@ def get_pricing(model: str) -> Tuple[float, float]:
         if key in model_lower or model_lower in key:
             return val
     # Default to Claude 3.5 Sonnet
-    return (6.00, 3.00)
+    return (3.00, 15.00)
 
 
 def estimate_cost(input_tokens: int, output_tokens: int, model: str) -> Tuple[float, float, float]:
