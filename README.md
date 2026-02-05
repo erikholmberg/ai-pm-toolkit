@@ -7,14 +7,14 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 | Section | Description |
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
-| [**templates/**](./templates/) | Reusable documents for specs, OKRs, prioritization frameworks |
-| [**scripts/**](./scripts/) | Python utilities for analysis, A/B testing, and automation |
+| [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization |
+| [**scripts/**](./scripts/) | Python utilities: A/B testing, token counter & cost estimator, sentiment analysis |
 | [**frameworks/**](./frameworks/) | Mental models for prioritization and ML product lifecycle |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
 | [**evals/**](./evals/) | Evaluation frameworks, scripts, and metrics for AI products |
 | [**learning/**](./learning/) | AI/ML fundamentals, glossary, and curated resources |
-| [**strategy/**](./strategy/) | AI product strategy, build vs buy, pricing models |
+| [**strategy/**](./strategy/) | AI product strategy, pricing, go-to-market (see [strategy/README.md](./strategy/README.md)) |
 | [**governance/**](./governance/) | Responsible AI, ethics, bias detection, risk assessment |
 | [**communication/**](./communication/) | Stakeholder management and executive communication |
 | [**launch/**](./launch/) | GTM playbooks for AI features |

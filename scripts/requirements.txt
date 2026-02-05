@@ -35,3 +35,6 @@ anthropic>=0.18.0
 # Eval metrics (BLEU, ROUGE)
 rouge-score>=0.1.2
 
+# Token counting (optional; for scripts/token-counter.py accurate counts)
+# tiktoken>=0.5.0
+
