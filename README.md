@@ -8,12 +8,12 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization |
-| [**scripts/**](./scripts/) | Python utilities: A/B testing, token counter & cost estimator, sentiment analysis |
+| [**scripts/**](./scripts/) | Python utilities: A/B testing, token counter, Bedrock cost calculator, sentiment analysis |
 | [**frameworks/**](./frameworks/) | Mental models for prioritization and ML product lifecycle |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
 | [**evals/**](./evals/) | Evaluation frameworks, scripts, and metrics for AI products |
-| [**learning/**](./learning/) | AI/ML fundamentals, glossary, and curated resources |
+| [**learning/**](./learning/) | AI/ML fundamentals, [AWS Bedrock for PMs](./learning/aws-bedrock-for-pms.md), glossary, resources |
 | [**strategy/**](./strategy/) | AI product strategy, pricing, go-to-market (see [strategy/README.md](./strategy/README.md)) |
 | [**governance/**](./governance/) | Responsible AI, ethics, bias detection, risk assessment |
 | [**communication/**](./communication/) | Stakeholder management and executive communication |
@@ -84,6 +84,17 @@ pm-toolkit/
 ├── career/                   # AI PM skills roadmap
 └── workflows/                # Daily AI PM workflow
 ```
+
+## ☁️ Building on AWS Bedrock
+
+If you use **Amazon Bedrock**, see:
+
+- [AWS Bedrock for PMs](./learning/aws-bedrock-for-pms.md) – concepts, model families, data/compliance
+- [scripts/bedrock-cost-calculator.py](./scripts/bedrock-cost-calculator.py) – estimate inference cost
+- [prompts/ai-ml/bedrock-model-selection.prompt.md](./prompts/ai-ml/bedrock-model-selection.prompt.md) – choose a model
+- [evals/frameworks/bedrock-eval-guide.md](./evals/frameworks/bedrock-eval-guide.md) – run evals with Bedrock
+
+---
 
 ## 🤝 Contributing
 
