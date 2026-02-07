@@ -1,0 +1,8 @@
+[
+  {"test_case_id": "tc1", "prompt_version": "v1", "latency_ms": 450, "tokens_used": 120, "scores": {"exact_match": 1.0}},
+  {"test_case_id": "tc2", "prompt_version": "v1", "latency_ms": 520, "tokens_used": 95, "scores": {"exact_match": 0.0}},
+  {"test_case_id": "tc3", "prompt_version": "v1", "latency_ms": 380, "tokens_used": 110, "scores": {"exact_match": 1.0}},
+  {"test_case_id": "tc1", "prompt_version": "v2", "latency_ms": 480, "tokens_used": 130, "scores": {"exact_match": 1.0}},
+  {"test_case_id": "tc2", "prompt_version": "v2", "latency_ms": 500, "tokens_used": 100, "scores": {"exact_match": 1.0}},
+  {"test_case_id": "tc3", "prompt_version": "v2", "latency_ms": 410, "tokens_used": 115, "scores": {"exact_match": 1.0}}
+]

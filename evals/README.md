@@ -46,13 +46,18 @@ Use scripts in [scripts/](./scripts/) or your preferred eval framework.
 - **[automated-metrics.py](./scripts/automated-metrics.py)** - BLEU, ROUGE, exact match, and related reference-based metrics
 - **[eval-cost-calculator.py](./scripts/eval-cost-calculator.py)** - Estimate eval cost (tokens × model price)
 - **[regression-runner.py](./scripts/regression-runner.py)** - Compare new results to baseline and flag regressions
-- **[eval-report-generator.py](./scripts/eval-report-generator.py)** - Turn results JSON into markdown or HTML reports
+- **[eval-summary-report.py](./scripts/eval-summary-report.py)** - One-page Markdown summary from eval JSON/CSV (e.g. from prompt-eval-harness)
 
-See [scripts/README.md](./scripts/README.md) for usage instructions.
+See [scripts/README.md](./scripts/README.md) for usage instructions (if present).
 
 ### 5. Report Results
 
-Use [eval-report-generator.py](./scripts/eval-report-generator.py) to generate markdown or HTML reports from results JSON.
+Use [eval-summary-report.py](./scripts/eval-summary-report.py) to generate a one-page Markdown summary from eval results:
+
+```bash
+python evals/scripts/eval-summary-report.py results.json --output report.md
+python evals/scripts/eval-summary-report.py results.json --stdout
+```
 
 ## Common Eval Types
 

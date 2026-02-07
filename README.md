@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization |
-| [**scripts/**](./scripts/) | Python utilities: A/B testing, token counter, Bedrock cost calculator, sentiment analysis |
+| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost calculator, latency/SLO, sentiment analysis, token counter |
 | [**frameworks/**](./frameworks/) | Mental models for prioritization and ML product lifecycle |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -47,6 +47,10 @@ Python scripts require Python 3.10+.
 ```bash
 pip install -r scripts/requirements.txt
 python scripts/ab-test-calculator.py
+python scripts/experiment-duration-calculator.py --baseline 0.05 --mde 0.10 --daily-visitors 5000
+python scripts/ai-unit-economics-calculator.py --cost-per-request 0.002 --requests-per-month 1e6 --revenue-per-user 5 --mau 200000
+python scripts/bedrock-cost-calculator.py --input-tokens 1000 --output-tokens 500 --model claude
+python scripts/latency-slo-calculator.py --availability 99.9 --requests-per-month 10e6
 ```
 
 ## 🗂️ Directory Structure
@@ -60,7 +64,7 @@ pm-toolkit/
 │   ├── ai-ml/                # ML system design, model cards, MLOps
 │   └── developer-community/  # AI accelerator resources
 ├── templates/                # RICE, OKRs, technical specs
-├── scripts/                  # Python analysis tools
+├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, latency/SLO, sentiment, token counter
 ├── frameworks/               # Prioritization, ML lifecycle
 ├── mcps/
 │   ├── guides/               # Setup and use case documentation
@@ -72,7 +76,7 @@ pm-toolkit/
 │   └── patterns/             # Agent design patterns
 ├── evals/
 │   ├── frameworks/           # LLM evaluation methodology
-│   ├── scripts/              # Evaluation harness code
+│   ├── scripts/              # Eval harness, eval summary report generator
 │   ├── templates/            # Eval planning docs
 │   └── metrics/              # AI product metrics guide
 ├── learning/                 # AI/ML fundamentals, glossary, resources
