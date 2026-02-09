@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization |
-| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost calculator, multi-model cost comparator, feature rollout calculator, AI initiative ROI, latency/SLO, sentiment analysis, token counter |
+| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter |
 | [**frameworks/**](./frameworks/) | Mental models for prioritization and ML product lifecycle |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -53,6 +53,9 @@ python scripts/bedrock-cost-calculator.py --input-tokens 1000 --output-tokens 50
 python scripts/multi-model-cost-comparator.py --input-tokens 1000 --output-tokens 500
 python scripts/feature-rollout-calculator.py --daily-volume 100000
 python scripts/ai-initiative-roi-calculator.py --dev-cost 50000 --monthly-ai-cost 2000 --monthly-benefit 10000
+python scripts/confidence-interval-calculator.py --n 500 --proportion 0.32
+python scripts/nps-csat-summary.py nps --promoters 40 --passives 30 --detractors 30
+python scripts/survey-sample-size.py --margin 0.05 --confidence 0.95
 python scripts/latency-slo-calculator.py --availability 99.9 --requests-per-month 10e6
 ```
 
@@ -67,7 +70,7 @@ pm-toolkit/
 │   ├── ai-ml/                # ML system design, model cards, MLOps
 │   └── developer-community/  # AI accelerator resources
 ├── templates/                # RICE, OKRs, technical specs
-├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, latency/SLO, sentiment, token counter
+├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT, survey sample size, latency/SLO, sentiment, token counter
 ├── frameworks/               # Prioritization, ML lifecycle
 ├── mcps/
 │   ├── guides/               # Setup and use case documentation
