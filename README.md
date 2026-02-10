@@ -7,9 +7,9 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 | Section | Description |
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
-| [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization |
+| [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
 | [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime |
-| [**frameworks/**](./frameworks/) | Mental models for prioritization and ML product lifecycle |
+| [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
 | [**evals/**](./evals/) | Evaluation frameworks, scripts, and metrics for AI products |
@@ -74,9 +74,9 @@ pm-toolkit/
 │   ├── core-pm/              # PRDs, user stories, stakeholder updates, pricing page, API changelog
 │   ├── ai-ml/                # ML system design, model cards, MLOps, migration playbooks
 │   └── developer-community/  # AI accelerator resources
-├── templates/                # RICE, OKRs, technical specs
+├── templates/                # RICE, OKRs, technical specs, prompt library management
 ├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT, survey sample size, latency/SLO, sentiment, token counter, churn risk, prompt cost optimizer, data drift, adoption funnel, SLA/uptime
-├── frameworks/               # Prioritization, ML lifecycle
+├── frameworks/               # Prioritization, ML lifecycle, build vs. buy, deprecation playbook
 ├── mcps/
 │   ├── guides/               # Setup and use case documentation
 │   └── servers/              # Jira, Confluence, GitHub MCP servers
