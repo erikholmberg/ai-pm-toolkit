@@ -71,8 +71,8 @@ pm-toolkit/
 ├── README.md
 ├── .gitignore
 ├── prompts/
-│   ├── core-pm/              # PRDs, user stories, stakeholder updates
-│   ├── ai-ml/                # ML system design, model cards, MLOps
+│   ├── core-pm/              # PRDs, user stories, stakeholder updates, pricing page, API changelog
+│   ├── ai-ml/                # ML system design, model cards, MLOps, migration playbooks
 │   └── developer-community/  # AI accelerator resources
 ├── templates/                # RICE, OKRs, technical specs
 ├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT, survey sample size, latency/SLO, sentiment, token counter, churn risk, prompt cost optimizer, data drift, adoption funnel, SLA/uptime
