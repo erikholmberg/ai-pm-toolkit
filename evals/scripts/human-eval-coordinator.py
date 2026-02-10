@@ -500,10 +500,14 @@ def consolidate_ratings(
 
         if strategy == "majority":
             score_counts = Counter(scores)
-            final_score = score_counts.most_common(1)[0][0]
+            max_count = score_counts.most_common(1)[0][1]
+            tied_scores = [s for s, c in score_counts.items() if c == max_count]
+            final_score = max(tied_scores)  # break ties by highest score
             if labels:
                 label_counts = Counter(labels)
-                final_label = label_counts.most_common(1)[0][0]
+                max_label_count = label_counts.most_common(1)[0][1]
+                tied_labels = [l for l, c in label_counts.items() if c == max_label_count]
+                final_label = sorted(tied_labels)[0]  # break ties alphabetically
             else:
                 final_label = None
         elif strategy == "average":
@@ -691,16 +695,16 @@ def print_consolidation_report(consolidated: List[Dict]) -> None:
 
 
 def _kappa_label(k: float) -> str:
-    """Interpret kappa value."""
+    """Interpret kappa value per Landis & Koch (1977) scale."""
     if k < 0:
         return "poor"
-    elif k < 0.21:
+    elif k <= 0.20:
         return "slight"
-    elif k < 0.41:
+    elif k <= 0.40:
         return "fair"
-    elif k < 0.61:
+    elif k <= 0.60:
         return "moderate"
-    elif k < 0.81:
+    elif k <= 0.80:
         return "substantial"
     else:
         return "almost perfect"
