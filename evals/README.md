@@ -47,6 +47,7 @@ Use scripts in [scripts/](./scripts/) or your preferred eval framework.
 - **[eval-cost-calculator.py](./scripts/eval-cost-calculator.py)** - Estimate eval cost (tokens × model price)
 - **[regression-runner.py](./scripts/regression-runner.py)** - Compare new results to baseline and flag regressions
 - **[eval-summary-report.py](./scripts/eval-summary-report.py)** - One-page Markdown summary from eval JSON/CSV (e.g. from prompt-eval-harness)
+- **[human-eval-coordinator.py](./scripts/human-eval-coordinator.py)** - Assign tasks to human raters, calculate inter-rater reliability (Cohen's/Fleiss' Kappa, Krippendorff's Alpha), and consolidate ratings
 
 See [scripts/README.md](./scripts/README.md) for usage instructions (if present).
 
