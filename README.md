@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization |
-| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter |
+| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime |
 | [**frameworks/**](./frameworks/) | Mental models for prioritization and ML product lifecycle |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -57,6 +57,11 @@ python scripts/confidence-interval-calculator.py --n 500 --proportion 0.32
 python scripts/nps-csat-summary.py nps --promoters 40 --passives 30 --detractors 30
 python scripts/survey-sample-size.py --margin 0.05 --confidence 0.95
 python scripts/latency-slo-calculator.py --availability 99.9 --requests-per-month 10e6
+python scripts/churn-risk-calculator.py --cohort "New Users" --usage-drop 40 --adoption 25 --tickets 12
+python scripts/prompt-cost-optimizer.py --file prompt.txt --model gpt-4o --requests-per-month 500000
+python scripts/data-drift-detector.py --baseline baseline.csv --current current.csv
+python scripts/adoption-funnel-analyzer.py --steps "Visit:10000" "Signup:4000" "Activate:2500" "Repeat:800"
+python scripts/sla-uptime-calculator.py --sla 99.9 --incidents 45 120 15 --forecast-days 90
 ```
 
 ## 🗂️ Directory Structure
@@ -70,7 +75,7 @@ pm-toolkit/
 │   ├── ai-ml/                # ML system design, model cards, MLOps
 │   └── developer-community/  # AI accelerator resources
 ├── templates/                # RICE, OKRs, technical specs
-├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT, survey sample size, latency/SLO, sentiment, token counter
+├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT, survey sample size, latency/SLO, sentiment, token counter, churn risk, prompt cost optimizer, data drift, adoption funnel, SLA/uptime
 ├── frameworks/               # Prioritization, ML lifecycle
 ├── mcps/
 │   ├── guides/               # Setup and use case documentation
