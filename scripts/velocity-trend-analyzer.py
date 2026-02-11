@@ -208,10 +208,10 @@ def print_report(report: Dict) -> None:
         print(f"   Consider discussing in next retrospective: blockers, scope creep, context switching?")
 
     # Forecast note
-    if r["trend_direction"] == "increasing" and r["last_rolling_avg"]:
+    if r["trend_direction"] == "increasing" and r["last_rolling_avg"] is not None:
         print(f"\n📈 FORECAST:")
         print(f"   Velocity trending up. Next sprint prediction: ~{r['last_rolling_avg']:.0f}–{r['last_rolling_avg'] + r['slope']:.0f} points")
-    elif r["trend_direction"] == "decreasing" and r["last_rolling_avg"]:
+    elif r["trend_direction"] == "decreasing" and r["last_rolling_avg"] is not None:
         print(f"\n📉 FORECAST:")
         print(f"   Velocity trending down. Investigate causes before planning assumes prior levels.")
 

@@ -48,7 +48,7 @@ def available_days(
 
     # PTO and holidays reduce available person-days
     unavailable = pto_days + (holiday_days * team_size)
-    available_person_days = raw_person_days - unavailable
+    available_person_days = max(0.0, raw_person_days - unavailable)
 
     # Meeting load reduces effective capacity (meetings affect everyone)
     focus_multiplier = 1.0 - meeting_load_pct

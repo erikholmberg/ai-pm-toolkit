@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
-| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime, velocity trend, capacity planning |
+| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime, velocity trend, capacity planning, cycle/lead time |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -64,6 +64,7 @@ python scripts/adoption-funnel-analyzer.py --steps "Visit:10000" "Signup:4000" "
 python scripts/sla-uptime-calculator.py --sla 99.9 --incidents 45 120 15 --forecast-days 90
 python scripts/velocity-trend-analyzer.py --sprints 38 42 35 45 40 48 --window 3 --target 45
 python scripts/capacity-planning-calculator.py --team 6 --sprint-days 10 --pto 2 --meetings 0.2 --points-per-day 4
+python scripts/cycle-lead-time-analyzer.py --csv tickets.csv --group-by type
 ```
 
 ## 🗂️ Directory Structure
@@ -77,7 +78,7 @@ pm-toolkit/
 │   ├── ai-ml/                # ML system design, model cards, MLOps, migration playbooks
 │   └── developer-community/  # AI accelerator resources
 ├── templates/                # RICE, OKRs, technical specs, prompt library management
-├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT, survey sample size, latency/SLO, sentiment, token counter, churn risk, prompt cost optimizer, data drift, adoption funnel, SLA/uptime, velocity trend, capacity planning
+├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT, survey sample size, latency/SLO, sentiment, token counter, churn risk, prompt cost optimizer, data drift, adoption funnel, SLA/uptime, velocity trend, capacity planning, cycle/lead time
 ├── frameworks/               # Prioritization, ML lifecycle, build vs. buy, deprecation playbook, SPACE
 ├── mcps/
 │   ├── guides/               # Setup and use case documentation
