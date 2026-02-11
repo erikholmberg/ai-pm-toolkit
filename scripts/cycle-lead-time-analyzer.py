@@ -220,8 +220,9 @@ def print_report(
     print(f"   • Tickets analyzed:  {n}")
     if period_days:
         tp = throughput(tickets, period_days)
-        print(f"   • Period:            {period_days:.0f} days")
-        print(f"   • Throughput:        {tp:.1f} items / {period_days:.0f} days (~{tp * 7:.1f}/week)")
+        period_str = f"{period_days:.1f} days" if period_days >= 1 else f"{period_days * 24:.1f} hours"
+        print(f"   • Period:            {period_str}")
+        print(f"   • Throughput:        {tp:.1f} items / {period_str} (~{tp * 7:.1f}/week)")
 
     if "groups" in stats:
         print(f"\n📐 BY {group_by.upper()}:")
@@ -328,7 +329,8 @@ def main():
     if not period_days and tickets:
         min_d = min(t["created"] for t in tickets)
         max_d = max(t["done"] for t in tickets)
-        period_days = (max_d - min_d).days or 1
+        delta = max_d - min_d
+        period_days = max(1 / 24, delta.total_seconds() / (24 * 3600))
 
     stats = compute_stats(tickets, args.group_by)
 
