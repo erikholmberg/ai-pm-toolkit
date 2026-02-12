@@ -330,7 +330,8 @@ def main():
         min_d = min(t["created"] for t in tickets)
         max_d = max(t["done"] for t in tickets)
         delta = max_d - min_d
-        period_days = max(1 / 24, delta.total_seconds() / (24 * 3600))
+        actual_days = delta.total_seconds() / (24 * 3600)
+        period_days = max(1 / 1440, actual_days)  # min 1 minute to avoid div-by-zero
 
     stats = compute_stats(tickets, args.group_by)
 
