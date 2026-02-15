@@ -186,12 +186,13 @@ def analyze(
     iqr_multiplier: float = 1.5,
     rolling_window: int = 7,
     direction: str = "both",
+    zscore_threshold: float = 3.0,
 ) -> Dict[str, Any]:
     """Run all threshold methods and return unified results."""
     sig = sigma_thresholds(values, sigma_k)
     iqr_t = iqr_thresholds(values, iqr_multiplier)
     pct = percentile_thresholds(values)
-    rolling = rolling_zscore(values, rolling_window, sigma_k)
+    rolling = rolling_zscore(values, rolling_window, zscore_threshold)
 
     # Count how many existing data points would have triggered each method
     def count_violations(lower: float, upper: float) -> int:
@@ -411,6 +412,9 @@ Examples:
     parser.add_argument("--sigma", "-s", type=float, default=3.0, help="Sigma multiplier for std-dev method (default: 3.0)")
     parser.add_argument("--iqr-multiplier", type=float, default=1.5, help="IQR multiplier for Tukey fences (default: 1.5)")
     parser.add_argument("--window", "-w", type=int, default=7, help="Rolling window size for z-score (default: 7)")
+    parser.add_argument("--zscore-threshold", type=float, default=3.0,
+                        help="Z-score threshold for rolling anomaly detection (default: 3.0). "
+                             "Independent of --sigma which controls the static threshold method.")
     parser.add_argument(
         "--direction", "-d", type=str, default="both",
         choices=["both", "upper", "lower"],
@@ -450,6 +454,7 @@ Examples:
         iqr_multiplier=args.iqr_multiplier,
         rolling_window=args.window,
         direction=args.direction,
+        zscore_threshold=args.zscore_threshold,
     )
 
     # Report

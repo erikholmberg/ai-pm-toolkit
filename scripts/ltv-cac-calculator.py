@@ -462,6 +462,13 @@ Examples:
             ltv_data = ltv_simple(args.arpu or 0, avg_churn, args.gross_margin)
             cac_data = cac_analysis(args.cac, ltv_data["ltv"], ltv_data["monthly_contribution"])
 
+    # Guard: ensure ltv_data was computed before printing
+    if ltv_data is None:
+        print("Error: could not compute LTV. Provide --arpu/--churn-rate or a valid --csv.", file=sys.stderr)
+        return 1
+    if cac_data is None:
+        cac_data = cac_analysis(args.cac, ltv_data["ltv"], ltv_data["monthly_contribution"])
+
     # Print report
     print_report(
         arpu=args.arpu or 0,
