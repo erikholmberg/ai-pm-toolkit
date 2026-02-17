@@ -198,6 +198,8 @@ def load_git_log(
             raise RuntimeError(f"git log failed: {result.stderr.strip()}")
     except FileNotFoundError:
         raise RuntimeError("git not found. Install git or use --csv/--json instead.")
+    except subprocess.TimeoutExpired:
+        raise RuntimeError("git log timed out after 30 seconds. Try narrowing the range with --last or --since.")
 
     entries: List[Dict[str, Any]] = []
     for line in result.stdout.strip().split("\n"):
