@@ -308,7 +308,7 @@ def load_json(path: str) -> Tuple[List[Dict[str, Any]], Optional[str]]:
         category = CATEGORY_MAP.get(raw_cat, raw_cat.title() if raw_cat else detect_category(title))
 
         entries.append({
-            "title": clean_title(title),
+            "title": clean_title(title) if category != "Other" else title,
             "raw_title": title,
             "category": category,
             "author": item.get("author"),

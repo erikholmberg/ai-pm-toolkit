@@ -171,7 +171,7 @@ def load_csv(path: str) -> List[Dict[str, Any]]:
 
 def parse_inline_item(s: str) -> Dict[str, Any]:
     """Parse 'Title:impact:cost:risk' into item dict."""
-    parts = s.split(":")
+    parts = s.rsplit(":", 3)
     if len(parts) < 4:
         raise ValueError(f"Invalid item '{s}'. Format: Title:impact:cost:risk")
     return {
