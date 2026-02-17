@@ -1,6 +1,6 @@
 # 🚀 AI Product Manager Toolkit
 
-A comprehensive collection of prompts, templates, tools, and frameworks for Product Managers working with AI/ML products.
+A comprehensive collection of prompts, templates, tools, and frameworks for Product Managers working with AI / ML products.
 
 ## 📚 What's Inside
 
