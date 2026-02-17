@@ -500,9 +500,12 @@ Examples:
             elif mtype == "usage":
                 models.append((mname, simulate_usage(user_counts, mc["price_per_unit"], mc.get("avg_usage", 100), mc.get("paid_pct", 100))))
             elif mtype == "freemium":
-                conv = mc.get("conversion_pct", mc.get("free_pct", 96))
-                if "free_pct" in mc:
+                if "conversion_pct" in mc:
+                    conv = mc["conversion_pct"]
+                elif "free_pct" in mc:
                     conv = 100 - mc["free_pct"]
+                else:
+                    conv = 4  # sensible default: 4% free-to-paid conversion
                 models.append((mname, simulate_freemium(user_counts, conv, mc["paid_price"])))
             elif mtype == "hybrid":
                 models.append((mname, simulate_hybrid(
