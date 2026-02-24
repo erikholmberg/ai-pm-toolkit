@@ -300,7 +300,7 @@ def parse_pipeline_string(s: str) -> Dict[str, Any]:
     rows = int(float(params.get("rows", "0")))
     expected = int(float(params.get("expected", params.get("expected_rows", "0"))))
     errors = int(float(params.get("errors", "0")))
-    total = int(float(params.get("total", params.get("total_runs", str(rows)))))
+    total = int(float(params.get("total", params.get("total_runs", "0"))))
     schema = int(float(params.get("schema", params.get("schema_changes", "0"))))
     completeness = float(params.get("completeness", params.get("completeness_pct", "100")))
 
@@ -436,7 +436,7 @@ def print_report(pipelines: List[Dict[str, Any]]) -> None:
         fresh_str = f"{p['freshness_min']:.0f}m" if p["freshness_min"] > 0 else "—"
         vol_str = _fmt_rows(p["rows"]) if p["rows"] > 0 else "—"
         err_str = f"{p['errors']:,}" if p["total_runs"] > 0 else "—"
-        comp_str = f"{p['completeness_pct']:.0f}%" if p["completeness_pct"] < 100 else "100%"
+        comp_str = f"{p['completeness_pct']:.1f}%" if p["completeness_pct"] < 100 else "100%"
 
         print(
             f"   {p['name'][:20]:<20} "
