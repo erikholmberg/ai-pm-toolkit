@@ -257,6 +257,11 @@ def load_csv(path: str) -> List[Dict[str, Any]]:
         c_comm = _col(fields, "communication", "c")
         c_eff = _col(fields, "efficiency", "e")
         c_notes = _col(fields, "notes", "note")
+        c_note_sat = _col(fields, "note_satisfaction", "notes_satisfaction")
+        c_note_perf = _col(fields, "note_performance", "notes_performance")
+        c_note_act = _col(fields, "note_activity", "notes_activity")
+        c_note_comm = _col(fields, "note_communication", "notes_communication")
+        c_note_eff = _col(fields, "note_efficiency", "notes_efficiency")
 
         for row in reader:
             team = row.get(c_team or "team", "").strip()
@@ -294,8 +299,15 @@ def load_csv(path: str) -> List[Dict[str, Any]]:
                 continue
 
             notes = {}
-            if c_notes and row.get(c_notes, "").strip():
-                notes["satisfaction"] = row[c_notes].strip()  # single note column
+            for dim, c_note in [
+                ("satisfaction", c_note_sat or c_notes),
+                ("performance", c_note_perf),
+                ("activity", c_note_act),
+                ("communication", c_note_comm),
+                ("efficiency", c_note_eff),
+            ]:
+                if c_note and row.get(c_note, "").strip():
+                    notes[dim] = row[c_note].strip()
 
             sc = build_scorecard(
                 team=team,
@@ -344,6 +356,8 @@ def load_json(path: str) -> Dict[str, Any]:
 
 def generate_markdown(card: Dict[str, Any]) -> str:
     """Generate Markdown scorecard."""
+    if card.get("error"):
+        return f"# SPACE Team Health: {card.get('team', 'Team')}\n\n**Error:** {card['error']}\n"
     lines = []
     lines.append(f"# SPACE Team Health: {card['team']}")
     lines.append("")
@@ -351,7 +365,7 @@ def generate_markdown(card: Dict[str, Any]) -> str:
     if card.get("period"):
         lines.append(f"**Period:** {card['period']}  ")
     lines.append(f"**Overall:** {card['overall_label']} ({card['overall_pct']:.0f}%)  ")
-    lines.append(f"**Focus area:** {card['weakest_label']}  ")
+    lines.append(f"**Focus area:** {card.get('weakest_label', '—')}  ")
     lines.append("")
 
     lines.append("## Dimensions")
@@ -577,7 +591,7 @@ Examples:
         print_report(cards[0])
 
     # Markdown
-    if args.markdown and cards:
+    if args.markdown and cards and not cards[0].get("error"):
         md = generate_markdown(cards[0])
         with open(args.markdown, "w", encoding="utf-8") as f:
             f.write(md)

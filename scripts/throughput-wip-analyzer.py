@@ -120,7 +120,7 @@ def load_tickets(
         c_done = _col(fields, "completed", "done", "resolutiondate", "closed", "completed_at")
         c_created = _col(fields, "created", "created_at", "createdate")
         c_started = _col(fields, "started", "in_progress", "started_at")
-        c_sprint = _col(fields, "sprint", "sprint_id", "cycle") if sprint_col else _col(fields, sprint_col or "sprint")
+        c_sprint = _col(fields, sprint_col or "sprint", "sprint_id", "cycle")
 
         for row in reader:
             tid = row.get(c_id or "id", "").strip() or str(len(completed) + len(wip) + 1)
