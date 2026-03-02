@@ -205,7 +205,7 @@ def load_json(
             continue
 
         status_raw = (row.get("status", row.get("state", "open")) or "open").lower()
-        status = "done" if status_raw in ("done", "closed", "complete", "completed", "resolved") else "open"
+        status = "done" if status_raw in ("done", "closed", "complete", "completed", "resolved", "1", "yes") else "open"
 
         created_str = row.get("created", row.get("created_at", "")) or ""
         created_dt = parse_date(created_str) if created_str else None

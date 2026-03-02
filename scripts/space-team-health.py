@@ -40,7 +40,9 @@ Scale:
 CSV format:
     team,date,satisfaction,performance,activity,communication,efficiency,notes
     Platform Team,2025-08-01,4,3,4,3,4,"S: good. P: velocity dip."
-    Optional columns: note_satisfaction, note_performance, etc.
+    The generic "notes" column is used only for the satisfaction dimension when
+    note_satisfaction is not present. Optional columns: note_satisfaction,
+    note_performance, note_activity, note_communication, note_efficiency.
 
 JSON format:
     {
