@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
-| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime, velocity trend, capacity planning, cycle/lead time, sprint burndown checker |
+| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime, velocity trend, capacity planning, cycle/lead time, sprint burndown checker, sprint mix report |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -66,6 +66,7 @@ python scripts/velocity-trend-analyzer.py --sprints 38 42 35 45 40 48 --window 3
 python scripts/capacity-planning-calculator.py --team 6 --sprint-days 10 --pto 2 --meetings 0.2 --points-per-day 4
 python scripts/cycle-lead-time-analyzer.py --csv tickets.csv --group-by type
 python scripts/sprint-burndown-checker.py --csv burndown.csv --chart
+python scripts/sprint-mix-report.py --csv sprint.csv --group-by type
 ```
 
 ## 🗂️ Directory Structure
