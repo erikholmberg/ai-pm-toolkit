@@ -1,0 +1,11 @@
+issue_id,status,changed_at,type
+PROJ-101,To Do,2025-01-02,Bug
+PROJ-101,In Progress,2025-01-05,Bug
+PROJ-101,Done,2025-01-08,Bug
+PROJ-102,To Do,2025-01-03,Story
+PROJ-102,In Progress,2025-01-06,Story
+PROJ-102,In Review,2025-01-10,Story
+PROJ-102,Done,2025-01-12,Story
+PROJ-103,To Do,2025-01-04,Task
+PROJ-103,In Progress,2025-01-07,Task
+PROJ-103,Done,2025-01-11,Task
