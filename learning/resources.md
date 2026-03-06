@@ -14,6 +14,7 @@ Curated resources for Product Managers learning AI/ML.
 | [Practical Deep Learning](https://course.fast.ai/) | Fast.ai | Intermediate | 40 hours | Hands-on coding |
 | [LLM Bootcamp](https://fullstackdeeplearning.com/llm-bootcamp/) | Full Stack Deep Learning | Intermediate | 10 hours | LLM focus |
 | [Prompt Engineering](https://www.deeplearning.ai/short-courses/) | DeepLearning.AI | Beginner | 1-2 hours | Prompting |
+| [Learn Agentic Patterns](https://learnagenticpatterns.com) | Learn Agentic Patterns | Beginner–Intermediate | Self-paced | Agentic AI patterns for PMs |
 
 ### Paid Courses
 
