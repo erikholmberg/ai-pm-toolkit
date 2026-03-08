@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
-| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime, velocity trend, capacity planning, cycle/lead time, sprint burndown checker, sprint mix report, commitment predictability index, status duration analyzer, experiment result interpreter, backlog aging report, sprint goal checker |
+| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime, velocity trend, capacity planning, cycle/lead time, sprint burndown checker, sprint mix report, commitment predictability index, status duration analyzer, experiment result interpreter, backlog aging report, sprint goal checker, eval score trend |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -72,6 +72,7 @@ python scripts/status-duration-analyzer.py --csv transitions.csv --chart
 python scripts/experiment-result-interpreter.py --baseline 5.0 --variant 5.6 --n 8000
 python scripts/backlog-aging-report.py --csv backlog.csv --oldest 15
 python scripts/sprint-goal-checker.py --goals goals.csv --completed done.csv
+python scripts/eval-score-trend.py --csv eval-runs.csv --chart
 ```
 
 ## 🗂️ Directory Structure

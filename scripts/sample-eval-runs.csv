@@ -1,0 +1,9 @@
+run_id,date,metric,value
+run-001,2025-01-15,accuracy,0.92
+run-001,2025-01-15,latency_p99,120
+run-002,2025-01-22,accuracy,0.94
+run-002,2025-01-22,latency_p99,115
+run-003,2025-01-29,accuracy,0.89
+run-003,2025-01-29,latency_p99,118
+run-004,2025-02-05,accuracy,0.95
+run-004,2025-02-05,latency_p99,110
