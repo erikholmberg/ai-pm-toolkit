@@ -238,6 +238,9 @@ def main() -> int:
     if not args.completed and not args.done_keys:
         print("Provide --completed CSV or --done-keys.", file=sys.stderr)
         return 1
+    if not completed:
+        print("No completed issues found. Ensure --completed CSV has data rows or provide --done-keys with at least one key.", file=sys.stderr)
+        return 1
 
     result = analyze_goals(goals, completed)
     print_report(result)
