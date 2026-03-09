@@ -313,7 +313,8 @@ def main() -> int:
             f.write("| Id | Age (days) | Points | Priority | Summary |\n")
             f.write("|----|------------|--------|----------|--------|\n")
             for o in result.get("oldest", []):
-                summary_esc = (o.get("summary") or "—").replace("|", "\\|")[:40]
+                summary_raw = (o.get("summary") or "—")[:40]
+                summary_esc = summary_raw.replace("|", "\\|")
                 f.write(f"| {o['id']} | {o['age_days']} | {o['points']} | {o['priority']} | {summary_esc} |\n")
         print(f"Wrote Markdown to {args.markdown}")
 
