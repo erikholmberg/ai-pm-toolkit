@@ -235,7 +235,7 @@ def main() -> int:
         completed = load_completed_keys(args.completed)
     if args.done_keys:
         completed |= parse_done_keys(args.done_keys)
-    if not completed and not args.done_keys:
+    if not args.completed and not args.done_keys:
         print("Provide --completed CSV or --done-keys.", file=sys.stderr)
         return 1
 
