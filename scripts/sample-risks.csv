@@ -1,0 +1,6 @@
+risk,likelihood,impact,owner
+API dependency on vendor,High,High,Platform
+Key person dependency,3,4,Engineering
+Scope creep,Medium,Medium,PM
+Security audit finding,2,5,Security
+Third-party SLA breach,LOW,Critical,Ops
