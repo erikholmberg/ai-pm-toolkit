@@ -1,0 +1,7 @@
+feature,type,reach
+Add SSO support,feature,All users
+Fix login timeout,fix,
+Improve dashboard load,improvement,Web
+Dependency updates,chore,
+New export to PDF,feature,Pro
+Resolve session cookie bug,fix,
