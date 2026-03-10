@@ -156,8 +156,9 @@ def group_by_period(
     n_periods = len(counts)
     avg_per_period = total / n_periods if n_periods else 0
 
-    # MTTR: mean duration in minutes (only incidents with duration)
-    durations = [inc["duration_minutes"] for inc in incidents if inc.get("duration_minutes") is not None]
+    # MTTR: mean duration in minutes (only incidents in filtered range, with duration)
+    filtered_incidents = [inc for k in sorted_keys for inc in by_key[k]]
+    durations = [inc["duration_minutes"] for inc in filtered_incidents if inc.get("duration_minutes") is not None]
     mttr_min = sum(durations) / len(durations) if durations else None
 
     # Trend: first half vs second half avg rate
