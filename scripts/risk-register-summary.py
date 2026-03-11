@@ -163,7 +163,7 @@ def print_report(result: Dict[str, Any]) -> None:
     if top:
         print(f"\n   Top {len(top)} to mitigate:")
         for i, r in enumerate(top, 1):
-            risk_short = (r["risk"][:50] + "…") if len(r["risk"]) > 51 else r["risk"]
+            risk_short = (r["risk"][:50] + "…") if len(r["risk"]) > 50 else r["risk"]
             print(f"      {i}. [{r['score']}] {risk_short}  ({r['owner']})")
 
     print("\n   💡 Use for status updates and prioritising mitigation.\n")
