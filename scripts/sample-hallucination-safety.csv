@@ -1,0 +1,7 @@
+run_id,date,metric,value
+run-001,2025-01-15,hallucination_rate,0.032
+run-001,2025-01-15,safety_score,0.91
+run-002,2025-01-22,hallucination_rate,0.028
+run-002,2025-01-22,safety_score,0.93
+run-003,2025-01-29,hallucination_rate,0.035
+run-003,2025-01-29,safety_score,0.90
