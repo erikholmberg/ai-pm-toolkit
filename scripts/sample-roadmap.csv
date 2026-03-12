@@ -1,0 +1,5 @@
+initiative,start,end,owner
+SSO rollout,2025-03-01,2025-04-15,Platform
+API v2,2025-02-15,2025-05-01,Backend
+Dashboard refresh,2025-04-01,2025-05-15,Frontend
+Data pipeline v2,2025-03-15,2025-04-30,Data

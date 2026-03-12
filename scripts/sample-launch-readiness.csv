@@ -1,0 +1,10 @@
+area,item,done
+QA,Smoke tests passed,yes
+QA,Regression suite green,1
+QA,Load test signed off,
+Security,Pen test signed off,yes
+Security,Secrets audit,
+Docs,Runbook updated,yes
+Docs,API changelog published,
+Rollout,Feature flag created,yes
+Rollout,Rollback tested,yes
