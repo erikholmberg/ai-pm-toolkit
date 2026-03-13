@@ -1,0 +1,9 @@
+date,product,severity
+2025-01-06,API,high
+2025-01-08,Dashboard,medium
+2025-01-13,API,medium
+2025-01-15,Dashboard,low
+2025-01-20,API,high
+2025-01-22,Dashboard,medium
+2025-01-27,API,medium
+2025-01-29,API,low
