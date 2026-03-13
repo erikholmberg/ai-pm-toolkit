@@ -136,7 +136,7 @@ def summarize_by_group(
         overall = count_words(feedback, top_n, 2)
         by_group_words = {}
         for grp, items in by_group.items():
-            by_group_words[grp] = count_words(items, min(top_n, 15), 2)
+            by_group_words[grp] = count_words(items, top_n, 2)
         return {
             "mode": "words",
             "top_words": overall,
