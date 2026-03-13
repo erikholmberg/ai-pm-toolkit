@@ -1,0 +1,7 @@
+control_id,description,status,evidence,domain
+CC6.1,Access reviews performed quarterly,complete,https://docs/access-reviews,Access
+CC6.2,Log retention configured per policy,pending,,Access
+CC7.1,Change management process documented,complete,https://docs/changelog,Change Mgmt
+CC7.2,Deployment approvals recorded,pending,,Change Mgmt
+CC8.1,Encryption at rest verified,complete,,Data Protection
+CC8.2,Key rotation schedule documented,pending,,Data Protection
