@@ -1,0 +1,7 @@
+period,planned,actual,category
+2025-01,10000,9500,Engineering
+2025-02,10000,10200,Engineering
+2025-03,10000,,Engineering
+2025-01,3000,3200,Marketing
+2025-02,3000,2800,Marketing
+2025-03,3000,,Marketing
