@@ -70,12 +70,25 @@ def load_budget(
         c_actual = _col(fields, actual_col, "actual", "spend", "spent", "realized")
         c_cat = _col(fields, category_col, "category", "area", "team", "bucket")
 
+        missing = []
+        if not c_period:
+            missing.append("period (or month, date, interval)")
+        if not c_planned:
+            missing.append("planned (or budget, plan, expected)")
+        if not c_actual:
+            missing.append("actual (or spend, spent, realized)")
+        if missing:
+            raise ValueError(
+                f"Required column(s) not found in CSV: {', '.join(missing)}. "
+                f"Columns in file: {list(fields)}"
+            )
+
         for row in reader:
-            period = (row.get(c_period or "period", "") or "").strip()
+            period = (row.get(c_period, "") or "").strip()
             if not period:
                 continue
-            planned = parse_amount(row.get(c_planned or "planned", "") or "")
-            actual = parse_amount(row.get(c_actual or "actual", "") or "")
+            planned = parse_amount(row.get(c_planned, "") or "")
+            actual = parse_amount(row.get(c_actual, "") or "")
             category = (row.get(c_cat or "category", "") or "").strip() or "—"
             rows.append({
                 "period": period,
@@ -200,7 +213,11 @@ def main() -> int:
     parser.add_argument("--output", "-o", metavar="FILE", help="Write JSON result to FILE")
     args = parser.parse_args()
 
-    rows = load_budget(args.csv)
+    try:
+        rows = load_budget(args.csv)
+    except ValueError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return 1
     if not rows:
         print("No valid rows in CSV (need period, planned, actual).", file=sys.stderr)
         return 1
