@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
-| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime, velocity trend, capacity planning, cycle/lead time, sprint burndown checker, sprint mix report, commitment predictability index, status duration analyzer, experiment result interpreter, backlog aging report, sprint goal checker, eval score trend, incident rate trend, risk register summary, release impact summary, prompt version diff, hallucination/safety trend, roadmap timeline summary, launch readiness score, feedback theme counter, support escalation trend, audit checklist summary, budget burn summary |
+| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime, velocity trend, capacity planning, cycle/lead time, sprint burndown checker, sprint mix report, commitment predictability index, status duration analyzer, experiment result interpreter, backlog aging report, sprint goal checker, eval score trend, incident rate trend, risk register summary, release impact summary, prompt version diff, hallucination/safety trend, roadmap timeline summary, launch readiness score, feedback theme counter, support escalation trend, audit checklist summary, budget burn summary, win-loss summary |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -84,6 +84,7 @@ python scripts/feedback-theme-counter.py --csv feedback.csv --themes "pricing,re
 python scripts/support-escalation-trend.py --csv tickets.csv --chart --group-by severity
 python scripts/audit-checklist-summary.py --csv controls.csv --group-by domain --open
 python scripts/budget-burn-summary.py --csv budget.csv --group-by category
+python scripts/win-loss-summary.py --csv deals.csv --top 5 --group-by segment
 ```
 
 ## 🗂️ Directory Structure

@@ -1,0 +1,9 @@
+opportunity_id,outcome,reason,segment
+opp-001,won,,Enterprise
+opp-002,lost,Price,SMB
+opp-003,lost,Competitor - Acme,Enterprise
+opp-004,won,,SMB
+opp-005,lost,Price,Enterprise
+opp-006,lost,Timing,SMB
+opp-007,won,,Enterprise
+opp-008,lost,Competitor - Acme,SMB
