@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
-| [**scripts/**](./scripts/) | Python utilities: A/B testing, experiment duration, AI unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT summary, survey sample size, latency/SLO, sentiment analysis, token counter, churn risk, prompt cost optimizer, data drift detection, adoption funnel analysis, SLA/uptime, velocity trend, capacity planning, cycle/lead time, sprint burndown checker, sprint mix report, commitment predictability index, status duration analyzer, experiment result interpreter, backlog aging report, sprint goal checker, eval score trend, incident rate trend, risk register summary, release impact summary, prompt version diff, hallucination/safety trend, roadmap timeline summary, launch readiness score, feedback theme counter, support escalation trend, audit checklist summary, budget burn summary, win-loss summary, inference latency trend, feature adoption trend, stakeholder sign-off tracker, dependency blocked-by summary, beta conversion report, customer health score trend, release cadence report |
+| [**scripts/**](./scripts/) | 80+ Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy. See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -21,6 +21,14 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 | [**incidents/**](./incidents/) | Incident response and rollback strategies |
 | [**career/**](./career/) | AI PM skills roadmap and interview prep |
 | [**workflows/**](./workflows/) | Daily productivity and tool recommendations |
+
+## 🧭 Finding things
+
+- **Scripts** → [scripts/README.md](./scripts/README.md): categorized index, one-line descriptions, and which sample CSV to use with each script.
+- **Prompts** → [prompts/](./prompts/): `core-pm/`, `ai-ml/`, `developer-community/` (all files are `*.prompt.md`).
+- **Templates** → [templates/](./templates/): PRD, OKR, RICE, technical spec, DX assessment, etc.
+- **MCPs** → [mcps/README.md](./mcps/README.md): Jira, Confluence, GitHub, Slack, Braintrust, LangSmith servers.
+- **Evals** → [evals/scripts/README.md](./evals/scripts/README.md): eval harness, regression runner, cost calculator.
 
 ## 🎯 Quick Start
 
@@ -42,7 +50,7 @@ npm run build
 ```
 
 ### Using Scripts
-Python scripts require Python 3.10+. 
+Python scripts require Python 3.10+. Sample data lives in **`scripts/samples/`**; see [scripts/README.md](scripts/README.md) for the full index and which sample file goes with each script.
 
 ```bash
 pip install -r scripts/requirements.txt
@@ -105,7 +113,7 @@ pm-toolkit/
 │   ├── ai-ml/                # ML system design, model cards, MLOps, migration playbooks
 │   └── developer-community/  # AI accelerator resources
 ├── templates/                # RICE, OKRs, technical specs, prompt library management
-├── scripts/                  # A/B test, experiment duration, unit economics, Bedrock cost, multi-model comparator, feature rollout, AI ROI, confidence interval, NPS/CSAT, survey sample size, latency/SLO, sentiment, token counter, churn risk, prompt cost optimizer, data drift, adoption funnel, SLA/uptime, velocity trend, capacity planning, cycle/lead time
+├── scripts/                  # See scripts/README.md for categorized index and sample CSVs
 ├── frameworks/               # Prioritization, ML lifecycle, build vs. buy, deprecation playbook, SPACE
 ├── mcps/
 │   ├── guides/               # Setup and use case documentation
@@ -143,7 +151,7 @@ If you use **Amazon Bedrock**, see:
 
 ## 🤝 Contributing
 
-This toolkit is open for contributions. If you have prompts, templates, or tools that help you as an AI PM, please submit a PR.
+This toolkit is open for contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for where to add scripts, prompts, and templates so the repo stays easy to navigate. Then open a PR.
 
 ## 📄 License
 
