@@ -126,7 +126,7 @@ def summarize(rows: List[Dict[str, Any]]) -> Dict[str, Any]:
         mid = n // 2
         first_avg = sum(conversion_rates[:mid]) / mid
         second_avg = sum(conversion_rates[mid:]) / (n - mid)
-        trend_delta_pct = second_avg - first_avg if first_avg else 0
+        trend_delta_pct = second_avg - first_avg
     return {
         "periods": [r["date_str"] for r in rows],
         "rows": rows,
@@ -233,7 +233,7 @@ def main() -> int:
             trend_val = result.get('trend_delta_pct')
             f.write(f"- **Trend:** {f'{trend_val:+.1f} pp' if trend_val is not None else '—'}\n\n")
             f.write("| Date | Waitlist | Converted | Rate % |\n")
-            f.write("|------|----------|-----------+--------|\n")
+            f.write("|------|----------|-----------|--------|\n")
             for r in result["rows"]:
                 f.write(f"| {r['date_str']} | {r['waitlist_size']:,.0f} | {r['converted']:,.0f} | {r['conversion_pct']:.1f}% |\n")
         print(f"Wrote Markdown to {args.markdown}")
