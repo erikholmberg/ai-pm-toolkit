@@ -1,0 +1,10 @@
+date,account_id,health_score,segment
+2025-01-01,acct-001,72,Enterprise
+2025-01-01,acct-002,45,SMB
+2025-01-01,acct-003,88,Enterprise
+2025-01-08,acct-001,68,Enterprise
+2025-01-08,acct-002,42,SMB
+2025-01-08,acct-003,85,Enterprise
+2025-01-15,acct-001,65,Enterprise
+2025-01-15,acct-002,38,SMB
+2025-01-15,acct-003,82,Enterprise
