@@ -22,7 +22,7 @@ Ideas for new **scripts** and **MCP servers** that would complement the existing
 | Server | Purpose | Why add |
 |--------|--------|--------|
 | **Linear** | Issues, projects, cycles, roadmap. | Many teams use Linear instead of (or with) Jira; same PM workflows (sprint status, release notes, ticket creation). |
-| **Notion** | Search and create pages, databases, meeting notes, PRDs. | Alternative/complement to Confluence; common for wikis and specs. |
+| **Notion** | Search and create pages, databases, meeting notes, PRDs. | ✅ Implemented: [notion-pm-tools](../mcps/servers/notion-pm-tools/) |
 | **Product analytics (read-only)** | Query Amplitude, Mixpanel, or Pendo for key metrics (DAU, funnels, feature usage). | Lets the AI summarize “how is feature X performing?” without leaving the assistant. |
 | **Calendar / meetings** | List upcoming meetings, free/busy, or create calendar events. | Supports standup prep, stakeholder updates, and “what’s on my plate today?” |
 | **Customer support** | Read-only: Intercom, Zendesk, or Help Scout (tickets, themes, volume). | Complements Slack and customer prompts; good for feedback synthesis and prioritization. |
@@ -33,7 +33,7 @@ Ideas for new **scripts** and **MCP servers** that would complement the existing
 ## Quick wins
 
 - **Scripts:** Multi-model cost comparator and confidence interval calculator (small, high reuse).
-- **MCP:** Linear (if your users are on it) and Notion (broadly useful for docs and wikis).
+- **MCP:** Linear (if your users are on it). Notion is implemented: [notion-pm-tools](../mcps/servers/notion-pm-tools/).
 
 ---
 

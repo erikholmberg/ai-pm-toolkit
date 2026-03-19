@@ -12,6 +12,7 @@ MCP (Model Context Protocol) allows AI assistants like Claude to interact with e
 - 💬 Search Slack messages, extract action items, get channel summaries
 - 🧪 Query Braintrust experiments and eval results
 - 📊 Analyze LangSmith runs, traces, and project metrics
+- 📝 Search and create Notion pages, meeting notes, query databases
 
 ## Available Servers
 
@@ -19,6 +20,7 @@ MCP (Model Context Protocol) allows AI assistants like Claude to interact with e
 |--------|-------------|--------|
 | [jira-pm-assistant](./servers/jira-pm-assistant/) | Create tickets, query sprints, generate release notes | Ready |
 | [confluence-docs](./servers/confluence-docs/) | Search docs, publish PRDs, create meeting notes | Ready |
+| [notion-pm-tools](./servers/notion-pm-tools/) | Search/create Notion pages, meeting notes, list/query databases | Ready |
 | [github-pm-tools](./servers/github-pm-tools/) | Track issues, generate release notes from PRs | Ready |
 | [slack-pm-assistant](./servers/slack-pm-assistant/) | Search messages, extract action items, channel summaries | Ready |
 | [braintrust-pm-tools](./servers/braintrust-pm-tools/) | Query experiments, eval results, datasets, logs | Ready |
@@ -145,6 +147,21 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   // Handle tool calls
 });
 ```
+
+## Suggested MCPs to add
+
+Candidates that would complement the current set (Jira, Confluence, GitHub, Slack, Braintrust, LangSmith). See [docs/suggested-tools.md](../docs/suggested-tools.md) for full rationale.
+
+| Priority | Server | Purpose |
+|----------|--------|---------|
+| **High** | **Linear** | Issues, projects, cycles, roadmap. Same PM workflows as Jira for teams that use Linear. |
+| — | **Notion** | ✅ [notion-pm-tools](./servers/notion-pm-tools/) |
+| **Medium** | **Product analytics** | Read-only: Amplitude, Mixpanel, or Pendo — DAU, funnels, feature usage. “How is feature X performing?” in-conversation. |
+| **Medium** | **Calendar** | List upcoming meetings, free/busy, create events. Standup prep, “what’s on my plate today?” |
+| **Medium** | **Customer support** | Read-only: Intercom, Zendesk, or Help Scout — tickets, themes, volume. Feedback synthesis and prioritization. |
+| **Lower** | **Figma (read-only)** | List files, frame/screen names and links. Link specs to design; PRDs and eng handoff. |
+
+**Quick wins:** Linear (if your users are on it) and Notion (broadly useful for docs and wikis).
 
 ## Contributing
 
