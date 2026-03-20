@@ -80,6 +80,7 @@ python scripts/status-duration-analyzer.py --csv transitions.csv --chart
 python scripts/experiment-result-interpreter.py --baseline 5.0 --variant 5.6 --n 8000
 python scripts/backlog-aging-report.py --csv backlog.csv --oldest 15
 python scripts/sprint-goal-checker.py --goals goals.csv --completed done.csv
+python scripts/eval-label-economics.py --margin 0.05 --confidence 0.95 --proportion 0.5 --cost-per-label 2.50
 python scripts/eval-score-trend.py --csv eval-runs.csv --chart
 python scripts/incident-rate-trend.py --csv incidents.csv --chart
 python scripts/risk-register-summary.py --csv risks.csv --top 5
