@@ -59,6 +59,7 @@ python scripts/experiment-duration-calculator.py --baseline 0.05 --mde 0.10 --da
 python scripts/ai-unit-economics-calculator.py --cost-per-request 0.002 --requests-per-month 1e6 --revenue-per-user 5 --mau 200000
 python scripts/bedrock-cost-calculator.py --input-tokens 1000 --output-tokens 500 --model claude
 python scripts/multi-model-cost-comparator.py --input-tokens 1000 --output-tokens 500
+python scripts/model-selection-scorecard.py -s scripts/samples/sample-model-selection-scores.csv -w scripts/samples/sample-model-selection-weights.csv
 python scripts/feature-rollout-calculator.py --daily-volume 100000
 python scripts/ai-initiative-roi-calculator.py --dev-cost 50000 --monthly-ai-cost 2000 --monthly-benefit 10000
 python scripts/confidence-interval-calculator.py --n 500 --proportion 0.32

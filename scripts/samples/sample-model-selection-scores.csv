@@ -1,0 +1,5 @@
+model,quality,latency_fit,context,tooling,data_residency,vendor_risk
+gpt-4o,9,7,9,10,8,6
+claude-3-5-sonnet,9,8,9,10,8,7
+claude-3-haiku,7,10,8,9,8,8
+bedrock.titan-text-express,6,9,6,7,9,7

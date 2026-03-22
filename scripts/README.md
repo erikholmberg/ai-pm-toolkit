@@ -148,6 +148,7 @@ Sample CSVs and example files live in **`scripts/samples/`** (e.g. `samples/samp
 ### AI/ML ops & tokens
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
+| [model-selection-scorecard.py](model-selection-scorecard.py) | Weighted MCDA rank for models/tiers; optional +weight sensitivity | samples/sample-model-selection-scores.csv, samples/sample-model-selection-weights.csv |
 | [token-counter.py](token-counter.py) | Token count for prompts/models | — |
 | [token-budget-allocator.py](token-budget-allocator.py) | Allocate token budget across use cases | — |
 | [model-migration-estimator.py](model-migration-estimator.py) | Estimate effort/cost for model migration | — |

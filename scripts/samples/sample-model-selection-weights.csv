@@ -1,0 +1,7 @@
+criterion,weight
+quality,0.28
+latency_fit,0.18
+context,0.15
+tooling,0.12
+data_residency,0.15
+vendor_risk,0.12

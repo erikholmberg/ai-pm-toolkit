@@ -47,3 +47,4 @@ You are helping me choose an Amazon Bedrock foundation model for a product featu
 - **Context:** If you need 100K+ tokens (long docs), ensure the model supports it (e.g. Claude, some Llama variants).
 - **Region:** Confirm the model is available in your chosen AWS region (Bedrock console or docs).
 - **Pricing:** Use the toolkit’s `bedrock-cost-calculator.py` to compare $/1M tokens for candidates.
+- **Structured tradeoffs:** Score candidates on shared criteria (quality, latency fit, context, etc.) with `model-selection-scorecard.py` and optional weight sensitivity.
