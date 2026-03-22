@@ -131,6 +131,29 @@ def weighted_total(
     return total, contributions
 
 
+def score_rows_for_weights(
+    rows: List[Dict[str, str]],
+    model_col: str,
+    weights_norm: Dict[str, float],
+    crit_to_col: Dict[str, str],
+) -> List[Tuple[str, float, Dict[str, float]]]:
+    """
+    Score every row with a non-empty model name. Raises ValueError with row
+    context if any required criterion cell is missing or invalid.
+    """
+    scored: List[Tuple[str, float, Dict[str, float]]] = []
+    for row in rows:
+        name = (row.get(model_col) or "").strip()
+        if not name:
+            continue
+        try:
+            total, contrib = weighted_total(row, weights_norm, crit_to_col)
+        except ValueError as e:
+            raise ValueError(f"row '{name}': {e}") from e
+        scored.append((name, total, contrib))
+    return scored
+
+
 def rank_models(
     scored: List[Tuple[str, float, Dict[str, float]]],
 ) -> List[Tuple[str, float, Dict[str, float], int]]:
@@ -159,13 +182,7 @@ def ranking_names(
     weights_norm: Dict[str, float],
     crit_to_col: Dict[str, str],
 ) -> List[str]:
-    scored: List[Tuple[str, float, Dict[str, float]]] = []
-    for row in rows:
-        name = (row.get(model_col) or "").strip()
-        if not name:
-            continue
-        total, contrib = weighted_total(row, weights_norm, crit_to_col)
-        scored.append((name, total, contrib))
+    scored = score_rows_for_weights(rows, model_col, weights_norm, crit_to_col)
     ranked = rank_models(scored)
     return [r[0] for r in ranked]
 
@@ -215,17 +232,11 @@ def main() -> int:
         print(f"Error: {e}", file=sys.stderr)
         return 1
 
-    scored: List[Tuple[str, float, Dict[str, float]]] = []
-    for row in rows:
-        name = (row.get(model_col) or "").strip()
-        if not name:
-            continue
-        try:
-            total, contrib = weighted_total(row, weights_norm, crit_to_col)
-        except ValueError as e:
-            print(f"Error: row '{name}': {e}", file=sys.stderr)
-            return 1
-        scored.append((name, total, contrib))
+    try:
+        scored = score_rows_for_weights(rows, model_col, weights_norm, crit_to_col)
+    except ValueError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        return 1
 
     if not scored:
         print("Error: no data rows with model names", file=sys.stderr)
@@ -251,22 +262,26 @@ def main() -> int:
         }
         if not args.no_sensitivity:
             sens = []
-            for crit_lc in sorted(weights_norm.keys()):
-                try:
-                    pw = perturb_weights(weights_norm, crit_lc, args.bump)
-                except KeyError:
-                    continue
-                new_order = ranking_names(rows, model_col, pw, crit_to_col)
-                sens.append(
-                    {
-                        "bumped_criterion": crit_lc,
-                        "relative_bump": args.bump,
-                        "ranking": new_order,
-                        "winner": new_order[0] if new_order else None,
-                        "winner_changed": (new_order[0] if new_order else None) != winner,
-                        "order_changed": new_order != baseline_order,
-                    }
-                )
+            try:
+                for crit_lc in sorted(weights_norm.keys()):
+                    try:
+                        pw = perturb_weights(weights_norm, crit_lc, args.bump)
+                    except KeyError:
+                        continue
+                    new_order = ranking_names(rows, model_col, pw, crit_to_col)
+                    sens.append(
+                        {
+                            "bumped_criterion": crit_lc,
+                            "relative_bump": args.bump,
+                            "ranking": new_order,
+                            "winner": new_order[0] if new_order else None,
+                            "winner_changed": (new_order[0] if new_order else None) != winner,
+                            "order_changed": new_order != baseline_order,
+                        }
+                    )
+            except ValueError as e:
+                print(f"Error: sensitivity: {e}", file=sys.stderr)
+                return 1
             payload["sensitivity"] = sens
         print(json.dumps(payload, indent=2))
         return 0
@@ -288,19 +303,23 @@ def main() -> int:
     if not args.no_sensitivity:
         pct = args.bump * 100
         print(f"\n🔁 Sensitivity (bump one criterion weight by +{pct:.0f}%, renormalize):")
-        for crit_lc in sorted(weights_norm.keys()):
-            pw = perturb_weights(weights_norm, crit_lc, args.bump)
-            new_order = ranking_names(rows, model_col, pw, crit_to_col)
-            new_winner = new_order[0] if new_order else None
-            order_changed = new_order != baseline_order
-            winner_changed = new_winner != winner
-            if winner_changed:
-                status = f"winner → {new_winner}"
-            elif order_changed:
-                status = "ranking shuffled (same winner)"
-            else:
-                status = "no change"
-            print(f"   • {crit_lc}: {status}")
+        try:
+            for crit_lc in sorted(weights_norm.keys()):
+                pw = perturb_weights(weights_norm, crit_lc, args.bump)
+                new_order = ranking_names(rows, model_col, pw, crit_to_col)
+                new_winner = new_order[0] if new_order else None
+                order_changed = new_order != baseline_order
+                winner_changed = new_winner != winner
+                if winner_changed:
+                    status = f"winner → {new_winner}"
+                elif order_changed:
+                    status = "ranking shuffled (same winner)"
+                else:
+                    status = "no change"
+                print(f"   • {crit_lc}: {status}")
+        except ValueError as e:
+            print(f"Error: sensitivity: {e}", file=sys.stderr)
+            return 1
 
     print("\n📎 Tip: pair with multi-model-cost-comparator.py and eval runs for quality scores.")
     print("=" * 64)
