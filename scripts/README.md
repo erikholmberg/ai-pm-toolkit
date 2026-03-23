@@ -136,6 +136,7 @@ Sample CSVs and example files live in **`scripts/samples/`** (e.g. `samples/samp
 ### Stakeholders, communication & team
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
+| [meeting-load-optimizer.py](meeting-load-optimizer.py) | Meeting load vs work window, focus blocks, recurring-title signals | samples/sample-meetings.csv |
 | [exec-summary-generator.py](exec-summary-generator.py) | Executive summary from inputs | — |
 | [stakeholder-update.py](stakeholder-update.py) | Generate stakeholder update | — |
 | [stakeholder-signoff-tracker.py](stakeholder-signoff-tracker.py) | Track sign-offs by deliverable | samples/sample-stakeholder-signoff.csv |
@@ -167,6 +168,7 @@ From the repo root:
 python scripts/feature-adoption-trend.py --csv scripts/samples/sample-feature-adoption.csv --chart
 python scripts/sprint-burndown-checker.py --csv scripts/samples/sample-burndown.csv --chart
 python scripts/backlog-aging-report.py --csv scripts/samples/sample-backlog-aging.csv --oldest 10
+python scripts/meeting-load-optimizer.py --csv scripts/samples/sample-meetings.csv
 ```
 
 For full options, always run:
