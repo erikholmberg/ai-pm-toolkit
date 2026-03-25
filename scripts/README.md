@@ -19,6 +19,7 @@ Sample CSVs and example files live in **`scripts/samples/`** (e.g. `samples/samp
 | [ab-test-calculator.py](ab-test-calculator.py) | A/B test sample size, duration, power; proportions or means | — |
 | [experiment-duration-calculator.py](experiment-duration-calculator.py) | How long to run an experiment given traffic and sample size | — |
 | [experiment-result-interpreter.py](experiment-result-interpreter.py) | Interpret baseline vs variant with confidence | — |
+| [experiment-lifecycle-manager.py](experiment-lifecycle-manager.py) | Decision memo with guardrail-aware ship/iterate/stop recommendation | — |
 | [confidence-interval-calculator.py](confidence-interval-calculator.py) | Wilson score and mean CIs | — |
 | [survey-sample-size.py](survey-sample-size.py) | Sample size for target margin and confidence | — |
 | [cohort-comparison-tool.py](cohort-comparison-tool.py) | Compare cohorts (e.g. retention, conversion) | — |
@@ -89,6 +90,7 @@ Sample CSVs and example files live in **`scripts/samples/`** (e.g. `samples/samp
 | [feedback-theme-counter.py](feedback-theme-counter.py) | Count feedback by theme | samples/sample-feedback.csv |
 | [sentiment-analysis.py](sentiment-analysis.py) | Sentiment on text (e.g. feedback) | — |
 | [support-escalation-trend.py](support-escalation-trend.py) | Escalation volume/trend by severity | samples/sample-support-tickets.csv |
+| [voc-synthesis.py](voc-synthesis.py) | Deduplicate multi-source feedback and rank top opportunities | — |
 
 ### Risk, dependencies & governance
 | Script | Description | Sample CSV |
@@ -104,6 +106,7 @@ Sample CSVs and example files live in **`scripts/samples/`** (e.g. `samples/samp
 |--------|-------------|------------|
 | [launch-readiness-score.py](launch-readiness-score.py) | Go/no-go score from checklist | samples/sample-launch-readiness.csv |
 | [launch-checklist.py](launch-checklist.py) | Launch checklist workflow | — |
+| [release-gate-scorer.py](release-gate-scorer.py) | Weighted evidence-based release gate decision | — |
 | [feature-rollout-calculator.py](feature-rollout-calculator.py) | Phased rollout sample size and duration | — |
 | [feature-flag-planner.py](feature-flag-planner.py) | Feature flag stages and gates | — |
 
@@ -125,6 +128,8 @@ Sample CSVs and example files live in **`scripts/samples/`** (e.g. `samples/samp
 | [opportunity-scorer.py](opportunity-scorer.py) | Score opportunities from criteria | — |
 | [competitive-feature-matrix.py](competitive-feature-matrix.py) | Feature matrix vs competitors | — |
 | [impact-sizing-estimator.py](impact-sizing-estimator.py) | Impact sizing for roadmap | — |
+| [roadmap-simulator.py](roadmap-simulator.py) | Monte Carlo style scenario simulation for roadmap confidence | — |
+| [prd-traceability-linker.py](prd-traceability-linker.py) | Requirement-to-artifact trace coverage from PRD to delivery | — |
 
 ### Budget, sales & OKRs
 | Script | Description | Sample CSV |
@@ -150,6 +155,7 @@ Sample CSVs and example files live in **`scripts/samples/`** (e.g. `samples/samp
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [model-selection-scorecard.py](model-selection-scorecard.py) | Weighted MCDA rank for models/tiers; optional +weight sensitivity | samples/sample-model-selection-scores.csv, samples/sample-model-selection-weights.csv |
+| [model-runtime-orchestrator.py](model-runtime-orchestrator.py) | Runtime model routing, fallback, and guardrails orchestration | — |
 | [token-counter.py](token-counter.py) | Token count for prompts/models | — |
 | [token-budget-allocator.py](token-budget-allocator.py) | Allocate token budget across use cases | — |
 | [model-migration-estimator.py](model-migration-estimator.py) | Estimate effort/cost for model migration | — |

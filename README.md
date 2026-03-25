@@ -27,7 +27,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 - **Scripts** → [scripts/README.md](./scripts/README.md): categorized index, one-line descriptions, and which sample CSV to use with each script.
 - **Prompts** → [prompts/](./prompts/): `core-pm/`, `ai-ml/`, `developer-community/` (all files are `*.prompt.md`).
 - **Templates** → [templates/](./templates/): PRD, OKR, RICE, technical spec, DX assessment, etc.
-- **MCPs** → [mcps/README.md](./mcps/README.md): Jira, Confluence, GitHub, Slack, Braintrust, LangSmith servers.
+- **MCPs** → [mcps/README.md](./mcps/README.md): Jira, Confluence, GitHub, Slack, Braintrust, LangSmith, Product Analytics servers.
 - **Evals** → [evals/scripts/README.md](./evals/scripts/README.md): eval harness, regression runner, cost calculator.
 
 ## 🎯 Quick Start

@@ -13,6 +13,7 @@ MCP (Model Context Protocol) allows AI assistants like Claude to interact with e
 - 🧪 Query Braintrust experiments and eval results
 - 📊 Analyze LangSmith runs, traces, and project metrics
 - 📝 Search and create Notion pages, meeting notes, query databases
+- 📈 Query product analytics trends, funnels, and retention
 
 ## Available Servers
 
@@ -25,6 +26,7 @@ MCP (Model Context Protocol) allows AI assistants like Claude to interact with e
 | [slack-pm-assistant](./servers/slack-pm-assistant/) | Search messages, extract action items, channel summaries | Ready |
 | [braintrust-pm-tools](./servers/braintrust-pm-tools/) | Query experiments, eval results, datasets, logs | Ready |
 | [langsmith-pm-tools](./servers/langsmith-pm-tools/) | Analyze runs, traces, project stats, eval results | Ready |
+| [product-analytics-pm-tools](./servers/product-analytics-pm-tools/) | Read-only analytics tools (event trends, funnels, cohorts, retention) | Ready |
 
 ## Prerequisites
 

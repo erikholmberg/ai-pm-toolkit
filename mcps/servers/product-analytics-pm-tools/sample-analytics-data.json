@@ -1,0 +1,31 @@
+{
+  "events": [
+    {
+      "eventName": "signup_completed",
+      "timestamp": "2026-03-01T09:00:00Z",
+      "userId": "u-001",
+      "segment": "self-serve",
+      "properties": {
+        "country": "SE"
+      }
+    },
+    {
+      "eventName": "activation_completed",
+      "timestamp": "2026-03-02T10:30:00Z",
+      "userId": "u-001",
+      "segment": "self-serve",
+      "properties": {
+        "country": "SE"
+      }
+    },
+    {
+      "eventName": "signup_completed",
+      "timestamp": "2026-03-03T13:15:00Z",
+      "userId": "u-002",
+      "segment": "enterprise",
+      "properties": {
+        "country": "US"
+      }
+    }
+  ]
+}
