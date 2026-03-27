@@ -1,0 +1,71 @@
+{
+  "kind": "system",
+  "name": "Support Copilot",
+  "version": "1.4.0",
+  "model_type": "LLM application (RAG)",
+  "owner": "AI Platform",
+  "last_updated": "2026-03-27",
+  "purpose": "Draft first-pass replies for tier-1 support using the knowledge base and ticket context.",
+  "intended_use": [
+    "Agents review and edit every reply before send",
+    "English and Spanish ticket bodies"
+  ],
+  "out_of_scope": [
+    "Medical, legal, or financial advice",
+    "Deleting accounts or issuing refunds without human approval"
+  ],
+  "training_data": {
+    "summary": "No fine-tuning; retrieval index built from approved Confluence + Zendesk macro articles.",
+    "datasets": ["support_kb_v3", "macro_templates_2025Q1"],
+    "gaps": "Limited coverage for legacy product SKUs."
+  },
+  "evaluation": {
+    "held_out": "500 labeled tickets (Q4 sample), stratified by product line",
+    "metrics": [
+      { "name": "KB faithfulness", "value": "0.91", "notes": "human graded 1-5" },
+      { "name": "Resolution suggestion accuracy", "value": "0.78", "notes": "top-3 macro" }
+    ]
+  },
+  "ethical": {
+    "potential_harms": [
+      "Incorrect policy guidance could frustrate customers or breach SLAs"
+    ],
+    "bias_analysis": "Reviewed error rates by language and region; en slightly higher satisfaction than es in pilot.",
+    "mitigation": ["Mandatory human send", "Confidence threshold routes to senior queue"]
+  },
+  "limitations": [
+    "Does not access real-time billing systems",
+    "May hallucinate article IDs under adversarial prompts"
+  ],
+  "failure_modes": [
+    "Conflicting macros in KB produce hedged or generic answers",
+    "Very long threads exceed context; summary quality drops"
+  ],
+  "deployment": {
+    "infrastructure": "AWS Bedrock + internal API gateway",
+    "latency_p50_ms": 1200,
+    "latency_p99_ms": 4200,
+    "monitoring": ["p99 latency", "human edit distance", "escalation rate"]
+  },
+  "maintenance": {
+    "feedback_channel": "#support-copilot-feedback",
+    "deprecation_plan": "v1.4 supported until 2027-01-01 or two major KB migrations, whichever is later"
+  },
+  "contact": {
+    "owner": "ai-platform@example.com",
+    "issues": "Pager: Support-Copilot",
+    "documentation": "https://wiki.example.com/support-copilot"
+  },
+  "system": {
+    "base_model": "anthropic.claude-3-5-sonnet",
+    "system_prompt_summary": "Cite KB sources; refuse policy changes; escalate uncertainty.",
+    "tools": ["zendesk_ticket_read", "kb_search", "macro_suggest"],
+    "retrieval": "Pinecone index support_kb_v3, hybrid search, top-k 8"
+  },
+  "examples": [
+    {
+      "input": "Customer cannot reset password; error 502 on SSO.",
+      "output": "Suggested steps from KB AUTH-12 + offer escalation if SSO still failing."
+    }
+  ]
+}

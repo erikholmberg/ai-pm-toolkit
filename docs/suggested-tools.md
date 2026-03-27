@@ -14,6 +14,7 @@ Ideas for new **scripts** and **MCP servers** that would complement the existing
 | **Confidence interval calculator** | Given sample size and rate (or mean), output CI (e.g. Wilson score for proportions). | ✅ Implemented: `scripts/confidence-interval-calculator.py` |
 | **NPS / CSAT summary** | Compute NPS from promoter/detractor counts; CSAT average and distribution from scores. | ✅ Implemented: `scripts/nps-csat-summary.py` |
 | **Survey sample size** | Sample size for target margin of error and confidence level (proportions). | ✅ Implemented: `scripts/survey-sample-size.py` |
+| **Model / system card builder** | Generate Markdown/YAML model or LLM system cards from CLI or JSON. | ✅ Implemented: `scripts/model-system-card-builder.py` |
 
 ---
 

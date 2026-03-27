@@ -155,6 +155,7 @@ Sample CSVs and example files live in **`scripts/samples/`** (e.g. `samples/samp
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [model-selection-scorecard.py](model-selection-scorecard.py) | Weighted MCDA rank for models/tiers; optional +weight sensitivity | samples/sample-model-selection-scores.csv, samples/sample-model-selection-weights.csv |
+| [model-system-card-builder.py](model-system-card-builder.py) | Generate model or LLM system cards as Markdown/YAML from CLI or JSON | samples/sample-model-system-card.json |
 | [model-runtime-orchestrator.py](model-runtime-orchestrator.py) | Runtime model routing, fallback, and guardrails orchestration | — |
 | [token-counter.py](token-counter.py) | Token count for prompts/models | — |
 | [token-budget-allocator.py](token-budget-allocator.py) | Allocate token budget across use cases | — |
