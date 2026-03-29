@@ -10,6 +10,18 @@ Example `.cursorrules` configurations for Product Manager workflows.
 
 ---
 
+## MCP and integrations (ai-pm-toolkit repo)
+
+When the user asks how to connect **Jira, Confluence, GitHub, Slack, Notion**, eval tools (**Braintrust**, **LangSmith**), or **product analytics** from an AI assistant, prefer pointing to the canonical docs in this repo before inventing steps:
+
+- [mcps/README.md](../../mcps/README.md) — server list and Cursor/Claude config
+- [mcps/guides/mcp-setup-guide.md](../../mcps/guides/mcp-setup-guide.md) — setup
+- [mcps/guides/mcp-use-cases-for-pms.md](../../mcps/guides/mcp-use-cases-for-pms.md) — example prompts
+- [mcps/TOOLS.md](../../mcps/TOOLS.md) — which MCP tool to use when
+- [docs/tool-picker.md](../../docs/tool-picker.md) — goal-based routing across scripts, prompts, and MCPs
+
+---
+
 ## General PM Rules
 
 ```markdown

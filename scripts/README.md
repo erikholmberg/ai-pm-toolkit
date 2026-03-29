@@ -9,6 +9,23 @@ python scripts/<script-name>.py --help
 
 Sample CSVs and example files live in **`scripts/samples/`** (e.g. `samples/sample-feature-adoption.csv`). Use your own data or these for testing.
 
+Goal-based routing (scripts + prompts + MCP): [docs/tool-picker.md](../docs/tool-picker.md).
+
+---
+
+## Common questions
+
+| Question | Script |
+|----------|--------|
+| How big should my A/B test be (sample size, power)? | [ab-test-calculator.py](ab-test-calculator.py) |
+| How long do I need to run the experiment? | [experiment-duration-calculator.py](experiment-duration-calculator.py), [experiment-result-interpreter.py](experiment-result-interpreter.py) |
+| Is this lift statistically meaningful? | [experiment-result-interpreter.py](experiment-result-interpreter.py), [confidence-interval-calculator.py](confidence-interval-calculator.py) |
+| What’s the ROI or payback of an AI initiative? | [ai-initiative-roi-calculator.py](ai-initiative-roi-calculator.py), [ai-unit-economics-calculator.py](ai-unit-economics-calculator.py) |
+| What does this LLM inference cost (Bedrock / compare vendors)? | [bedrock-cost-calculator.py](bedrock-cost-calculator.py), [multi-model-cost-comparator.py](multi-model-cost-comparator.py) |
+| Are we burning error budget too fast? | [error-budget-burn-rate.py](error-budget-burn-rate.py), [sla-uptime-calculator.py](sla-uptime-calculator.py) |
+| How healthy is the sprint / backlog? | [sprint-burndown-checker.py](sprint-burndown-checker.py), [backlog-health-report.py](backlog-health-report.py), [backlog-aging-report.py](backlog-aging-report.py) |
+| How do we size a phased rollout? | [feature-rollout-calculator.py](feature-rollout-calculator.py), [release-gate-scorer.py](release-gate-scorer.py) |
+
 ---
 
 ## By category
@@ -185,3 +202,22 @@ python scripts/<script>.py --help
 ```
 
 Evaluation-specific scripts (eval harness, regression runner, etc.) live in [evals/scripts/](../evals/scripts/) and are documented in [evals/scripts/README.md](../evals/scripts/README.md).
+
+---
+
+## Keyword index (search / grep)
+
+Useful when you know the topic but not the filename:
+
+| Keywords | Scripts |
+|----------|---------|
+| `ab-test`, `sample-size`, `power`, `mde` | ab-test-calculator.py, survey-sample-size.py |
+| `roi`, `payback`, `unit-economics`, `ltv`, `cac` | ai-initiative-roi-calculator.py, ai-unit-economics-calculator.py, ltv-cac-calculator.py |
+| `bedrock`, `tokens`, `inference-cost`, `multi-model` | bedrock-cost-calculator.py, multi-model-cost-comparator.py, prompt-cost-optimizer.py |
+| `slo`, `sla`, `uptime`, `error-budget`, `latency-slo` | latency-slo-calculator.py, sla-uptime-calculator.py, error-budget-burn-rate.py |
+| `velocity`, `sprint`, `burndown`, `backlog`, `dora` | sprint-velocity-tracker.py, sprint-burndown-checker.py, backlog-aging-report.py, dora-metrics-calculator.py |
+| `funnel`, `retention`, `adoption`, `churn` | adoption-funnel-analyzer.py, retention-curve-analyzer.py, feature-adoption-trend.py, churn-risk-calculator.py |
+| `nps`, `csat`, `feedback` | nps-csat-summary.py, feedback-theme-counter.py, voc-synthesis.py |
+| `eval`, `hallucination`, `drift`, `prompt-diff` | eval-label-economics.py, eval-score-trend.py, hallucination-safety-trend.py, data-drift-detector.py, prompt-version-diff.py |
+| `risk`, `dependency`, `audit`, `launch-readiness` | risk-register-summary.py, dependency-blocked-summary.py, audit-checklist-summary.py, launch-readiness-score.py |
+| `tam`, `pricing`, `roadmap`, `stakeholder` | tam-sam-som-calculator.py, pricing-model-simulator.py, roadmap-timeline-summary.py, win-loss-summary.py |

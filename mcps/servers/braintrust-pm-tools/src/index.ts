@@ -67,7 +67,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "list_projects",
-      description: "List Braintrust projects",
+      description: "Use when: listing Braintrust projects.",
       inputSchema: {
         type: "object",
         properties: {
@@ -84,7 +84,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_project",
-      description: "Get details of a specific project",
+      description: "Use when: reading details of one Braintrust project.",
       inputSchema: {
         type: "object",
         properties: {
@@ -98,7 +98,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "list_experiments",
-      description: "List experiments in a project",
+      description: "Use when: listing experiments in a Braintrust project.",
       inputSchema: {
         type: "object",
         properties: {
@@ -116,7 +116,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_experiment",
-      description: "Get details and results of a specific experiment",
+      description: "Use when: loading full details and results for one experiment.",
       inputSchema: {
         type: "object",
         properties: {
@@ -134,7 +134,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_experiment_summary",
-      description: "Get summary statistics for an experiment",
+      description: "Use when: you need summary statistics for an experiment.",
       inputSchema: {
         type: "object",
         properties: {
@@ -148,7 +148,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "list_datasets",
-      description: "List datasets in a project or organization",
+      description: "Use when: listing Braintrust datasets.",
       inputSchema: {
         type: "object",
         properties: {
@@ -169,7 +169,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_dataset",
-      description: "Get details of a specific dataset",
+      description: "Use when: reading one Braintrust dataset.",
       inputSchema: {
         type: "object",
         properties: {
@@ -183,7 +183,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "query_logs",
-      description: "Query production logs and traces",
+      description: "Use when: querying Braintrust logs or traces in a time window.",
       inputSchema: {
         type: "object",
         properties: {
@@ -209,7 +209,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "compare_experiments",
-      description: "Compare metrics across multiple experiments",
+      description: "Use when: comparing metrics across multiple experiments.",
       inputSchema: {
         type: "object",
         properties: {

@@ -20,21 +20,21 @@ Ideas for new **scripts** and **MCP servers** that would complement the existing
 
 ## MCP Servers
 
-| Server | Purpose | Why add |
+**Already in the repo:** Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, and read-only product analytics — see [mcps/README.md](../mcps/README.md) and [mcps/TOOLS.md](../mcps/TOOLS.md) for the full tool list.
+
+| Server | Purpose | Status |
 |--------|--------|--------|
-| **Linear** | Issues, projects, cycles, roadmap. | Many teams use Linear instead of (or with) Jira; same PM workflows (sprint status, release notes, ticket creation). |
-| **Notion** | Search and create pages, databases, meeting notes, PRDs. | ✅ Implemented: [notion-pm-tools](../mcps/servers/notion-pm-tools/) |
-| **Product analytics (read-only)** | Query Amplitude, Mixpanel, or Pendo for key metrics (DAU, funnels, feature usage). | Lets the AI summarize “how is feature X performing?” without leaving the assistant. |
-| **Calendar / meetings** | List upcoming meetings, free/busy, or create calendar events. | Supports standup prep, stakeholder updates, and “what’s on my plate today?” |
-| **Customer support** | Read-only: Intercom, Zendesk, or Help Scout (tickets, themes, volume). | Complements Slack and customer prompts; good for feedback synthesis and prioritization. |
-| **Figma (read-only)** | List files, get frame/screen names and links (no edit). | Helps link specs to design; useful for PRDs and eng handoff. |
+| **Linear** | Issues, projects, cycles, roadmap. | Suggested — many teams use Linear instead of (or with) Jira; same PM workflows (sprint status, release notes, ticket creation). |
+| **Calendar / meetings** | List upcoming meetings, free/busy, or create calendar events. | Suggested — standup prep, stakeholder updates, “what’s on my plate today?” |
+| **Customer support** | Read-only: Intercom, Zendesk, or Help Scout (tickets, themes, volume). | Suggested — complements Slack and customer prompts; feedback synthesis and prioritization. |
+| **Figma (read-only)** | List files, get frame/screen names and links (no edit). | Suggested — link specs to design; PRDs and eng handoff. |
 
 ---
 
 ## Quick wins
 
 - **Scripts:** Multi-model cost comparator and confidence interval calculator (small, high reuse).
-- **MCP:** Linear (if your users are on it). Notion is implemented: [notion-pm-tools](../mcps/servers/notion-pm-tools/).
+- **MCP:** Linear (if your team uses it). Notion and product analytics are implemented: [notion-pm-tools](../mcps/servers/notion-pm-tools/), [product-analytics-pm-tools](../mcps/servers/product-analytics-pm-tools/).
 
 ---
 

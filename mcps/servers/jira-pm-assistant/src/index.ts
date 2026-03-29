@@ -74,7 +74,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "search_issues",
-      description: "Search Jira issues using JQL (Jira Query Language)",
+      description: "Use when: searching or reporting on Jira work with JQL (Jira Query Language).",
       inputSchema: {
         type: "object",
         properties: {
@@ -92,7 +92,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_issue",
-      description: "Get details of a specific Jira issue",
+      description: "Use when: you need full details for a specific Jira issue.",
       inputSchema: {
         type: "object",
         properties: {
@@ -106,7 +106,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "create_issue",
-      description: "Create a new Jira issue",
+      description: "Use when: creating a new Jira issue.",
       inputSchema: {
         type: "object",
         properties: {
@@ -141,7 +141,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_sprint",
-      description: "Get current sprint information for a board",
+      description: "Use when: you need current sprint information for a board.",
       inputSchema: {
         type: "object",
         properties: {
@@ -155,7 +155,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_sprint_issues",
-      description: "Get all issues in a sprint",
+      description: "Use when: listing all issues in a sprint.",
       inputSchema: {
         type: "object",
         properties: {
@@ -169,7 +169,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "generate_release_notes",
-      description: "Generate release notes from completed issues in a sprint or version",
+      description: "Use when: drafting release notes from completed Jira issues (sprint or version).",
       inputSchema: {
         type: "object",
         properties: {

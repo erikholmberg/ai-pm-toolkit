@@ -68,7 +68,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "event_trend",
-      description: "Aggregate event counts and unique users over time",
+      description: "Use when: analyzing event volume and unique users over time (sample analytics dataset).",
       inputSchema: {
         type: "object",
         properties: {
@@ -83,7 +83,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "funnel_conversion",
-      description: "Compute conversion through ordered funnel steps",
+      description: "Use when: measuring conversion through ordered funnel steps (sample analytics dataset).",
       inputSchema: {
         type: "object",
         properties: {
@@ -97,7 +97,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "retention_by_cohort",
-      description: "Estimate N-day retention by first-seen cohort",
+      description: "Use when: estimating cohort retention (sample analytics dataset).",
       inputSchema: {
         type: "object",
         properties: {
@@ -111,7 +111,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "cohort_compare",
-      description: "Compare conversion between two segments for one event",
+      description: "Use when: comparing two segments on one event (sample analytics dataset).",
       inputSchema: {
         type: "object",
         properties: {
@@ -126,7 +126,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "segment_compare",
-      description: "Compare event volume and unique users across segments",
+      description: "Use when: comparing event volume and uniques across segments (sample analytics dataset).",
       inputSchema: {
         type: "object",
         properties: {

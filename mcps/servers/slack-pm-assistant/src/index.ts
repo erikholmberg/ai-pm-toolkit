@@ -119,7 +119,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "search_messages",
-      description: "Search for messages across Slack channels. Requires user token for full search.",
+      description: "Use when: searching messages across Slack (user token may be required for full search).",
       inputSchema: {
         type: "object",
         properties: {
@@ -142,7 +142,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_channel_history",
-      description: "Get recent messages from a Slack channel",
+      description: "Use when: reading recent messages from a Slack channel.",
       inputSchema: {
         type: "object",
         properties: {
@@ -168,7 +168,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_thread",
-      description: "Get all replies in a message thread",
+      description: "Use when: reading all replies in a Slack thread.",
       inputSchema: {
         type: "object",
         properties: {
@@ -186,7 +186,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "list_channels",
-      description: "List available Slack channels",
+      description: "Use when: listing Slack channels the token can see.",
       inputSchema: {
         type: "object",
         properties: {
@@ -207,7 +207,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_channel_info",
-      description: "Get detailed information about a channel",
+      description: "Use when: you need metadata for a Slack channel.",
       inputSchema: {
         type: "object",
         properties: {
@@ -221,7 +221,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "post_message",
-      description: "Post a message to a Slack channel",
+      description: "Use when: posting a message to a Slack channel or thread.",
       inputSchema: {
         type: "object",
         properties: {
@@ -247,7 +247,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "summarize_channel",
-      description: "Get a summary of recent activity in a channel (messages, participants, topics)",
+      description: "Use when: summarizing recent channel activity (messages, participants, topics).",
       inputSchema: {
         type: "object",
         properties: {
@@ -265,7 +265,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "extract_action_items",
-      description: "Extract action items and tasks from channel messages",
+      description: "Use when: extracting action items from recent channel messages.",
       inputSchema: {
         type: "object",
         properties: {
@@ -283,7 +283,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_user_messages",
-      description: "Get recent messages from a specific user in a channel",
+      description: "Use when: filtering recent messages by a specific user in a channel.",
       inputSchema: {
         type: "object",
         properties: {
@@ -305,7 +305,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "find_channel_by_name",
-      description: "Find a channel by its name",
+      description: "Use when: resolving a channel name to a channel ID.",
       inputSchema: {
         type: "object",
         properties: {
@@ -319,7 +319,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_standup_summary",
-      description: "Generate a standup summary from recent channel activity",
+      description: "Use when: generating a standup-style summary from recent channel activity.",
       inputSchema: {
         type: "object",
         properties: {

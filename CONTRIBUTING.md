@@ -7,7 +7,7 @@ Thanks for considering contributing. A few pointers so the toolkit stays easy to
 | Content | Location | Notes |
 |--------|----------|--------|
 | **Python scripts** | `scripts/` | Use argparse, docstring with Usage/CSV format. Add to [scripts/README.md](scripts/README.md) in the right category; add a `sample-*.csv` in `scripts/samples/` if the script takes CSV input. |
-| **Prompts** | `prompts/core-pm/`, `prompts/ai-ml/`, or `prompts/developer-community/` | Use `.prompt.md` suffix. |
+| **Prompts** | `prompts/core-pm/`, `prompts/ai-ml/`, or `prompts/developer-community/` | Use `.prompt.md` suffix. Add a one-line entry to [prompts/README.md](prompts/README.md). |
 | **Templates** | `templates/` | Markdown templates (PRD, OKR, RICE, etc.). |
 | **MCP servers** | `mcps/servers/<name>/` | Document in [mcps/README.md](mcps/README.md) and in the server’s own README with env vars. |
 | **Eval scripts** | `evals/scripts/` | Document in [evals/scripts/README.md](evals/scripts/README.md). |

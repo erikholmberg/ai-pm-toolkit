@@ -65,7 +65,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "list_projects",
-      description: "List LangSmith projects",
+      description: "Use when: listing LangSmith projects.",
       inputSchema: {
         type: "object",
         properties: {
@@ -82,7 +82,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_project",
-      description: "Get details of a specific project",
+      description: "Use when: reading details of one LangSmith project.",
       inputSchema: {
         type: "object",
         properties: {
@@ -96,7 +96,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "list_runs",
-      description: "List runs/traces in a project",
+      description: "Use when: listing runs or traces in a LangSmith project.",
       inputSchema: {
         type: "object",
         properties: {
@@ -130,7 +130,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_run",
-      description: "Get details of a specific run",
+      description: "Use when: inspecting one LangSmith run.",
       inputSchema: {
         type: "object",
         properties: {
@@ -144,7 +144,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_trace",
-      description: "Get a trace with all child runs",
+      description: "Use when: loading a full trace including child runs.",
       inputSchema: {
         type: "object",
         properties: {
@@ -158,7 +158,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_project_stats",
-      description: "Get statistics for a project (run counts, error rates, latency)",
+      description: "Use when: summarizing project health (run counts, errors, latency).",
       inputSchema: {
         type: "object",
         properties: {
@@ -180,7 +180,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "list_datasets",
-      description: "List datasets in a project",
+      description: "Use when: listing LangSmith datasets.",
       inputSchema: {
         type: "object",
         properties: {
@@ -197,7 +197,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_dataset",
-      description: "Get details of a specific dataset",
+      description: "Use when: reading one LangSmith dataset.",
       inputSchema: {
         type: "object",
         properties: {
@@ -211,7 +211,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "query_traces",
-      description: "Query traces with advanced filtering",
+      description: "Use when: querying LangSmith traces with filters.",
       inputSchema: {
         type: "object",
         properties: {
@@ -241,7 +241,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_eval_results",
-      description: "Get evaluation results for a project or dataset",
+      description: "Use when: loading eval results for a project or dataset.",
       inputSchema: {
         type: "object",
         properties: {

@@ -10,7 +10,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
 | [**scripts/**](./scripts/) | 80+ Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy. See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
-| [**mcps/**](./mcps/) | Model Context Protocol servers for Jira, Confluence, and GitHub |
+| [**mcps/**](./mcps/) | MCP servers for Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, and product analytics ([mcps/README.md](./mcps/README.md)) |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
 | [**evals/**](./evals/) | Evaluation frameworks, scripts, and metrics for AI products |
 | [**learning/**](./learning/) | AI/ML fundamentals, [AWS Bedrock for PMs](./learning/aws-bedrock-for-pms.md), glossary, resources |
@@ -24,10 +24,11 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 
 ## 🧭 Finding things
 
+- **By goal (recommended)** → [docs/tool-picker.md](./docs/tool-picker.md): what to open for planning, delivery, experiments, AI/ML work, and cost.
 - **Scripts** → [scripts/README.md](./scripts/README.md): categorized index, one-line descriptions, and which sample CSV to use with each script.
-- **Prompts** → [prompts/](./prompts/): `core-pm/`, `ai-ml/`, `developer-community/` (all files are `*.prompt.md`).
+- **Prompts** → [prompts/README.md](./prompts/README.md): index by category; files are `prompts/*/*.prompt.md`.
 - **Templates** → [templates/](./templates/): PRD, OKR, RICE, technical spec, DX assessment, etc.
-- **MCPs** → [mcps/README.md](./mcps/README.md): Jira, Confluence, GitHub, Slack, Braintrust, LangSmith, Product Analytics servers.
+- **MCPs** → [mcps/README.md](./mcps/README.md): Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, Product Analytics. **Task-based routing** → [docs/tool-picker.md](./docs/tool-picker.md).
 - **Evals** → [evals/scripts/README.md](./evals/scripts/README.md): eval harness, regression runner, cost calculator.
 
 ## 🎯 Quick Start
@@ -120,7 +121,8 @@ pm-toolkit/
 ├── frameworks/               # Prioritization, ML lifecycle, build vs. buy, deprecation playbook, SPACE
 ├── mcps/
 │   ├── guides/               # Setup and use case documentation
-│   └── servers/              # Jira, Confluence, GitHub MCP servers
+│   ├── TOOLS.md              # Server → MCP tool name reference
+│   └── servers/              # Jira, Confluence, GitHub, Slack, Notion, etc.
 ├── agents/
 │   ├── system-prompts/       # Ready-to-use agent personas
 │   ├── rules/                # Cursor rules, Claude instructions

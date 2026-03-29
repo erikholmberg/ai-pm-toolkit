@@ -66,7 +66,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "list_issues",
-      description: "List issues in a repository",
+      description: "Use when: browsing or filtering GitHub issues in a repository.",
       inputSchema: {
         type: "object",
         properties: {
@@ -97,7 +97,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_issue",
-      description: "Get details of a specific issue",
+      description: "Use when: reading one GitHub issue in full.",
       inputSchema: {
         type: "object",
         properties: {
@@ -119,7 +119,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "create_issue",
-      description: "Create a new GitHub issue",
+      description: "Use when: filing a new GitHub issue.",
       inputSchema: {
         type: "object",
         properties: {
@@ -155,7 +155,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "list_pull_requests",
-      description: "List pull requests in a repository",
+      description: "Use when: listing pull requests in a repository.",
       inputSchema: {
         type: "object",
         properties: {
@@ -182,7 +182,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "generate_release_notes",
-      description: "Generate release notes from merged PRs between two refs",
+      description: "Use when: generating release notes from merged PRs between refs/tags.",
       inputSchema: {
         type: "object",
         properties: {
@@ -212,7 +212,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_repo_stats",
-      description: "Get repository statistics and health metrics",
+      description: "Use when: summarizing repository activity and health metrics.",
       inputSchema: {
         type: "object",
         properties: {

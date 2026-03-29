@@ -69,7 +69,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "search_pages",
-      description: "Search Confluence pages by text",
+      description: "Use when: finding Confluence wiki pages by text search.",
       inputSchema: {
         type: "object",
         properties: {
@@ -91,7 +91,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "get_page",
-      description: "Get content of a specific Confluence page",
+      description: "Use when: reading the full content of a Confluence page.",
       inputSchema: {
         type: "object",
         properties: {
@@ -105,7 +105,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "create_page",
-      description: "Create a new Confluence page",
+      description: "Use when: publishing a new Confluence page.",
       inputSchema: {
         type: "object",
         properties: {
@@ -131,7 +131,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "list_spaces",
-      description: "List available Confluence spaces",
+      description: "Use when: discovering available Confluence spaces.",
       inputSchema: {
         type: "object",
         properties: {
@@ -144,7 +144,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "create_meeting_notes",
-      description: "Create a meeting notes page from a template",
+      description: "Use when: creating meeting notes from a template.",
       inputSchema: {
         type: "object",
         properties: {

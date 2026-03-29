@@ -98,7 +98,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
   tools: [
     {
       name: "notion_search_pages",
-      description: "Search Notion pages by title. Returns pages shared with the integration.",
+      description: "Use when: searching Notion pages by title (integration must have access).",
       inputSchema: {
         type: "object",
         properties: {
@@ -110,7 +110,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "notion_list_databases",
-      description: "List Notion databases shared with the integration.",
+      description: "Use when: listing databases visible to the Notion integration.",
       inputSchema: {
         type: "object",
         properties: {
@@ -120,7 +120,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "notion_get_page",
-      description: "Get a Notion page's title, URL, and content (block children).",
+      description: "Use when: reading a Notion page (title, URL, block content).",
       inputSchema: {
         type: "object",
         properties: {
@@ -131,7 +131,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "notion_create_page",
-      description: "Create a new Notion page under a parent page. Content can be plain text or markdown (headings, bullets).",
+      description: "Use when: creating a child page under a parent (plain text or markdown body).",
       inputSchema: {
         type: "object",
         properties: {
@@ -144,7 +144,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "notion_create_page_in_database",
-      description: "Create a new page (row) in a Notion database.",
+      description: "Use when: adding a row as a new page in a Notion database.",
       inputSchema: {
         type: "object",
         properties: {
@@ -158,7 +158,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "notion_create_meeting_notes",
-      description: "Create a meeting notes page under a parent page with agenda, notes, action items.",
+      description: "Use when: creating structured meeting notes under a parent page.",
       inputSchema: {
         type: "object",
         properties: {
@@ -173,7 +173,7 @@ server.setRequestHandler(ListToolsRequestSchema, async () => ({
     },
     {
       name: "notion_query_database",
-      description: "Query a Notion database (filter and sort). Returns page IDs and property values.",
+      description: "Use when: querying a Notion database with filter/sort.",
       inputSchema: {
         type: "object",
         properties: {

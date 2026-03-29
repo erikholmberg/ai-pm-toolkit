@@ -108,6 +108,7 @@ Add to your Claude config (`~/Library/Application Support/Claude/claude_desktop_
 
 - [MCP Setup Guide](./guides/mcp-setup-guide.md) - Detailed setup instructions
 - [MCP Use Cases for PMs](./guides/mcp-use-cases-for-pms.md) - Ideas for what you can do
+- [TOOLS.md](./TOOLS.md) - Server → tool name → when to use it (quick lookup)
 
 ## Building Your Own MCP Server
 
@@ -152,18 +153,18 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
 ## Suggested MCPs to add
 
-Candidates that would complement the current set (Jira, Confluence, GitHub, Slack, Braintrust, LangSmith). See [docs/suggested-tools.md](../docs/suggested-tools.md) for full rationale.
+Candidates beyond the [current servers](#available-servers). See [docs/suggested-tools.md](../docs/suggested-tools.md) for rationale. Tool lookup: [TOOLS.md](./TOOLS.md).
 
 | Priority | Server | Purpose |
 |----------|--------|---------|
 | **High** | **Linear** | Issues, projects, cycles, roadmap. Same PM workflows as Jira for teams that use Linear. |
 | — | **Notion** | ✅ [notion-pm-tools](./servers/notion-pm-tools/) |
-| **Medium** | **Product analytics** | Read-only: Amplitude, Mixpanel, or Pendo — DAU, funnels, feature usage. “How is feature X performing?” in-conversation. |
+| — | **Product analytics (sample)** | ✅ [product-analytics-pm-tools](./servers/product-analytics-pm-tools/) — read-only demo over bundled data; replace backend for Amplitude/Mixpanel/Pendo-style workflows. |
 | **Medium** | **Calendar** | List upcoming meetings, free/busy, create events. Standup prep, “what’s on my plate today?” |
 | **Medium** | **Customer support** | Read-only: Intercom, Zendesk, or Help Scout — tickets, themes, volume. Feedback synthesis and prioritization. |
 | **Lower** | **Figma (read-only)** | List files, frame/screen names and links. Link specs to design; PRDs and eng handoff. |
 
-**Quick wins:** Linear (if your users are on it) and Notion (broadly useful for docs and wikis).
+**Quick wins:** Linear (if your users are on it). Notion and sample product analytics are already in-repo.
 
 ## Contributing
 

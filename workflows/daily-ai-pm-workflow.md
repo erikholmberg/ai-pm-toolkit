@@ -2,6 +2,17 @@
 
 How to structure your day as an AI Product Manager using AI tools.
 
+### Toolkit map (this repo)
+
+Goal-based routing to scripts, prompts, templates, and MCP servers: [docs/tool-picker.md](../docs/tool-picker.md).
+
+| Daily moment | Start here |
+|--------------|------------|
+| Health, incidents, SLOs | [scripts/README.md](../scripts/README.md) (Incidents, SLO), [incidents/](../incidents/) |
+| Triage Jira / Slack / GitHub | MCP servers in [mcps/README.md](../mcps/README.md); Jira/Slack/GitHub prompts under [prompts/core-pm/](../prompts/README.md) |
+| PRDs, roadmap, stakeholder updates | [prompts/core-pm/](../prompts/README.md), [templates/](../templates/) |
+| Product or AI quality metrics | [evals/](../evals/), Braintrust/LangSmith MCP in [mcps/TOOLS.md](../mcps/TOOLS.md) |
+
 ---
 
 ## Morning Routine (30 min)
