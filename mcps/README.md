@@ -14,6 +14,7 @@ MCP (Model Context Protocol) allows AI assistants like Claude to interact with e
 - 📊 Analyze LangSmith runs, traces, and project metrics
 - 📝 Search and create Notion pages, meeting notes, query databases
 - 📈 Query product analytics trends, funnels, and retention
+- 📅 Prep for meetings, check free/busy, and create calendar events
 
 ## Available Servers
 
@@ -27,6 +28,7 @@ MCP (Model Context Protocol) allows AI assistants like Claude to interact with e
 | [braintrust-pm-tools](./servers/braintrust-pm-tools/) | Query experiments, eval results, datasets, logs | Ready |
 | [langsmith-pm-tools](./servers/langsmith-pm-tools/) | Analyze runs, traces, project stats, eval results | Ready |
 | [product-analytics-pm-tools](./servers/product-analytics-pm-tools/) | Read-only analytics tools (event trends, funnels, cohorts, retention) | Ready |
+| [calendar-meetings-pm-tools](./servers/calendar-meetings-pm-tools/) | Meeting prep, event search, free/busy, event creation, agendas | Ready |
 
 ## Prerequisites
 
@@ -160,11 +162,11 @@ Candidates beyond the [current servers](#available-servers). See [docs/suggested
 | **High** | **Linear** | Issues, projects, cycles, roadmap. Same PM workflows as Jira for teams that use Linear. |
 | — | **Notion** | ✅ [notion-pm-tools](./servers/notion-pm-tools/) |
 | — | **Product analytics (sample)** | ✅ [product-analytics-pm-tools](./servers/product-analytics-pm-tools/) — read-only demo over bundled data; replace backend for Amplitude/Mixpanel/Pendo-style workflows. |
-| **Medium** | **Calendar** | List upcoming meetings, free/busy, create events. Standup prep, “what’s on my plate today?” |
+| — | **Calendar** | ✅ [calendar-meetings-pm-tools](./servers/calendar-meetings-pm-tools/) |
 | **Medium** | **Customer support** | Read-only: Intercom, Zendesk, or Help Scout — tickets, themes, volume. Feedback synthesis and prioritization. |
 | **Lower** | **Figma (read-only)** | List files, frame/screen names and links. Link specs to design; PRDs and eng handoff. |
 
-**Quick wins:** Linear (if your users are on it). Notion and sample product analytics are already in-repo.
+**Quick wins:** Linear (if your users are on it). Notion, Calendar, and sample product analytics are already in-repo.
 
 ## Contributing
 

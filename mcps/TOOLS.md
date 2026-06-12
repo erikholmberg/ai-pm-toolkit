@@ -118,3 +118,17 @@ Read-only analytics over bundled sample data (see server README). **Use when** e
 | `retention_by_cohort` | Cohort retention curves |
 | `cohort_compare` | Two-segment comparison for one event |
 | `segment_compare` | Multi-segment volume comparison |
+
+---
+
+## calendar-meetings-pm-tools
+
+| Tool | Use when |
+|------|----------|
+| `calendar_list_events` | Listing upcoming meetings or events in a time window |
+| `calendar_search_events` | Finding meetings by keyword across a past/future window |
+| `calendar_get_event` | Reading details, attendees, links, and agenda-style description lines for one event |
+| `calendar_find_free_busy` | Checking free/busy blocks before scheduling |
+| `calendar_create_event` | Creating a calendar event or meeting invite |
+| `calendar_prepare_meeting_brief` | Preparing a PM-style brief for upcoming meetings |
+| `calendar_draft_agenda` | Drafting a structured agenda and calendar description |
