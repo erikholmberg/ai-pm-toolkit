@@ -24,6 +24,7 @@ Use this page when you know **what you want to do**, not which file or server to
 | GitHub issues, PRs, release notes | MCP [github-pm-tools](../mcps/servers/github-pm-tools/) |
 | Confluence docs, PRDs in wiki | MCP [confluence-docs](../mcps/servers/confluence-docs/) |
 | Notion pages, databases, notes | MCP [notion-pm-tools](../mcps/servers/notion-pm-tools/) |
+| Calendar meetings, free/busy, agendas | MCP [calendar-meetings-pm-tools](../mcps/servers/calendar-meetings-pm-tools/) |
 | Slack context, threads, summaries | MCP [slack-pm-assistant](../mcps/servers/slack-pm-assistant/) |
 | Velocity, burndown, backlog health, DORA | [scripts/README.md](../scripts/README.md) (Delivery, velocity & backlog) |
 
