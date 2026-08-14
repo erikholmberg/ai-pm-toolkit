@@ -25,7 +25,7 @@ Ideas for new **scripts** and **MCP servers** that would complement the existing
 | Server | Purpose | Status |
 |--------|--------|--------|
 | **Linear** | Issues, projects, cycles, roadmap. | Suggested — many teams use Linear instead of (or with) Jira; same PM workflows (sprint status, release notes, ticket creation). |
-| **Calendar / meetings** | List upcoming meetings, free/busy, or create calendar events. | Suggested — standup prep, stakeholder updates, “what’s on my plate today?” |
+| **Calendar / meetings** | List upcoming meetings, free/busy, or create calendar events. | ✅ Implemented: `mcps/servers/calendar-meetings-pm-tools/` |
 | **Customer support** | Read-only: Intercom, Zendesk, or Help Scout (tickets, themes, volume). | Suggested — complements Slack and customer prompts; feedback synthesis and prioritization. |
 | **Figma (read-only)** | List files, get frame/screen names and links (no edit). | Suggested — link specs to design; PRDs and eng handoff. |
 
@@ -34,7 +34,7 @@ Ideas for new **scripts** and **MCP servers** that would complement the existing
 ## Quick wins
 
 - **Scripts:** Multi-model cost comparator and confidence interval calculator (small, high reuse).
-- **MCP:** Linear (if your team uses it). Notion and product analytics are implemented: [notion-pm-tools](../mcps/servers/notion-pm-tools/), [product-analytics-pm-tools](../mcps/servers/product-analytics-pm-tools/).
+- **MCP:** Linear (if your team uses it). Notion, Calendar, and product analytics are implemented: [notion-pm-tools](../mcps/servers/notion-pm-tools/), [calendar-meetings-pm-tools](../mcps/servers/calendar-meetings-pm-tools/), [product-analytics-pm-tools](../mcps/servers/product-analytics-pm-tools/).
 
 ---
 
