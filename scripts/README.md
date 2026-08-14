@@ -25,6 +25,11 @@ Goal-based routing (scripts + prompts + MCP): [docs/tool-picker.md](../docs/tool
 | Are we burning error budget too fast? | [error-budget-burn-rate.py](error-budget-burn-rate.py), [sla-uptime-calculator.py](sla-uptime-calculator.py) |
 | How healthy is the sprint / backlog? | [sprint-burndown-checker.py](sprint-burndown-checker.py), [backlog-health-report.py](backlog-health-report.py), [backlog-aging-report.py](backlog-aging-report.py) |
 | How do we size a phased rollout? | [feature-rollout-calculator.py](feature-rollout-calculator.py), [release-gate-scorer.py](release-gate-scorer.py) |
+| What does an agentic (multi-step tool-calling) workflow cost vs a single call? | [agentic-cost-simulator.py](agentic-cost-simulator.py), [reasoning-token-budget-calculator.py](reasoning-token-budget-calculator.py) |
+| Is our AI agent actually succeeding at tasks, and which tools are flaky? | [agent-task-success-tracker.py](agent-task-success-tracker.py), [tool-use-reliability-scorer.py](tool-use-reliability-scorer.py) |
+| Can we trust an LLM-as-judge, and is our guardrail catching real violations? | [llm-judge-calibration-checker.py](llm-judge-calibration-checker.py), [guardrail-effectiveness-analyzer.py](guardrail-effectiveness-analyzer.py) |
+| Are we red-team-tested enough to launch, and is this prompt injection-risky? | [red-team-coverage-tracker.py](red-team-coverage-tracker.py), [prompt-injection-risk-scanner.py](prompt-injection-risk-scanner.py) |
+| Which models in our portfolio are about to be deprecated? | [model-deprecation-watch.py](model-deprecation-watch.py), [model-migration-estimator.py](model-migration-estimator.py) |
 
 ---
 
@@ -138,6 +143,23 @@ Goal-based routing (scripts + prompts + MCP): [docs/tool-picker.md](../docs/tool
 | [groundedness-scorer.py](groundedness-scorer.py) | Groundedness scoring for outputs | — |
 | [rag-quality-analyzer.py](rag-quality-analyzer.py) | RAG retrieval/answer quality | — |
 
+### Agentic AI & orchestration
+| Script | Description | Sample CSV |
+|--------|-------------|------------|
+| [agent-task-success-tracker.py](agent-task-success-tracker.py) | Success/failure/escalation rates, steps-to-completion, category breakdown for an AI agent's task runs | samples/sample-agent-task-runs.csv |
+| [tool-use-reliability-scorer.py](tool-use-reliability-scorer.py) | Per-tool call success/retry/timeout rate and latency from an agent's tool-call log; flags unreliable tools | samples/sample-tool-calls.csv |
+| [agentic-cost-simulator.py](agentic-cost-simulator.py) | Cost & latency of a multi-step think/tool/observe agent loop vs a naive single-call baseline (the "agent tax") | — |
+| [reasoning-token-budget-calculator.py](reasoning-token-budget-calculator.py) | Cost/latency at each extended-thinking effort tier (low/medium/high) for reasoning models | — |
+| [context-window-utilization-analyzer.py](context-window-utilization-analyzer.py) | Turn-by-turn context usage, warning-threshold crossing, and projected turns until compaction is needed | samples/sample-context-window-session.csv |
+
+### AI safety, red-teaming & guardrails
+| Script | Description | Sample CSV |
+|--------|-------------|------------|
+| [llm-judge-calibration-checker.py](llm-judge-calibration-checker.py) | Agreement (kappa/correlation, bias) between an LLM-as-judge and human labels; verdict on trusting the judge | samples/sample-judge-vs-human.csv |
+| [prompt-injection-risk-scanner.py](prompt-injection-risk-scanner.py) | Heuristic first-pass linter for prompt-injection risk patterns in system prompts/instructions | samples/sample-system-prompt-risky.txt |
+| [guardrail-effectiveness-analyzer.py](guardrail-effectiveness-analyzer.py) | Precision/recall/confusion matrix for a safety guardrail vs labeled actual violations, by category | samples/sample-guardrail-labels.csv |
+| [red-team-coverage-tracker.py](red-team-coverage-tracker.py) | Adversarial test coverage against a risk-category taxonomy (jailbreak, PII, bias, etc.); go/no-go per category | samples/sample-redteam-results.csv |
+
 ### Strategy & prioritization
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
@@ -177,6 +199,7 @@ Goal-based routing (scripts + prompts + MCP): [docs/tool-picker.md](../docs/tool
 | [token-counter.py](token-counter.py) | Token count for prompts/models | — |
 | [token-budget-allocator.py](token-budget-allocator.py) | Allocate token budget across use cases | — |
 | [model-migration-estimator.py](model-migration-estimator.py) | Estimate effort/cost for model migration | — |
+| [model-deprecation-watch.py](model-deprecation-watch.py) | Track model sunset dates across your portfolio; prioritized migration queue by urgency × traffic × criticality | samples/sample-model-portfolio.csv |
 | [pipeline-health-monitor.py](pipeline-health-monitor.py) | ML pipeline health checks | — |
 | [tech-debt-scorer.py](tech-debt-scorer.py) | Tech debt scoring | — |
 | [metric-forecaster.py](metric-forecaster.py) | Simple metric forecasting | — |
@@ -193,6 +216,10 @@ python scripts/feature-adoption-trend.py --csv scripts/samples/sample-feature-ad
 python scripts/sprint-burndown-checker.py --csv scripts/samples/sample-burndown.csv --chart
 python scripts/backlog-aging-report.py --csv scripts/samples/sample-backlog-aging.csv --oldest 10
 python scripts/meeting-load-optimizer.py --csv scripts/samples/sample-meetings.csv
+python scripts/agentic-cost-simulator.py --steps-per-task 6 --retry-rate 0.15 --sub-agent-fanout 2
+python scripts/guardrail-effectiveness-analyzer.py --csv scripts/samples/sample-guardrail-labels.csv
+python scripts/red-team-coverage-tracker.py --csv scripts/samples/sample-redteam-results.csv
+python scripts/model-deprecation-watch.py --csv scripts/samples/sample-model-portfolio.csv
 ```
 
 For full options, always run:
@@ -221,3 +248,7 @@ Useful when you know the topic but not the filename:
 | `eval`, `hallucination`, `drift`, `prompt-diff` | eval-label-economics.py, eval-score-trend.py, hallucination-safety-trend.py, data-drift-detector.py, prompt-version-diff.py |
 | `risk`, `dependency`, `audit`, `launch-readiness` | risk-register-summary.py, dependency-blocked-summary.py, audit-checklist-summary.py, launch-readiness-score.py |
 | `tam`, `pricing`, `roadmap`, `stakeholder` | tam-sam-som-calculator.py, pricing-model-simulator.py, roadmap-timeline-summary.py, win-loss-summary.py |
+| `agent`, `agentic`, `tool-use`, `agent-tax` | agent-task-success-tracker.py, tool-use-reliability-scorer.py, agentic-cost-simulator.py |
+| `reasoning-tokens`, `extended-thinking`, `context-window`, `compaction` | reasoning-token-budget-calculator.py, context-window-utilization-analyzer.py |
+| `judge`, `calibration`, `guardrail`, `red-team`, `injection`, `jailbreak` | llm-judge-calibration-checker.py, guardrail-effectiveness-analyzer.py, red-team-coverage-tracker.py, prompt-injection-risk-scanner.py |
+| `deprecation`, `sunset`, `model-portfolio` | model-deprecation-watch.py, model-migration-estimator.py |

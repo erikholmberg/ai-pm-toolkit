@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
-| [**scripts/**](./scripts/) | 80+ Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy. See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
+| [**scripts/**](./scripts/) | 90+ Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy, agentic AI & orchestration, AI safety & red-teaming. See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | MCP servers for Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, and product analytics ([mcps/README.md](./mcps/README.md)) |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -104,6 +104,11 @@ python scripts/dependency-blocked-summary.py --csv deps.csv --blocking
 python scripts/beta-conversion-report.py --csv beta.csv --chart
 python scripts/customer-health-score-trend.py --csv health.csv --at-risk-below 50 --chart --group-by segment
 python scripts/release-cadence-report.py --csv releases.csv --period month --chart --group-by product
+python scripts/agentic-cost-simulator.py --steps-per-task 6 --retry-rate 0.15 --tasks-per-month 20000
+python scripts/agent-task-success-tracker.py --csv agent-runs.csv --target-success-rate 0.85
+python scripts/guardrail-effectiveness-analyzer.py --csv guardrail-labels.csv --max-fn-rate 0.05
+python scripts/red-team-coverage-tracker.py --csv redteam-results.csv
+python scripts/model-deprecation-watch.py --csv model-portfolio.csv --warn-within-days 90
 ```
 
 ## 🗂️ Directory Structure

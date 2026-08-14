@@ -1,0 +1,21 @@
+run_id,task,outcome,steps,duration_s,category,date
+r001,Reset user password,success,3,11.2,account_ops,2025-01-05
+r002,Summarize support thread,success,2,7.5,support,2025-01-05
+r003,Refund duplicate charge,escalated,6,42.1,billing,2025-01-05
+r004,Update shipping address,success,3,9.8,account_ops,2025-01-06
+r005,Draft refund policy exception,failure,8,55.4,billing,2025-01-06
+r006,Triage bug report,success,4,18.6,support,2025-01-06
+r007,Cancel subscription,success,3,10.1,billing,2025-01-07
+r008,Answer pricing question,success,2,6.3,support,2025-01-07
+r009,Investigate failed payment,escalated,7,49.9,billing,2025-01-07
+r010,Merge duplicate accounts,failure,9,61.2,account_ops,2025-01-08
+r011,Reset user password,success,3,10.9,account_ops,2025-01-08
+r012,Escalate legal request,escalated,5,38.0,legal,2025-01-08
+r013,Summarize support thread,success,2,7.9,support,2025-01-09
+r014,Apply loyalty discount,failure,6,33.5,billing,2025-01-09
+r015,Update shipping address,success,3,9.5,account_ops,2025-01-09
+r016,Answer refund eligibility,success,4,15.2,billing,2025-01-10
+r017,Cancel subscription,success,3,10.4,billing,2025-01-10
+r018,Investigate chargeback,escalated,8,58.7,billing,2025-01-10
+r019,Draft contract redline,failure,10,72.3,legal,2025-01-11
+r020,Triage bug report,success,4,17.9,support,2025-01-11

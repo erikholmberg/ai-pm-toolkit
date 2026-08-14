@@ -1,0 +1,13 @@
+model,provider,sunset_date,monthly_requests,criticality
+gpt-4-32k,OpenAI,2026-07-01,80000,high
+claude-2.1,Anthropic,2026-08-20,150000,high
+gpt-4-turbo-preview,OpenAI,2026-09-05,45000,medium
+gemini-1.0-pro,Google,2026-09-30,20000,low
+claude-3-sonnet,Anthropic,2026-10-15,300000,high
+gpt-3.5-turbo-0613,OpenAI,2026-11-01,10000,low
+bedrock.titan-text-lite,AWS Bedrock,2026-11-20,5000,low
+gpt-4,OpenAI,2026-12-15,60000,medium
+claude-instant-1.2,Anthropic,2027-01-10,25000,medium
+gemini-1.5-pro-001,Google,2027-02-01,90000,high
+mistral-medium,Mistral,2027-03-01,15000,low
+gpt-4-0314,OpenAI,2026-08-25,500000,high
