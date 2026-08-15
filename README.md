@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
-| [**scripts/**](./scripts/) | 109 Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy, agentic AI & orchestration, AI safety & red-teaming — plus three shared modules ([pricing](./scripts/model_pricing.py), [CSV headers](./scripts/csv_columns.py), [result envelope](./scripts/toolkit_io.py)). See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
+| [**scripts/**](./scripts/) | 109 Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy, agentic AI & orchestration, AI safety & red-teaming — plus shared modules for [pricing](./scripts/model_pricing.py), [CSV headers](./scripts/csv_columns.py), [result envelope](./scripts/toolkit_io.py), and a [smoke test](./scripts/smoke-test.py) that runs every script against real sample data (109/109 pass). See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | MCP servers for Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, product analytics, and Calendar/meetings ([mcps/README.md](./mcps/README.md)) |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -126,6 +126,9 @@ python scripts/launch-checklist.py --name "Agent Copilot" --type backend --csv g
 - **`--output` JSON** carries the tool name, timestamp, and schema version alongside the
   result, so a number in a deck can be traced back to what produced it:
   `python scripts/toolkit_io.py results.json`.
+- **Every script runs, not just `--help`s.** `scripts/samples/` has real sample data for
+  all 109 scripts, and [scripts/smoke-test.py](./scripts/smoke-test.py) runs each one
+  against it and checks it actually produces output: `python scripts/smoke-test.py`.
 
 ## 🗂️ Directory Structure
 
