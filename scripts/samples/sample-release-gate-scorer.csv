@@ -1,0 +1,7 @@
+category,check,weight,status,evidence
+QA,Smoke tests passing,3,pass,CI run #4021
+QA,Load test at 2x expected traffic,2,pass,Load test report
+Security,Pen test sign-off,3,fail,Pending vendor scan
+Security,Secrets scan clean,2,pass,Automated scan clean
+Docs,Runbook updated,1,pass,Runbook PR merged
+Rollback,Rollback tested in staging,3,pass,Verified 2025-01-10

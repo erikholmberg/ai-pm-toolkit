@@ -1,0 +1,5 @@
+requirement_id,requirement_title,artifact_type,artifact_id,artifact_url,status,evidence
+REQ-001,User can reset password via email,ticket,PROJ-401,https://jira.example.com/PROJ-401,done,PR #882 merged
+REQ-002,System supports SSO login,ticket,PROJ-402,https://jira.example.com/PROJ-402,in progress,
+REQ-003,Audit log retained 90 days,test,TEST-55,https://ci.example.com/TEST-55,done,Nightly test passing
+REQ-004,Export data as CSV,,,,,not started,

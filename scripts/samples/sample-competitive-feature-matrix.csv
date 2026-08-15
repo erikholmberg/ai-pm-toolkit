@@ -1,0 +1,6 @@
+feature,category,Us,Competitor A,Competitor B
+SSO / SAML,Security,yes,yes,no
+Real-time collaboration,Core,yes,partial,yes
+API access,Platform,yes,yes,yes
+Audit logs,Security,partial,yes,no
+Mobile app,Core,no,yes,yes

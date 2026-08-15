@@ -1,0 +1,6 @@
+key,summary,description,assignee,priority,issue type,status,created,updated,story points
+PROJ-101,Fix login timeout,Users see a spinner after 30s,alice,High,Bug,To Do,2024-11-01,2024-11-01,3
+PROJ-102,Add SSO support,Support SAML login for enterprise,bob,Medium,Story,In Progress,2024-10-15,2025-01-10,8
+PROJ-103,Refactor payment retry,No priority set,,,Story,To Do,2024-09-20,2024-09-20,
+PROJ-104,Update onboarding copy,Improve activation copy,carol,Low,Task,Done,2025-01-05,2025-01-12,1
+PROJ-105,Investigate flaky CI,Intermittent test failures,,High,Bug,To Do,2024-08-01,2024-08-01,

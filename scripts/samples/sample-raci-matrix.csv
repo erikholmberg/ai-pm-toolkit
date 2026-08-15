@@ -1,0 +1,5 @@
+task,PM,Eng Lead,Designer,QA,Marketing
+Design specs,A,R,R,I,
+Implementation,I,A,C,R,
+Launch comms,C,I,,I,A
+Post-launch review,A,R,C,R,C

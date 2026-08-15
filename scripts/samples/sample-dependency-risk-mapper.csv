@@ -1,0 +1,4 @@
+name,team,status,due_date,description,depends_on
+Auth Service,Platform,on-track,2025-07-15,API contract,
+Payment Gateway,Billing,at-risk,2025-07-20,Stripe integration,Auth Service
+ML Model v2,Data Science,blocked,2025-08-01,Rec engine,Auth Service

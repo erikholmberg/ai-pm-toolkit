@@ -1,0 +1,4 @@
+pipeline,freshness_min,sla_min,rows,expected_rows,errors,total_runs,schema_changes,completeness_pct
+User Events,15,30,450000,500000,12,450000,0,98.5
+Billing Sync,120,240,8500,10000,3,8500,0,95.0
+ML Features,25,15,120000,120000,0,120000,2,100

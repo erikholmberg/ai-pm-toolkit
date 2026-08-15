@@ -1,0 +1,5 @@
+id,effort_points,impact_score,dependency_risk
+Checkout redesign,120,8.5,0.2
+AI recommendations,80,7.0,0.4
+Mobile app rebuild,200,6.5,0.6
+Tech debt cleanup,40,4.0,0.1

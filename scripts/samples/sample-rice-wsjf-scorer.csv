@@ -1,0 +1,5 @@
+feature,reach,impact,confidence,effort,category
+AI-assisted search,50000,3,80,4,Core
+Bulk CSV import,8000,2,90,2,Data
+Dark mode,20000,1,100,1,UX
+Real-time collaboration,15000,3,60,8,Core

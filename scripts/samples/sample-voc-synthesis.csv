@@ -1,0 +1,6 @@
+text,source,severity,theme
+Reports take too long to generate and often time out,support,4,performance
+Would love a dark mode option,survey,2,ux
+Onboarding was confusing; took 3 tries to set up SSO,interview,3,onboarding
+Export feature is missing bulk CSV support,support,3,data
+Mobile app crashes when opening large dashboards,support,5,mobile

@@ -1,0 +1,7 @@
+title,category,impact,cost,risk,owner,notes
+Monolith DB queries,Performance,4,3,3,backend,Slows dashboard by 2s
+Legacy auth system,Security,5,4,5,platform,No MFA support
+Flaky CI pipeline,DevEx,3,2,4,infra,3-4 failures/week
+No rate limiting,Security,4,2,5,backend,API abuse risk
+Hardcoded configs,Maintainability,2,1,2,backend,Blocks multi-region
+Manual deploys,DevEx,3,3,3,devops,No CD pipeline

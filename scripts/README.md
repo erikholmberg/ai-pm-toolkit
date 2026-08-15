@@ -39,6 +39,24 @@ published rates; Bedrock, OpenAI, and Google entries are carried over from the o
 tables and are marked `UNVERIFIED` until someone checks them against the vendor's page.
 Any comparison that includes an unverified model says so in its output.
 
+### Smoke test
+
+[smoke-test.py](smoke-test.py) runs every script against the sample data listed in this
+file's per-script tables and checks it actually produces output — not just that `--help`
+exits 0. `--help` passing and the script working are different claims; three scripts
+(`eval-score-trend`, `hallucination-safety-trend`, `inference-latency-trend`) had a working
+`--help` and a `--output` flag that raised `TypeError` on every real invocation until this
+caught it.
+
+```bash
+python scripts/smoke-test.py              # summary
+python scripts/smoke-test.py --verbose    # every script's result, not just failures
+```
+
+Scripts with no sample data listed in this README are only `--help`-checked (reported as
+`SKIP`, not `PASS`) — there's no generic way to guess a required scalar flag like
+`--baseline-rate`. Add a sample-data row for a script here to bring it under real coverage.
+
 ---
 
 ## Common questions
@@ -66,71 +84,71 @@ Any comparison that includes an unverified model says so in its output.
 ### Experiments & statistics
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
-| [ab-test-calculator.py](ab-test-calculator.py) | A/B test sample size, duration, power; proportions or means | — |
+| [ab-test-calculator.py](ab-test-calculator.py) | A/B test sample size, duration, power; proportions or means | samples/sample-ab-test-calculator.csv |
 | [experiment-duration-calculator.py](experiment-duration-calculator.py) | How long to run an experiment given traffic and sample size | — |
 | [experiment-result-interpreter.py](experiment-result-interpreter.py) | Interpret baseline vs variant with confidence | — |
 | [experiment-lifecycle-manager.py](experiment-lifecycle-manager.py) | Decision memo with guardrail-aware ship/iterate/stop recommendation | — |
 | [confidence-interval-calculator.py](confidence-interval-calculator.py) | Wilson score and mean CIs | — |
 | [survey-sample-size.py](survey-sample-size.py) | Sample size for target margin and confidence | — |
-| [cohort-comparison-tool.py](cohort-comparison-tool.py) | Compare cohorts (e.g. retention, conversion) | — |
+| [cohort-comparison-tool.py](cohort-comparison-tool.py) | Compare cohorts (e.g. retention, conversion) | samples/sample-cohort-comparison-tool.csv |
 
 ### Cost & economics
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [bedrock-cost-calculator.py](bedrock-cost-calculator.py) | Bedrock inference cost from tokens and model | — |
 | [multi-model-cost-comparator.py](multi-model-cost-comparator.py) | Compare cost across Bedrock, OpenAI, Anthropic | — |
-| [prompt-cost-optimizer.py](prompt-cost-optimizer.py) | Estimate and optimize prompt cost by model/volume | — |
+| [prompt-cost-optimizer.py](prompt-cost-optimizer.py) | Estimate and optimize prompt cost by model/volume | samples/sample-prompt-v1.txt |
 | [ai-unit-economics-calculator.py](ai-unit-economics-calculator.py) | Cost per request, revenue per user, unit economics | — |
 | [ai-initiative-roi-calculator.py](ai-initiative-roi-calculator.py) | Payback for AI projects (dev + inference vs benefit) | — |
-| [ltv-cac-calculator.py](ltv-cac-calculator.py) | LTV, CAC, payback | — |
-| [tam-sam-som-calculator.py](tam-sam-som-calculator.py) | TAM/SAM/SOM sizing | — |
+| [ltv-cac-calculator.py](ltv-cac-calculator.py) | LTV, CAC, payback | samples/sample-ltv-cac-calculator.csv |
+| [tam-sam-som-calculator.py](tam-sam-som-calculator.py) | TAM/SAM/SOM sizing | samples/sample-tam-sam-som-calculator.csv |
 | [pricing-model-simulator.py](pricing-model-simulator.py) | Model pricing scenarios (usage-based, tiered) | — |
-| [revenue-waterfall.py](revenue-waterfall.py) | Revenue waterfall breakdown | — |
+| [revenue-waterfall.py](revenue-waterfall.py) | Revenue waterfall breakdown | samples/sample-revenue-waterfall.csv |
 
 ### Delivery, velocity & backlog
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
-| [velocity-trend-analyzer.py](velocity-trend-analyzer.py) | Sprint velocity trend, rolling window, target | — |
+| [velocity-trend-analyzer.py](velocity-trend-analyzer.py) | Sprint velocity trend, rolling window, target | samples/sample-velocity-trend-analyzer.csv |
 | [sprint-burndown-checker.py](sprint-burndown-checker.py) | Burndown vs plan, chart | samples/sample-burndown.csv |
 | [sprint-mix-report.py](sprint-mix-report.py) | Mix by type/priority; balance | samples/sample-sprint-mix.csv |
 | [sprint-velocity-tracker.py](sprint-velocity-tracker.py) | Track velocity over sprints | samples/sample-velocity.csv |
 | [sprint-goal-checker.py](sprint-goal-checker.py) | Goals vs completed work | samples/sample-sprint-goals.csv, samples/sample-sprint-done.csv |
-| [sprint-scope-checker.py](sprint-scope-checker.py) | Scope vs capacity | — |
+| [sprint-scope-checker.py](sprint-scope-checker.py) | Scope vs capacity | samples/sample-sprint-scope-checker.csv |
 | [commitment-predictability-index.py](commitment-predictability-index.py) | CPI from velocity history | samples/sample-velocity.csv |
 | [capacity-planning-calculator.py](capacity-planning-calculator.py) | Capacity from team size, PTO, meetings, points/day | — |
-| [capacity-planner.py](capacity-planner.py) | Capacity planning with scenarios | — |
-| [cycle-lead-time-analyzer.py](cycle-lead-time-analyzer.py) | Cycle/lead time from ticket CSV | — |
-| [throughput-wip-analyzer.py](throughput-wip-analyzer.py) | Throughput and WIP over time | — |
+| [capacity-planner.py](capacity-planner.py) | Capacity planning with scenarios | samples/sample-capacity-planner.csv |
+| [cycle-lead-time-analyzer.py](cycle-lead-time-analyzer.py) | Cycle/lead time from ticket CSV | samples/sample-cycle-lead-time-analyzer.csv |
+| [throughput-wip-analyzer.py](throughput-wip-analyzer.py) | Throughput and WIP over time | samples/sample-throughput-wip-analyzer.csv |
 | [backlog-aging-report.py](backlog-aging-report.py) | Age bands, oldest items | samples/sample-backlog-aging.csv |
-| [backlog-health-report.py](backlog-health-report.py) | Backlog health (estimation, priority, stale) | — |
+| [backlog-health-report.py](backlog-health-report.py) | Backlog health (estimation, priority, stale) | samples/sample-backlog-health-report.csv |
 | [status-duration-analyzer.py](status-duration-analyzer.py) | Time in status from transitions | samples/sample-status-transitions.csv, samples/sample-status-spans.csv |
 | [release-impact-summary.py](release-impact-summary.py) | Shipped scope by version | samples/sample-release-impact.csv |
 | [release-cadence-report.py](release-cadence-report.py) | Release frequency and grouping | samples/sample-release-cadence.csv |
-| [release-notes-generator.py](release-notes-generator.py) | Generate release notes from data | — |
+| [release-notes-generator.py](release-notes-generator.py) | Generate release notes from data | samples/sample-release-notes-generator.csv |
 | [roadmap-timeline-summary.py](roadmap-timeline-summary.py) | Roadmap view, overlaps, by quarter | samples/sample-roadmap.csv |
-| [delivery-completion-forecaster.py](delivery-completion-forecaster.py) | Forecast completion dates | — |
-| [dora-metrics-calculator.py](dora-metrics-calculator.py) | DORA deployment, lead time, change failure | — |
+| [delivery-completion-forecaster.py](delivery-completion-forecaster.py) | Forecast completion dates | samples/sample-delivery-completion-forecaster.csv |
+| [dora-metrics-calculator.py](dora-metrics-calculator.py) | DORA deployment, lead time, change failure | samples/sample-dora-metrics-calculator.csv |
 
 ### Adoption, health & retention
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
-| [adoption-funnel-analyzer.py](adoption-funnel-analyzer.py) | Funnel steps and conversion (e.g. Visit→Signup→Activate) | — |
+| [adoption-funnel-analyzer.py](adoption-funnel-analyzer.py) | Funnel steps and conversion (e.g. Visit→Signup→Activate) | samples/sample-adoption-funnel-analyzer.csv |
 | [feature-adoption-trend.py](feature-adoption-trend.py) | Adoption % or DAU/WAU over time, trend label | samples/sample-feature-adoption.csv |
-| [feature-adoption-scorecard.py](feature-adoption-scorecard.py) | Adoption scorecard by segment/feature | — |
+| [feature-adoption-scorecard.py](feature-adoption-scorecard.py) | Adoption scorecard by segment/feature | samples/sample-feature-adoption-scorecard.csv |
 | [customer-health-score-trend.py](customer-health-score-trend.py) | Health score over time, at-risk threshold | samples/sample-customer-health.csv |
-| [churn-risk-calculator.py](churn-risk-calculator.py) | Churn risk from usage drop, adoption, tickets | — |
-| [retention-curve-analyzer.py](retention-curve-analyzer.py) | Retention curves and cohort comparison | — |
+| [churn-risk-calculator.py](churn-risk-calculator.py) | Churn risk from usage drop, adoption, tickets | samples/sample-churn-risk-calculator.csv |
+| [retention-curve-analyzer.py](retention-curve-analyzer.py) | Retention curves and cohort comparison | samples/sample-retention-curve-analyzer.csv |
 | [beta-conversion-report.py](beta-conversion-report.py) | Beta→GA conversion, trend | samples/sample-beta-conversion.csv |
 
 ### Incidents, SLO & reliability
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [incident-rate-trend.py](incident-rate-trend.py) | Incident rate over time, chart | samples/sample-incidents.csv |
-| [incident-postmortem.py](incident-postmortem.py) | Structure postmortem output | — |
+| [incident-postmortem.py](incident-postmortem.py) | Structure postmortem output | samples/sample-incident-postmortem.json |
 | [latency-slo-calculator.py](latency-slo-calculator.py) | Latency SLO and error budget from availability/RPM | — |
-| [sla-uptime-calculator.py](sla-uptime-calculator.py) | Uptime, error budget remaining, breach risk | — |
-| [error-budget-burn-rate.py](error-budget-burn-rate.py) | Error budget burn rate | — |
-| [alert-threshold-calculator.py](alert-threshold-calculator.py) | Alert thresholds from SLO and baseline | — |
+| [sla-uptime-calculator.py](sla-uptime-calculator.py) | Uptime, error budget remaining, breach risk | samples/sample-sla-uptime-calculator.csv |
+| [error-budget-burn-rate.py](error-budget-burn-rate.py) | Error budget burn rate | samples/sample-error-budget-burn-rate.csv |
+| [alert-threshold-calculator.py](alert-threshold-calculator.py) | Alert thresholds from SLO and baseline | samples/sample-alert-threshold-calculator.csv |
 | [inference-latency-trend.py](inference-latency-trend.py) | Inference latency (e.g. p99) over time | samples/sample-inference-latency.csv |
 
 ### Feedback, NPS & support
@@ -138,25 +156,25 @@ Any comparison that includes an unverified model says so in its output.
 |--------|-------------|------------|
 | [nps-csat-summary.py](nps-csat-summary.py) | NPS from promoter/passive/detractor; CSAT summary | — |
 | [feedback-theme-counter.py](feedback-theme-counter.py) | Count feedback by theme | samples/sample-feedback.csv |
-| [sentiment-analysis.py](sentiment-analysis.py) | Sentiment on text (e.g. feedback) | — |
+| [sentiment-analysis.py](sentiment-analysis.py) | Sentiment on text (e.g. feedback) | samples/sample-sentiment-feedback.csv |
 | [support-escalation-trend.py](support-escalation-trend.py) | Escalation volume/trend by severity | samples/sample-support-tickets.csv |
-| [voc-synthesis.py](voc-synthesis.py) | Deduplicate multi-source feedback and rank top opportunities | — |
+| [voc-synthesis.py](voc-synthesis.py) | Deduplicate multi-source feedback and rank top opportunities | samples/sample-voc-synthesis.csv |
 
 ### Risk, dependencies & governance
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [risk-register-summary.py](risk-register-summary.py) | Top risks, summary by category | samples/sample-risks.csv |
 | [dependency-blocked-summary.py](dependency-blocked-summary.py) | Blocked-by and blocking summary | samples/sample-dependency-blocked.csv |
-| [dependency-risk-mapper.py](dependency-risk-mapper.py) | Dependency and risk mapping | — |
-| [blocker-wait-summary.py](blocker-wait-summary.py) | Blocker and wait-time summary | — |
+| [dependency-risk-mapper.py](dependency-risk-mapper.py) | Dependency and risk mapping | samples/sample-dependency-risk-mapper.csv |
+| [blocker-wait-summary.py](blocker-wait-summary.py) | Blocker and wait-time summary | samples/sample-blocker-wait-summary.csv |
 | [audit-checklist-summary.py](audit-checklist-summary.py) | Audit controls, open/by domain | samples/sample-audit-controls.csv |
 
 ### Launch & rollout
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [launch-readiness-score.py](launch-readiness-score.py) | Go/no-go score from checklist | samples/sample-launch-readiness.csv |
-| [launch-checklist.py](launch-checklist.py) | Launch checklist workflow; `--csv` emits the format the scorer reads | — |
-| [release-gate-scorer.py](release-gate-scorer.py) | Weighted evidence-based release gate decision | — |
+| [launch-checklist.py](launch-checklist.py) | Launch checklist workflow; `--csv` emits the format the scorer reads | — (generative; --csv writes the launch-readiness-score.py input format) |
+| [release-gate-scorer.py](release-gate-scorer.py) | Weighted evidence-based release gate decision | samples/sample-release-gate-scorer.csv |
 | [feature-rollout-calculator.py](feature-rollout-calculator.py) | Phased rollout sample size and duration | — |
 | [feature-flag-planner.py](feature-flag-planner.py) | Feature flag stages and gates | — |
 
@@ -176,8 +194,8 @@ python scripts/launch-readiness-score.py --csv gate.csv --per-area
 | [hallucination-safety-trend.py](hallucination-safety-trend.py) | Hallucination/safety metric trend | samples/sample-hallucination-safety.csv |
 | [data-drift-detector.py](data-drift-detector.py) | Drift between baseline and current dataset | — |
 | [prompt-version-diff.py](prompt-version-diff.py) | Diff two prompt versions | samples/sample-prompt-v1.txt, sample-prompt-v2.txt |
-| [groundedness-scorer.py](groundedness-scorer.py) | Groundedness scoring for outputs | — |
-| [rag-quality-analyzer.py](rag-quality-analyzer.py) | RAG retrieval/answer quality | — |
+| [groundedness-scorer.py](groundedness-scorer.py) | Groundedness scoring for outputs | samples/sample-groundedness-scorer.csv |
+| [rag-quality-analyzer.py](rag-quality-analyzer.py) | RAG retrieval/answer quality | samples/sample-rag-quality.csv |
 
 ### Agentic AI & orchestration
 | Script | Description | Sample CSV |
@@ -199,32 +217,32 @@ python scripts/launch-readiness-score.py --csv gate.csv --per-area
 ### Strategy & prioritization
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
-| [rice-wsjf-scorer.py](rice-wsjf-scorer.py) | RICE / WSJF scoring | — |
-| [opportunity-scorer.py](opportunity-scorer.py) | Score opportunities from criteria | — |
-| [competitive-feature-matrix.py](competitive-feature-matrix.py) | Feature matrix vs competitors | — |
-| [impact-sizing-estimator.py](impact-sizing-estimator.py) | Impact sizing for roadmap | — |
-| [roadmap-simulator.py](roadmap-simulator.py) | Monte Carlo style scenario simulation for roadmap confidence | — |
-| [prd-traceability-linker.py](prd-traceability-linker.py) | Requirement-to-artifact trace coverage from PRD to delivery | — |
+| [rice-wsjf-scorer.py](rice-wsjf-scorer.py) | RICE / WSJF scoring | samples/sample-rice-wsjf-scorer.csv |
+| [opportunity-scorer.py](opportunity-scorer.py) | Score opportunities from criteria | samples/sample-opportunity-scorer.csv |
+| [competitive-feature-matrix.py](competitive-feature-matrix.py) | Feature matrix vs competitors | samples/sample-competitive-feature-matrix.csv |
+| [impact-sizing-estimator.py](impact-sizing-estimator.py) | Impact sizing for roadmap | samples/sample-impact-sizing-estimator.csv |
+| [roadmap-simulator.py](roadmap-simulator.py) | Monte Carlo style scenario simulation for roadmap confidence | samples/sample-roadmap-simulator.csv |
+| [prd-traceability-linker.py](prd-traceability-linker.py) | Requirement-to-artifact trace coverage from PRD to delivery | samples/sample-prd-traceability-linker.csv |
 
 ### Budget, sales & OKRs
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [budget-burn-summary.py](budget-burn-summary.py) | Budget burn by category/period | samples/sample-budget.csv |
 | [win-loss-summary.py](win-loss-summary.py) | Win/loss summary, top reasons | samples/sample-win-loss.csv |
-| [okr-tracker.py](okr-tracker.py) | OKR progress and tracking | — |
+| [okr-tracker.py](okr-tracker.py) | OKR progress and tracking | samples/sample-okr-tracker.csv |
 
 ### Stakeholders, communication & team
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [meeting-load-optimizer.py](meeting-load-optimizer.py) | Meeting load vs work window, focus blocks, recurring-title signals | samples/sample-meetings.csv |
-| [exec-summary-generator.py](exec-summary-generator.py) | Executive summary from inputs | — |
-| [stakeholder-update.py](stakeholder-update.py) | Generate stakeholder update | — |
+| [exec-summary-generator.py](exec-summary-generator.py) | Executive summary from inputs | samples/sample-exec-summary-generator.csv |
+| [stakeholder-update.py](stakeholder-update.py) | Generate stakeholder update | samples/sample-stakeholder-update.json |
 | [stakeholder-signoff-tracker.py](stakeholder-signoff-tracker.py) | Track sign-offs by deliverable | samples/sample-stakeholder-signoff.csv |
-| [interview-note-analyzer.py](interview-note-analyzer.py) | Analyze interview notes | — |
-| [space-team-health.py](space-team-health.py) | SPACE (satisfaction, performance, etc.) | — |
-| [retro-action-tracker.py](retro-action-tracker.py) | Retrospective action tracking | — |
-| [raci-matrix.py](raci-matrix.py) | RACI matrix helper | — |
-| [decision-log.py](decision-log.py) | Decision log structure | — |
+| [interview-note-analyzer.py](interview-note-analyzer.py) | Analyze interview notes | samples/sample-interview-note-analyzer.csv |
+| [space-team-health.py](space-team-health.py) | SPACE (satisfaction, performance, etc.) | samples/sample-space-team-health.csv |
+| [retro-action-tracker.py](retro-action-tracker.py) | Retrospective action tracking | samples/sample-retro-action-tracker.csv |
+| [raci-matrix.py](raci-matrix.py) | RACI matrix helper | samples/sample-raci-matrix.csv |
+| [decision-log.py](decision-log.py) | Decision log structure | samples/sample-decision-log.csv |
 
 ### AI/ML ops & tokens
 | Script | Description | Sample CSV |
@@ -232,13 +250,13 @@ python scripts/launch-readiness-score.py --csv gate.csv --per-area
 | [model-selection-scorecard.py](model-selection-scorecard.py) | Weighted MCDA rank for models/tiers; optional +weight sensitivity | samples/sample-model-selection-scores.csv, samples/sample-model-selection-weights.csv |
 | [model-system-card-builder.py](model-system-card-builder.py) | Generate model or LLM system cards as Markdown/YAML from CLI or JSON | samples/sample-model-system-card.json |
 | [model-runtime-orchestrator.py](model-runtime-orchestrator.py) | Runtime model routing, fallback, and guardrails orchestration | — |
-| [token-counter.py](token-counter.py) | Token count for prompts/models | — |
+| [token-counter.py](token-counter.py) | Token count for prompts/models | samples/sample-prompt-v1.txt |
 | [token-budget-allocator.py](token-budget-allocator.py) | Allocate token budget across use cases | — |
 | [model-migration-estimator.py](model-migration-estimator.py) | Estimate effort/cost for model migration | — |
 | [model-deprecation-watch.py](model-deprecation-watch.py) | Track model sunset dates across your portfolio; prioritized migration queue by urgency × traffic × criticality | samples/sample-model-portfolio.csv |
-| [pipeline-health-monitor.py](pipeline-health-monitor.py) | ML pipeline health checks | — |
-| [tech-debt-scorer.py](tech-debt-scorer.py) | Tech debt scoring | — |
-| [metric-forecaster.py](metric-forecaster.py) | Simple metric forecasting | — |
+| [pipeline-health-monitor.py](pipeline-health-monitor.py) | ML pipeline health checks | samples/sample-pipeline-health-monitor.csv |
+| [tech-debt-scorer.py](tech-debt-scorer.py) | Tech debt scoring | samples/sample-tech-debt-scorer.csv |
+| [metric-forecaster.py](metric-forecaster.py) | Simple metric forecasting | samples/sample-metric-forecaster.csv |
 
 ---
 

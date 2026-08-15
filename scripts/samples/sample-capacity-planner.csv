@@ -1,0 +1,5 @@
+initiative,points,priority,owner
+Checkout redesign,120,P0,Product
+AI recommendations,80,P1,ML Team
+Mobile app,60,P1,Mobile
+Tech debt,40,P2,Platform

@@ -1,0 +1,54 @@
+{
+  "title": "Payment API outage",
+  "severity": "P1",
+  "date": "2025-07-10",
+  "duration_minutes": 47,
+  "detected_by": "monitoring",
+  "ttd_minutes": 5,
+  "ttm_minutes": 12,
+  "ttr_minutes": 47,
+  "impact": {
+    "users_affected": 2300,
+    "revenue_loss": 18400,
+    "support_tickets": 412,
+    "description": [
+      "2,300 failed transactions",
+      "$18,400 revenue loss"
+    ]
+  },
+  "root_cause": "Database connection pool exhaustion under load spike",
+  "contributing_factors": [
+    "No connection pool monitoring alerts",
+    "Load test coverage didn't include payment flow"
+  ],
+  "timeline": [
+    {
+      "time": "10:00",
+      "event": "Load spike begins"
+    },
+    {
+      "time": "10:05",
+      "event": "Monitoring alert fires"
+    },
+    {
+      "time": "10:47",
+      "event": "Service fully recovered"
+    }
+  ],
+  "action_items": [
+    {
+      "description": "Add connection pool alerts",
+      "owner": "Platform",
+      "priority": "P1",
+      "due_date": "2025-07-17",
+      "status": "open"
+    }
+  ],
+  "lessons_learned": [
+    "Need better observability for connection pools"
+  ],
+  "what_went_well": [
+    "Fast detection via monitoring",
+    "Clear escalation path"
+  ]
+}

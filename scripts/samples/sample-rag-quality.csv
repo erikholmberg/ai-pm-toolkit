@@ -1,0 +1,4 @@
+id,query,retrieved_contexts,answer,ground_truth
+q1,"What is the capital of France?","Paris is the capital and largest city of France.|France is a country in Western Europe.","The capital of France is Paris.","Paris"
+q2,"When was the Eiffel Tower built?","The Eiffel Tower was completed in 1889 for the World's Fair.|It is located on the Champ de Mars in Paris.","The Eiffel Tower was built in 1887.","1889"
+q3,"What is the population of France?","France has a population of about 68 million people as of 2023.","France's population is approximately 68 million.","about 68 million"

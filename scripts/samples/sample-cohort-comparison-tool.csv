@@ -1,0 +1,3 @@
+metric,cohort_a_name,cohort_a_mean,cohort_a_std,cohort_a_n,cohort_b_name,cohort_b_mean,cohort_b_std,cohort_b_n
+D7 retention,Control,0.42,0.08,1200,New onboarding,0.49,0.09,1180
+Activation rate,Control,0.58,0.12,1200,New onboarding,0.63,0.11,1180

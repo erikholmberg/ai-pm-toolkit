@@ -1,0 +1,3 @@
+date,duration_minutes,description
+2025-06-02,5,API timeout
+2025-06-04,12,DB failover

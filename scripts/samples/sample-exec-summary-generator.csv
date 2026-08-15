@@ -1,0 +1,5 @@
+metric,current,previous,target,unit,direction
+Weekly active users,42000,38500,50000,users,up
+Churn rate,4.2,4.8,3.5,%,down
+NPS,38,32,45,,up
+Avg response time,320,380,250,ms,down

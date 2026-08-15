@@ -1,0 +1,5 @@
+cohort,usage_drop_pct,feature_adoption_pct,tickets_per_100_users
+Enterprise,15,72,4
+Mid-market,35,45,9
+SMB,52,28,14
+Trial,68,15,22

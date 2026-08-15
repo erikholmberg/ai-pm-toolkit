@@ -1,0 +1,4 @@
+id,query,source,response
+q1,What is our refund policy?,"Refunds are available within 30 days of purchase for unused licenses.","We offer a 30-day refund window for unused licenses."
+q2,How do I reset my password?,"Click 'Forgot password' on the login page to receive a reset link via email.","You can reset your password by contacting support directly by phone."
+q3,What plans do we offer?,"We offer Free, Pro ($29/mo), and Enterprise (custom pricing) plans.","We offer Free, Pro, and Enterprise plans."

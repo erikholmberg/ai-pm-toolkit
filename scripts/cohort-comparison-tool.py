@@ -88,7 +88,10 @@ def welch_t_test(
     # Try scipy for exact p-value
     try:
         from scipy import stats as sp_stats
-        p_value = 2 * sp_stats.t.sf(abs(t), df)
+        # scipy returns numpy.float64, which downstream comparisons (p < 0.05)
+        # turn into numpy.bool_ -- not JSON serializable. Cast to plain float
+        # here so nothing numpy-typed ever enters the result dict.
+        p_value = float(2 * sp_stats.t.sf(abs(t), df))
         return t, df, p_value
     except ImportError:
         # Approximate p-value using normal distribution for large df

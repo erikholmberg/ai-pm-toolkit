@@ -1,0 +1,4 @@
+id,title,status,date,owner,context,decision,rationale,consequences,tags
+ADR-001,Use PostgreSQL,accepted,2025-06-15,Platform,Need a primary datastore for the new service,PostgreSQL,Team has deep expertise and it fits our relational data model,Requires connection pooling work,infra;db
+ADR-002,Adopt trunk-based development,accepted,2025-07-01,Engineering,Long-lived feature branches were causing painful merges,Trunk-based development with feature flags,Reduces merge conflicts and speeds up integration,Requires investment in feature flag tooling,process;eng
+ADR-003,Move to microservices,rejected,2025-08-10,Platform,Monolith was hard to scale independently,Stay monolithic for now,Team size doesn't justify the operational overhead yet,Revisit at 2x current team size,architecture

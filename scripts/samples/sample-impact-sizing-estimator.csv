@@ -1,0 +1,4 @@
+name,reach,conversion_pct,lift_pct,rev_per_conversion,eng_weeks,eng_cost_per_week
+Checkout CTA,500000,3.2,10,48,4,5000
+AI Recs,200000,5,12,65,12,5000
+Onboarding v2,100000,15,8,30,6,5000

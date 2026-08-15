@@ -1,0 +1,58 @@
+{
+  "project": "Checkout Redesign",
+  "period": "Week of Jul 7, 2025",
+  "author": "Jane PM",
+  "overall_status": "green",
+  "summary": "On track for Q3 launch. Payment flow shipped to 25%.",
+  "highlights": [
+    "Shipped new payment flow to 25% of users",
+    "Error rate stable at 0.12%"
+  ],
+  "metrics": [
+    {
+      "name": "Conversion rate",
+      "current": "3.2%",
+      "target": "3.5%",
+      "direction": "up"
+    },
+    {
+      "name": "Cart abandonment",
+      "current": "68%",
+      "target": "65%",
+      "direction": "down"
+    }
+  ],
+  "okrs": [
+    {
+      "objective": "Improve checkout conversion",
+      "score": 0.55,
+      "status": "on-track"
+    }
+  ],
+  "milestones": [
+    {
+      "name": "Payment flow GA",
+      "date": "2025-07-21",
+      "status": "on-track"
+    },
+    {
+      "name": "Mobile checkout",
+      "date": "2025-08-04",
+      "status": "at-risk"
+    }
+  ],
+  "risks": [
+    "Payment provider latency during peak"
+  ],
+  "blockers": [
+    "Design review delayed 3 days"
+  ],
+  "next_actions": [
+    "Expand rollout to 50%",
+    "A/B test CTA copy"
+  ],
+  "asks": [
+    "Need design review by Wed",
+    "Budget approval for load testing"
+  ]
+}

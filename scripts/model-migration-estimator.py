@@ -408,7 +408,13 @@ def print_report(
 # ---------------------------------------------------------------------------
 
 def resolve_model(name: str) -> Optional[str]:
-    """Resolve model name with fuzzy matching."""
+    """Resolve model name with fuzzy matching.
+
+    A migration estimator has to accept the model you're migrating *off of* —
+    which is often exactly a retired name (that's the whole point of the tool).
+    Falls back through model_pricing's alias/retirement table so a name like
+    "claude-3-opus" still resolves to its current replacement.
+    """
     lower = name.lower().strip()
     if lower in MODEL_CATALOG:
         return lower
@@ -420,7 +426,13 @@ def resolve_model(name: str) -> Optional[str]:
     for key in MODEL_CATALOG:
         if key.split(".")[-1] == lower:
             return key
-    return None
+    # Retired/aliased names (e.g. "claude-3-opus") that aren't in this
+    # script's own catalog but map to a current model in the shared table.
+    try:
+        canonical = model_pricing.canonical_name(name)
+    except model_pricing.UnknownModelError:
+        return None
+    return canonical if canonical in MODEL_CATALOG else None
 
 
 def main():

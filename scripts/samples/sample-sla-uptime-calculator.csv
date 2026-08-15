@@ -1,0 +1,4 @@
+date,duration_minutes,description
+2025-01-04,12,API timeout during peak traffic
+2025-01-11,5,Database failover
+2025-01-19,25,Third-party payment provider outage
