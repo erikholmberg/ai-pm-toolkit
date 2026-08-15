@@ -39,6 +39,12 @@ import json
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "llm-judge-calibration-checker"
+
 
 # ---------------------------------------------------------------------------
 # Calibration verdict thresholds (documented constants)
@@ -439,7 +445,7 @@ Examples:
             "worst_disagreements": worst_disagreements(rows, scale, top_n=10),
         }
         with open(args.output, "w", encoding="utf-8") as f:
-            json.dump(report, f, indent=2)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2)
         print(f"\n📁 Report saved to {args.output}")
 
     return 0

@@ -23,6 +23,10 @@ Requirements:
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import sys
 from dataclasses import dataclass
 from typing import List, Optional, Tuple
@@ -126,7 +130,7 @@ def load_csv(path: str) -> List[CohortMetrics]:
     """Load cohort data from CSV file."""
     cohorts: List[CohortMetrics] = []
     with open(path, newline="") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         for row in reader:
             cohorts.append(CohortMetrics(
                 name=row["cohort"].strip(),

@@ -36,8 +36,14 @@ import csv
 import json
 import sys
 from collections import defaultdict
-from datetime import datetime
+from datetime import date, datetime
 from typing import Any, Dict, List, Optional
+
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "inference-latency-trend"
 
 
 def parse_date(s: str) -> Optional[datetime]:
@@ -235,8 +241,23 @@ def print_report(result: Dict[str, Any], chart: bool) -> None:
     print("\n   💡 Use for AI/ML release checks and latency SLO monitoring.\n")
 
 
+def _jsonable(value: Any) -> Any:
+    """Recursively convert datetimes to ISO strings.
+
+    `regressions` nests datetime objects a few levels down, which made --output
+    raise instead of writing a file.
+    """
+    if isinstance(value, (datetime, date)):
+        return value.isoformat()
+    if isinstance(value, dict):
+        return {k: _jsonable(v) for k, v in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_jsonable(v) for v in value]
+    return value
+
+
 def to_json_result(result: Dict[str, Any]) -> Dict[str, Any]:
-    return {
+    return _jsonable({
         "metrics": result.get("metrics", []),
         "series": result.get("series", {}),
         "baseline": result.get("baseline", {}),
@@ -244,7 +265,7 @@ def to_json_result(result: Dict[str, Any]) -> Dict[str, Any]:
         "regression_threshold_pct": result.get("regression_threshold_pct", 0),
         "baseline_run": result.get("baseline_run"),
         "baseline_date": result.get("baseline_date"),
-    }
+    })
 
 
 def main() -> int:
@@ -302,7 +323,7 @@ def main() -> int:
 
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
-            json.dump(to_json_result(result), f, indent=2)
+            json.dump(toolkit_io.envelope(to_json_result(result), TOOL), f, indent=2)
         print(f"Wrote JSON to {args.output}")
 
     return 0

@@ -86,6 +86,12 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "incident-postmortem"
+
 
 # ---------------------------------------------------------------------------
 # Postmortem model
@@ -593,7 +599,7 @@ Examples:
     # JSON output
     if args.output:
         with open(args.output, "w") as f:
-            json.dump(pm, f, indent=2)
+            json.dump(toolkit_io.envelope(pm, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

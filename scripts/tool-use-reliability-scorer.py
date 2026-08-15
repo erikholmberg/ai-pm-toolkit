@@ -38,6 +38,12 @@ import sys
 from collections import defaultdict
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "tool-use-reliability-scorer"
+
 
 # ---------------------------------------------------------------------------
 # Status normalization
@@ -282,7 +288,7 @@ Examples:
 
     if args.output:
         with open(args.output, "w") as f:
-            json.dump({"summary": summary, "tools": results, "min_reliability": args.min_reliability}, f, indent=2)
+            json.dump(toolkit_io.envelope({"summary": summary, "tools": results, "min_reliability": args.min_reliability}, TOOL), f, indent=2)
         print(f"\n📁 Report saved to {args.output}")
 
     return 0

@@ -18,11 +18,21 @@ Requirements:
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import json
 from collections import Counter
 from dataclasses import dataclass
 from typing import List, Dict, Optional
 from pathlib import Path
+
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "sentiment-analysis"
 
 try:
     from textblob import TextBlob
@@ -236,7 +246,7 @@ def load_from_csv(filepath: str) -> List[Dict]:
     """Load feedback from a CSV file."""
     feedback = []
     with open(filepath, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         for row in reader:
             # Try common column names
             text = row.get('feedback') or row.get('text') or row.get('comment') or row.get('message', '')
@@ -338,7 +348,7 @@ def main():
         
         if args.output:
             with open(args.output, 'w') as f:
-                json.dump(summary, f, indent=2)
+                json.dump(toolkit_io.envelope(summary, TOOL), f, indent=2)
             print(f"\n✅ Results saved to {args.output}")
     
     else:

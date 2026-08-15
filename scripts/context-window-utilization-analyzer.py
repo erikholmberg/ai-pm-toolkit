@@ -40,6 +40,12 @@ import json
 import sys
 from typing import Any, Dict, List, Optional
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "context-window-utilization-analyzer"
+
 
 # ---------------------------------------------------------------------------
 # Data loading
@@ -338,7 +344,7 @@ Examples:
 
     if args.output:
         with open(args.output, "w") as f:
-            json.dump(result, f, indent=2)
+            json.dump(toolkit_io.envelope(result, TOOL), f, indent=2)
         print(f"\n📁 Report saved to {args.output}")
 
     return 0

@@ -39,10 +39,20 @@ Requirements:
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import json
 import sys
 from collections import defaultdict
 from typing import Any, Dict, List, Optional, Tuple
+
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "competitive-feature-matrix"
 
 
 # ---------------------------------------------------------------------------
@@ -88,7 +98,7 @@ def load_csv(path: str, scoring: str = "numeric") -> Tuple[List[Dict[str, Any]],
     category_col: Optional[str] = None
 
     with open(path, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         fields = reader.fieldnames or []
 
         if not fields:
@@ -511,7 +521,7 @@ Examples:
             "feature_analysis": analysis["feature_analysis"],
         }
         with open(args.output, "w") as f:
-            json.dump(output, f, indent=2)
+            json.dump(toolkit_io.envelope(output, TOOL), f, indent=2)
         print(f"\n📁 JSON results saved to {args.output}")
 
     return 0

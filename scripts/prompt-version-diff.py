@@ -28,6 +28,12 @@ import sys
 from pathlib import Path
 from typing import Any, Dict, List, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "prompt-version-diff"
+
 
 # Same as token-counter fallback (stdlib-only)
 CHARS_PER_TOKEN_ESTIMATE = 4
@@ -163,7 +169,7 @@ def main() -> int:
 
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
-            json.dump(result, f, indent=2)
+            json.dump(toolkit_io.envelope(result, TOOL), f, indent=2)
         print(f"Wrote JSON to {args.output}")
 
     return 0

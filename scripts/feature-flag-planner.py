@@ -71,6 +71,12 @@ import sys
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "feature-flag-planner"
+
 
 # ---------------------------------------------------------------------------
 # Rollout planning
@@ -472,7 +478,7 @@ Examples:
     # JSON output
     if args.output:
         with open(args.output, "w") as f:
-            json.dump(plan, f, indent=2, default=str)
+            json.dump(toolkit_io.envelope(plan, TOOL), f, indent=2, default=str)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

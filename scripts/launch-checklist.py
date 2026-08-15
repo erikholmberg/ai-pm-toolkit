@@ -50,10 +50,17 @@ Requirements:
 """
 
 import argparse
+import csv
 import json
 import sys
 from datetime import datetime
 from typing import Any, Dict, List, Optional
+
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "launch-checklist"
 
 
 # ---------------------------------------------------------------------------
@@ -421,6 +428,10 @@ Examples:
     parser.add_argument("--json", "-j", type=str, help="JSON config file")
     parser.add_argument("--markdown", type=str, help="Write Markdown checklist to file")
     parser.add_argument("--output", "-o", type=str, help="Write JSON results to file")
+    parser.add_argument(
+        "--csv", type=str,
+        help="Write an area,item,done CSV — the input format launch-readiness-score.py reads",
+    )
     args = parser.parse_args()
 
     cl = None
@@ -465,10 +476,27 @@ Examples:
             f.write(md)
         print(f"\n📄 Markdown saved to {args.markdown}")
 
+    # CSV — the handoff format launch-readiness-score.py consumes. Fill in the
+    # `done` column as the team works, then score the same file.
+    if args.csv:
+        with open(args.csv, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(["area", "item", "done", "priority", "owner"])
+            for item in cl["items"]:
+                writer.writerow([
+                    item.get("category", ""),
+                    item.get("description", ""),
+                    "yes" if item.get("status") == "done" else "",
+                    item.get("priority", ""),
+                    item.get("assignee", ""),
+                ])
+        print(f"\n📊 CSV saved to {args.csv}")
+        print(f"   Score it with: python launch-readiness-score.py --csv {args.csv}")
+
     # JSON output
     if args.output:
         with open(args.output, "w") as f:
-            json.dump(cl, f, indent=2)
+            json.dump(toolkit_io.envelope(cl, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

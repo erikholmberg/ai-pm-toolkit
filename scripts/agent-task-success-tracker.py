@@ -42,6 +42,12 @@ from collections import defaultdict
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "agent-task-success-tracker"
+
 
 # ---------------------------------------------------------------------------
 # Outcome normalization
@@ -393,7 +399,7 @@ Examples:
 
     if args.output:
         with open(args.output, "w") as f:
-            json.dump(result, f, indent=2, default=str)
+            json.dump(toolkit_io.envelope(result, TOOL), f, indent=2, default=str)
         print(f"\n📁 Report saved to {args.output}")
 
     return 0

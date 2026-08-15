@@ -22,27 +22,19 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 
-# USD per 1M tokens (input / output)
-PRICING: Dict[str, Dict[str, float]] = {
-    "claude-3-opus-20240229":      {"input": 15.0,  "output": 75.0},
-    "claude-3-sonnet-20240229":    {"input": 3.0,   "output": 15.0},
-    "claude-3-haiku-20240307":     {"input": 0.25,  "output": 1.25},
-    "claude-3-5-sonnet-20241022":  {"input": 3.0,   "output": 15.0},
-    "gpt-4o":                      {"input": 2.5,   "output": 10.0},
-    "gpt-4o-mini":                 {"input": 0.15,  "output": 0.60},
-    "gpt-4-turbo":                 {"input": 10.0,  "output": 30.0},
-    "gpt-4":                       {"input": 30.0,  "output": 60.0},
-    "gpt-3.5-turbo":               {"input": 0.50,  "output": 1.50},
-}
+# Pricing lives in scripts/model_pricing.py so every cost script agrees on one
+# table. Run `python model_pricing.py --check` to see what needs re-verifying.
+import model_pricing
 
 # Model downgrade suggestions: from -> list of cheaper alternatives
 DOWNGRADE_MAP: Dict[str, List[str]] = {
-    "claude-3-opus-20240229":     ["claude-3-5-sonnet-20241022", "claude-3-sonnet-20240229", "claude-3-haiku-20240307"],
-    "claude-3-5-sonnet-20241022": ["claude-3-sonnet-20240229", "claude-3-haiku-20240307"],
-    "claude-3-sonnet-20240229":   ["claude-3-haiku-20240307"],
-    "gpt-4":                      ["gpt-4-turbo", "gpt-4o", "gpt-4o-mini"],
-    "gpt-4-turbo":                ["gpt-4o", "gpt-4o-mini"],
-    "gpt-4o":                     ["gpt-4o-mini"],
+    "claude-fable-5":    ["claude-opus-5", "claude-sonnet-5", "claude-haiku-4-5"],
+    "claude-opus-5":     ["claude-sonnet-5", "claude-haiku-4-5"],
+    "claude-opus-4-8":   ["claude-sonnet-5", "claude-haiku-4-5"],
+    "claude-sonnet-5":   ["claude-haiku-4-5"],
+    "claude-sonnet-4-6": ["claude-haiku-4-5"],
+    "gpt-4-turbo":       ["gpt-4o", "gpt-4o-mini"],
+    "gpt-4o":            ["gpt-4o-mini"],
 }
 
 # Characters per token (fallback)
@@ -62,12 +54,16 @@ def count_tokens(text: str) -> Tuple[int, bool]:
 
 
 def get_pricing(model: str) -> Dict[str, float]:
-    """Get pricing for model. Matches by substring."""
-    model_lower = model.lower()
-    for key, val in PRICING.items():
-        if key.lower() in model_lower or model_lower in key.lower():
-            return val
-    return {"input": 3.0, "output": 15.0}
+    """Get pricing for model (per 1M tokens) from the shared table."""
+    try:
+        p = model_pricing.lookup(model)
+    except model_pricing.UnknownModelError as e:
+        print(f"Warning: {e}", file=sys.stderr)
+        print("Falling back to claude-sonnet-5 pricing.", file=sys.stderr)
+        p = model_pricing.lookup("claude-sonnet-5")
+    else:
+        model_pricing.warn_if_stale(model)
+    return {"input": p.input_per_mtok, "output": p.output_per_mtok}
 
 
 def monthly_cost(

@@ -34,6 +34,12 @@ import sys
 from datetime import date, datetime
 from typing import Any, Dict, List, Optional
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "model-deprecation-watch"
+
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -262,7 +268,7 @@ Examples:
 
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
-            json.dump(result, f, indent=2)
+            json.dump(toolkit_io.envelope(result, TOOL), f, indent=2)
         print(f"\n📁 Report saved to {args.output}")
 
     return 0

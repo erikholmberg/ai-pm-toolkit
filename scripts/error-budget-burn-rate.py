@@ -56,6 +56,12 @@ import sys
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "error-budget-burn-rate"
+
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -580,7 +586,7 @@ Examples:
             report["multi_window_rates"] = multi_window
 
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

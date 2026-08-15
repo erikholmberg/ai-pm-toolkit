@@ -49,6 +49,12 @@ import math
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "sprint-velocity-tracker"
+
 
 # ---------------------------------------------------------------------------
 # Velocity analysis
@@ -466,7 +472,7 @@ Examples:
         if forecast_result:
             report["forecast"] = forecast_result
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

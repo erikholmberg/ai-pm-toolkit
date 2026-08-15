@@ -49,6 +49,12 @@ from collections import defaultdict
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "blocker-wait-summary"
+
 
 # ---------------------------------------------------------------------------
 # Date parsing
@@ -378,7 +384,7 @@ Examples:
     if args.output:
         out = {k: v for k, v in result.items() if k != "error"}
         with open(args.output, "w") as f:
-            json.dump(out, f, indent=2)
+            json.dump(toolkit_io.envelope(out, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

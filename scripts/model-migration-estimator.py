@@ -30,122 +30,61 @@ import json
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared pricing table — see scripts/model_pricing.py
+import model_pricing
+
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "model-migration-estimator"
+
 
 # ---------------------------------------------------------------------------
-# Model catalog — USD per 1M tokens (input, output), avg latency ms/1K tokens
-# Verify at provider pricing pages. Latencies are rough estimates for planning.
+# Model catalog — latency and context window per model. Prices are NOT stored
+# here: they come from scripts/model_pricing.py so this script can never drift
+# from the other cost scripts (it used to, on mistral-large).
+# Latencies are rough planning estimates, not measurements.
 # ---------------------------------------------------------------------------
+
+# name -> (latency_ms_per_1k_tokens, context_window)
+_MODEL_META: Dict[str, Tuple[int, int]] = {
+    "claude-fable-5": (70, 1_000_000),
+    "claude-opus-5": (55, 1_000_000),
+    "claude-opus-4-8": (55, 1_000_000),
+    "claude-opus-4-7": (55, 1_000_000),
+    "claude-opus-4-6": (55, 1_000_000),
+    "claude-sonnet-5": (30, 1_000_000),
+    "claude-sonnet-4-6": (30, 1_000_000),
+    "claude-haiku-4-5": (12, 200_000),
+    "gpt-4o": (30, 128_000),
+    "gpt-4o-mini": (12, 128_000),
+    "gpt-4-turbo": (50, 128_000),
+    "bedrock.amazon-titan-text-express": (20, 8_192),
+    "bedrock.mistral-large": (35, 32_768),
+    "gemini-1.5-pro": (30, 2_000_000),
+    "gemini-1.5-flash": (10, 1_000_000),
+}
+
+_PROVIDER_LABEL = {
+    "anthropic": "Anthropic",
+    "openai": "OpenAI",
+    "google": "Google",
+    "bedrock": "AWS Bedrock",
+}
 
 MODEL_CATALOG: Dict[str, Dict[str, Any]] = {
-    # Anthropic
-    "claude-3-opus": {
-        "provider": "Anthropic",
-        "input_per_m": 15.00,
-        "output_per_m": 75.00,
-        "latency_ms_per_1k": 60,
-        "context_window": 200000,
-    },
-    "claude-3-5-sonnet": {
-        "provider": "Anthropic",
-        "input_per_m": 3.00,
-        "output_per_m": 15.00,
-        "latency_ms_per_1k": 35,
-        "context_window": 200000,
-    },
-    "claude-3-5-haiku": {
-        "provider": "Anthropic",
-        "input_per_m": 0.80,
-        "output_per_m": 4.00,
-        "latency_ms_per_1k": 15,
-        "context_window": 200000,
-    },
-    "claude-3-haiku": {
-        "provider": "Anthropic",
-        "input_per_m": 0.25,
-        "output_per_m": 1.25,
-        "latency_ms_per_1k": 12,
-        "context_window": 200000,
-    },
-    # OpenAI
-    "gpt-4o": {
-        "provider": "OpenAI",
-        "input_per_m": 2.50,
-        "output_per_m": 10.00,
-        "latency_ms_per_1k": 30,
-        "context_window": 128000,
-    },
-    "gpt-4o-mini": {
-        "provider": "OpenAI",
-        "input_per_m": 0.15,
-        "output_per_m": 0.60,
-        "latency_ms_per_1k": 12,
-        "context_window": 128000,
-    },
-    "gpt-4-turbo": {
-        "provider": "OpenAI",
-        "input_per_m": 10.00,
-        "output_per_m": 30.00,
-        "latency_ms_per_1k": 40,
-        "context_window": 128000,
-    },
-    "gpt-4": {
-        "provider": "OpenAI",
-        "input_per_m": 30.00,
-        "output_per_m": 60.00,
-        "latency_ms_per_1k": 50,
-        "context_window": 8192,
-    },
-    "gpt-3.5-turbo": {
-        "provider": "OpenAI",
-        "input_per_m": 0.50,
-        "output_per_m": 1.50,
-        "latency_ms_per_1k": 10,
-        "context_window": 16385,
-    },
-    # AWS Bedrock
-    "bedrock.claude-3-5-sonnet": {
-        "provider": "AWS Bedrock",
-        "input_per_m": 3.00,
-        "output_per_m": 15.00,
-        "latency_ms_per_1k": 40,
-        "context_window": 200000,
-    },
-    "bedrock.claude-3-haiku": {
-        "provider": "AWS Bedrock",
-        "input_per_m": 0.25,
-        "output_per_m": 1.25,
-        "latency_ms_per_1k": 15,
-        "context_window": 200000,
-    },
-    "bedrock.titan-text-express": {
-        "provider": "AWS Bedrock",
-        "input_per_m": 0.80,
-        "output_per_m": 3.20,
-        "latency_ms_per_1k": 20,
-        "context_window": 8192,
-    },
-    "bedrock.mistral-large": {
-        "provider": "AWS Bedrock",
-        "input_per_m": 4.00,
-        "output_per_m": 12.00,
-        "latency_ms_per_1k": 35,
-        "context_window": 32768,
-    },
-    # Google
-    "gemini-1.5-pro": {
-        "provider": "Google",
-        "input_per_m": 1.25,
-        "output_per_m": 5.00,
-        "latency_ms_per_1k": 30,
-        "context_window": 2000000,
-    },
-    "gemini-1.5-flash": {
-        "provider": "Google",
-        "input_per_m": 0.075,
-        "output_per_m": 0.30,
-        "latency_ms_per_1k": 10,
-        "context_window": 1000000,
-    },
+    name: {
+        "provider": _PROVIDER_LABEL.get(
+            model_pricing.PRICING[name].provider, model_pricing.PRICING[name].provider
+        ),
+        "input_per_m": model_pricing.PRICING[name].input_per_mtok,
+        "output_per_m": model_pricing.PRICING[name].output_per_mtok,
+        "latency_ms_per_1k": latency,
+        "context_window": ctx,
+    }
+    for name, (latency, ctx) in _MODEL_META.items()
+    if name in model_pricing.PRICING
 }
 
 
@@ -608,7 +547,7 @@ Examples:
         if pb is not None:
             report["payback_months"] = round(pb, 1)
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2)
         print(f"\n📁 Report saved to {args.output}")
 
     return 0

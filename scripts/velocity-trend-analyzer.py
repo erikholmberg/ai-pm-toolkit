@@ -24,9 +24,19 @@ Requirements:
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import math
 import sys
 from typing import Dict, List, Optional, Tuple
+
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "velocity-trend-analyzer"
 
 
 def load_from_csv(
@@ -37,7 +47,7 @@ def load_from_csv(
     """Load (sprint_id, points) pairs from CSV. Returns list ordered by row."""
     rows: List[Tuple[Optional[str], float]] = []
     with open(path, newline="") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         for row in reader:
             try:
                 pts = float(row[points_column])
@@ -295,7 +305,7 @@ def main():
     if args.output:
         import json
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2)
         print(f"Report saved to {args.output}")
 
     return 0

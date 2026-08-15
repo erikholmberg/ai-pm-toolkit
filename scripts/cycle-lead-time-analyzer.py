@@ -34,6 +34,12 @@ from collections import defaultdict
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "cycle-lead-time-analyzer"
+
 
 def parse_date(s: str) -> Optional[datetime]:
     """Parse date string. Tries dateutil first, then ISO and common formats."""
@@ -352,7 +358,7 @@ def main():
             "tickets": tickets_out,
         }
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2)
         print(f"Report saved to {args.output}")
 
     return 0

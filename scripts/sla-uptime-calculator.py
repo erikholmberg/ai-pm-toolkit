@@ -25,6 +25,10 @@ Requirements:
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import sys
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional, Tuple
@@ -39,7 +43,7 @@ def parse_incidents_csv(path: str) -> List[Dict]:
     """Load incidents from CSV. Returns list of {date, duration_minutes, description}."""
     incidents: List[Dict] = []
     with open(path, newline="") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         for row in reader:
             duration = float(row.get("duration_minutes", 0))
             date_str = row.get("date", "")

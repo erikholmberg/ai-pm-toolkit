@@ -74,6 +74,12 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "space-team-health"
+
 
 # ---------------------------------------------------------------------------
 # SPACE dimensions and focus suggestions (from framework)
@@ -603,9 +609,9 @@ Examples:
     if args.output:
         with open(args.output, "w") as f:
             if len(cards) == 1:
-                json.dump(cards[0], f, indent=2)
+                json.dump(toolkit_io.envelope(cards[0], TOOL), f, indent=2)
             else:
-                json.dump({"scorecards": cards}, f, indent=2)
+                json.dump(toolkit_io.envelope({"scorecards": cards}, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

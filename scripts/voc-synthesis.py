@@ -8,6 +8,10 @@ and ranks opportunities by weighted severity-frequency score.
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import json
 import re
 from collections import Counter, defaultdict
@@ -39,7 +43,7 @@ def jaccard(a: set[str], b: set[str]) -> float:
 
 def load_rows(path: str) -> List[Dict[str, str]]:
     with open(path, newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+        return list(csv_columns.DictReader(f))
 
 
 def main() -> int:

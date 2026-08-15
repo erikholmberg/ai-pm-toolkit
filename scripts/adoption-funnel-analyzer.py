@@ -30,6 +30,10 @@ Requirements:
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import math
 import sys
 from typing import Dict, List, Optional, Tuple
@@ -50,7 +54,7 @@ def load_csv_single(path: str) -> List[Tuple[str, int]]:
     """Load step,count CSV."""
     steps: List[Tuple[str, int]] = []
     with open(path, newline="") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         for row in reader:
             name = row.get("step", "").strip()
             count = int(row.get("count", 0))
@@ -63,7 +67,7 @@ def load_csv_compare(path: str) -> Tuple[List[Tuple[str, int]], List[Tuple[str, 
     a: List[Tuple[str, int]] = []
     b: List[Tuple[str, int]] = []
     with open(path, newline="") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         for row in reader:
             name = row.get("step", "").strip()
             a.append((name, int(row.get("period_a", 0))))
@@ -254,7 +258,7 @@ def main():
         try:
             # Detect format by reading header
             with open(args.csv, newline="") as f:
-                reader = csv.DictReader(f)
+                reader = csv_columns.DictReader(f)
                 if reader.fieldnames and "period_a" in reader.fieldnames:
                     steps_a, steps_b = load_csv_compare(args.csv)
                 else:

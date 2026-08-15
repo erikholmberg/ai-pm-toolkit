@@ -52,6 +52,12 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "throughput-wip-analyzer"
+
 
 # ---------------------------------------------------------------------------
 # Date parsing
@@ -364,7 +370,7 @@ Examples:
 
     if args.output:
         with open(args.output, "w") as f:
-            json.dump(result, f, indent=2)
+            json.dump(toolkit_io.envelope(result, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

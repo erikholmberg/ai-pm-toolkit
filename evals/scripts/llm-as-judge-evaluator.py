@@ -68,11 +68,11 @@ class EvaluationResult:
     expected_output: Optional[str]
     scores: Dict[str, float]  # Dimension -> score
     reasoning: Dict[str, str]  # Dimension -> explanation
-    overall_score: Optional[float] = None
     judge_model: str
     timestamp: str
     latency_ms: float
     tokens_used: int
+    overall_score: Optional[float] = None
 
 
 class LLMJudge:

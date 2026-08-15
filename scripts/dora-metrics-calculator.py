@@ -60,6 +60,12 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "dora-metrics-calculator"
+
 
 # ---------------------------------------------------------------------------
 # Date parsing (matches cycle-lead-time-analyzer pattern)
@@ -726,7 +732,7 @@ Examples:
             "mttr": mttr_data,
         }
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2, default=str)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2, default=str)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

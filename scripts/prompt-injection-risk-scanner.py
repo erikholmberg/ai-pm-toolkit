@@ -34,6 +34,12 @@ import re
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "prompt-injection-risk-scanner"
+
 
 # ---------------------------------------------------------------------------
 # Heuristic checks
@@ -383,10 +389,10 @@ Examples:
 
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
-            json.dump({
+            json.dump(toolkit_io.envelope({
                 "disclaimer": "Heuristic linter only, not a substitute for real adversarial testing.",
                 "results": results,
-            }, f, indent=2)
+            }, TOOL), f, indent=2)
         print(f"\n📁 Report saved to {args.output}")
 
     return 0

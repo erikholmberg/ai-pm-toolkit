@@ -74,6 +74,12 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Optional, Set, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "dependency-risk-mapper"
+
 
 # ---------------------------------------------------------------------------
 # Dependency model
@@ -606,7 +612,7 @@ Examples:
             "analysis": analysis,
         }
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2, default=str)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2, default=str)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

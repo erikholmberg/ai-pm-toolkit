@@ -7,6 +7,10 @@ Runs simple scenario simulations under capacity and dependency risk.
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import json
 import random
 from dataclasses import dataclass
@@ -25,7 +29,7 @@ class Initiative:
 def load_initiatives(path: str) -> List[Initiative]:
     rows: List[Initiative] = []
     with open(path, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         for row in reader:
             rows.append(
                 Initiative(

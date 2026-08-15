@@ -35,6 +35,12 @@ import sys
 from collections import defaultdict
 from typing import Any, Dict, List, Optional
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "audit-checklist-summary"
+
 
 def _col(fieldnames: List[str], *aliases: str) -> Optional[str]:
     lower_map = {f.lower().strip(): f for f in fieldnames}
@@ -207,7 +213,7 @@ def main() -> int:
 
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
-            json.dump(to_json_result(result), f, indent=2)
+            json.dump(toolkit_io.envelope(to_json_result(result), TOOL), f, indent=2)
         print(f"Wrote JSON to {args.output}")
 
     return 0

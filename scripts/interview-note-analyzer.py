@@ -40,6 +40,10 @@ Requirements:
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import json
 import os
 import re
@@ -47,6 +51,12 @@ import string
 import sys
 from collections import Counter, defaultdict
 from typing import Any, Dict, List, Optional, Tuple
+
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "interview-note-analyzer"
 
 
 # ---------------------------------------------------------------------------
@@ -320,7 +330,7 @@ def load_csv(path: str) -> List[Dict[str, str]]:
     """Load interviews from CSV."""
     interviews: List[Dict[str, str]] = []
     with open(path, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         fields = reader.fieldnames or []
         lower_map = {fl.lower().strip(): fl for fl in fields}
 
@@ -588,7 +598,7 @@ Examples:
             "per_interview": results,
         }
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2, default=str)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2, default=str)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

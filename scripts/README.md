@@ -13,6 +13,34 @@ Goal-based routing (scripts + prompts + MCP): [docs/tool-picker.md](../docs/tool
 
 ---
 
+## Shared modules
+
+Three modules underpin the rest. They are imported by the scripts, not run directly (though each has a CLI for inspection).
+
+| Module | What it does | Why it exists |
+|--------|--------------|---------------|
+| [model_pricing.py](model_pricing.py) | Single source of truth for per-token LLM pricing, with a `last_verified` date and `source` per model. | Four scripts used to carry overlapping price tables that **disagreed with each other**. Stale or never-verified prices now warn loudly instead of producing a confident wrong number. |
+| [csv_columns.py](csv_columns.py) | `DictReader` that matches headers case- and punctuation-insensitively, so `Duration (Minutes)` answers to `duration_minutes`. | A real export whose headers didn't match exactly used to hit the `.get(col, 0)` default path and return **0 silently**. |
+| [toolkit_io.py](toolkit_io.py) | Shared result envelope for every `--output` JSON: tool name, timestamp, schema version, and the payload. `load()` reads enveloped or legacy bare output. | 80+ scripts each emitted a bespoke blob and none could read another's, so "chaining" meant a human retyping numbers. |
+
+```bash
+# What pricing is stale or unverified? (exits 1 if anything needs attention)
+python scripts/model_pricing.py --check
+
+# Price a request, including cache and batch rates
+python scripts/model_pricing.py --cost claude-opus-5 --input-tokens 1e6 --output-tokens 5e5
+
+# Where did this number come from?
+python scripts/toolkit_io.py results.json
+```
+
+**Pricing is verified, not guessed.** Anthropic model prices were checked against the
+published rates; Bedrock, OpenAI, and Google entries are carried over from the original
+tables and are marked `UNVERIFIED` until someone checks them against the vendor's page.
+Any comparison that includes an unverified model says so in its output.
+
+---
+
 ## Common questions
 
 | Question | Script |
@@ -127,10 +155,18 @@ Goal-based routing (scripts + prompts + MCP): [docs/tool-picker.md](../docs/tool
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [launch-readiness-score.py](launch-readiness-score.py) | Go/no-go score from checklist | samples/sample-launch-readiness.csv |
-| [launch-checklist.py](launch-checklist.py) | Launch checklist workflow | — |
+| [launch-checklist.py](launch-checklist.py) | Launch checklist workflow; `--csv` emits the format the scorer reads | — |
 | [release-gate-scorer.py](release-gate-scorer.py) | Weighted evidence-based release gate decision | — |
 | [feature-rollout-calculator.py](feature-rollout-calculator.py) | Phased rollout sample size and duration | — |
 | [feature-flag-planner.py](feature-flag-planner.py) | Feature flag stages and gates | — |
+
+These two now compose. Generate the checklist, fill in `done` as the team works, then score the same file:
+
+```bash
+python scripts/launch-checklist.py --name "Agent Copilot" --type backend --csv gate.csv
+# ...team fills in the `done` column...
+python scripts/launch-readiness-score.py --csv gate.csv --per-area
+```
 
 ### Evals & quality
 | Script | Description | Sample CSV |

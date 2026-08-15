@@ -60,6 +60,12 @@ import math
 import sys
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "feature-adoption-scorecard"
+
 
 # ---------------------------------------------------------------------------
 # Adoption scoring
@@ -511,7 +517,7 @@ Examples:
     # JSON output
     if args.output:
         with open(args.output, "w") as f:
-            json.dump({"features": scored}, f, indent=2)
+            json.dump(toolkit_io.envelope({"features": scored}, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

@@ -51,6 +51,12 @@ import sys
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "delivery-completion-forecaster"
+
 
 # ---------------------------------------------------------------------------
 # Percentile and forecast
@@ -379,7 +385,7 @@ Examples:
 
     if args.output and not result.get("error"):
         with open(args.output, "w") as f:
-            json.dump(result, f, indent=2)
+            json.dump(toolkit_io.envelope(result, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0 if not result.get("error") else 1

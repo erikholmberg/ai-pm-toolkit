@@ -57,6 +57,12 @@ import sys
 from collections import defaultdict
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "tech-debt-scorer"
+
 
 # ---------------------------------------------------------------------------
 # Scoring
@@ -402,7 +408,7 @@ Inline item format: "Title:impact:cost:risk" (each 1-5)
             "items": [{k: v for k, v in i.items() if k not in ("tier_emoji",)} for i in ranked],
         }
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

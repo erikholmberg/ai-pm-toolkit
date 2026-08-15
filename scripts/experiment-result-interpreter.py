@@ -34,6 +34,12 @@ import math
 import sys
 from typing import Any, Dict, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "experiment-result-interpreter"
+
 
 # ---------------------------------------------------------------------------
 # Normal distribution (stdlib-only)
@@ -360,7 +366,7 @@ def main() -> int:
     if args.output:
         out = {k: v for k, v in result.items() if k != "verdict" or True}
         with open(args.output, "w", encoding="utf-8") as f:
-            json.dump(out, f, indent=2)
+            json.dump(toolkit_io.envelope(out, TOOL), f, indent=2)
         print(f"Wrote JSON to {args.output}")
 
     return 0

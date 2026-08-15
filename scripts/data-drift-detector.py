@@ -23,6 +23,10 @@ Requirements:
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import math
 import sys
 from typing import Dict, List, Optional, Tuple
@@ -32,7 +36,7 @@ def read_csv_columns(path: str, columns: Optional[List[str]] = None) -> Dict[str
     """Read numeric columns from CSV. If columns is None, read all numeric columns."""
     data: Dict[str, List[float]] = {}
     with open(path, newline="") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         if reader.fieldnames is None:
             return data
         target_cols = columns if columns else list(reader.fieldnames)

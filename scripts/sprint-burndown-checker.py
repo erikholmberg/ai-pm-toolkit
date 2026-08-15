@@ -39,6 +39,12 @@ import sys
 from datetime import datetime, timedelta
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "sprint-burndown-checker"
+
 
 # ---------------------------------------------------------------------------
 # Date parsing
@@ -328,7 +334,7 @@ def main() -> int:
 
     if args.output:
         with open(args.output, "w", encoding="utf-8") as f:
-            json.dump(to_json_result(result), f, indent=2)
+            json.dump(toolkit_io.envelope(to_json_result(result), TOOL), f, indent=2)
         print(f"Wrote JSON to {args.output}")
 
     return 0

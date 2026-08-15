@@ -7,6 +7,10 @@ Builds requirement-to-delivery links between PRD sections and execution artifact
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import json
 from collections import defaultdict
 from pathlib import Path
@@ -15,7 +19,7 @@ from typing import Any, Dict, List
 
 def load_csv(path: str) -> List[Dict[str, str]]:
     with open(path, newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+        return list(csv_columns.DictReader(f))
 
 
 def build_links(rows: List[Dict[str, str]]) -> Dict[str, Any]:

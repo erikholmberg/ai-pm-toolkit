@@ -16,59 +16,24 @@ import argparse
 import sys
 from typing import Dict, Tuple
 
-# USD per 1M tokens (input, output) — On-Demand, US East (N. Virginia) where applicable
-# Source: https://aws.amazon.com/bedrock/pricing/ (verify for your region)
-BEDROCK_PRICING: Dict[str, Tuple[float, float]] = {
-    # Anthropic
-    "anthropic.claude-3-5-sonnet-v2": (3.00, 15.00),
-    "anthropic.claude-3-5-sonnet": (3.00, 15.00),
-    "anthropic.claude-3-sonnet": (3.00, 15.00),
-    "anthropic.claude-3-haiku": (0.25, 1.25),
-    "anthropic.claude-3-opus": (15.00, 75.00),
-    "claude-3-5-sonnet": (3.00, 15.00),
-    "claude-3-sonnet": (3.00, 15.00),
-    "claude-3-haiku": (0.25, 1.25),
-    "claude-3-opus": (15.00, 75.00),
-    "claude": (3.00, 15.00),
-    # Amazon
-    "amazon.titan-text-express": (0.80, 3.20),
-    "amazon.titan-text-lite": (0.30, 0.40),
-    "titan-text-express": (0.80, 3.20),
-    "titan-text-lite": (0.30, 0.40),
-    "titan": (0.80, 3.20),
-    # Meta Llama (examples)
-    "meta.llama3-2-1b": (0.10, 0.10),
-    "meta.llama3-2-3b": (0.12, 0.12),
-    "meta.llama3-2-70b": (0.99, 0.99),
-    "meta.llama2-13b": (0.75, 1.00),
-    "meta.llama2-70b": (1.95, 2.56),
-    "llama3": (0.12, 0.12),
-    "llama2": (0.75, 1.00),
-    # Mistral
-    "mistral.mistral-large-3": (0.50, 1.50),
-    "mistral.ministral-8b": (0.15, 0.15),
-    "mistral.magistral-small": (0.50, 1.50),
-    "mistral-large": (0.50, 1.50),
-    "mistral": (0.50, 1.50),
-    # Cohere (example)
-    "cohere.command-r-plus": (1.50, 2.00),
-    "cohere.command": (1.50, 2.00),
-    "cohere": (1.50, 2.00),
-}
+# Pricing lives in scripts/model_pricing.py so every cost script agrees on one
+# table. Bedrock is partner-operated with its own regional rates — entries there
+# are prefixed `bedrock.`. Run `python model_pricing.py --check` to see what
+# needs re-verifying.
+import model_pricing
 
 
 def get_pricing(model: str) -> Tuple[float, float]:
-    """Return (input $/1M, output $/1M). Match by model ID or substring."""
-    model_lower = model.lower().strip()
-    # Exact match first
-    if model_lower in BEDROCK_PRICING:
-        return BEDROCK_PRICING[model_lower]
-    # Substring match
-    for key, val in BEDROCK_PRICING.items():
-        if key in model_lower or model_lower in key:
-            return val
-    # Default to Claude 3.5 Sonnet
-    return (3.00, 15.00)
+    """Return (input $/1M, output $/1M) from the shared table."""
+    try:
+        p = model_pricing.lookup(model)
+    except model_pricing.UnknownModelError as e:
+        print(f"Warning: {e}", file=sys.stderr)
+        print("Falling back to claude-sonnet-5 pricing.", file=sys.stderr)
+        p = model_pricing.lookup("claude-sonnet-5")
+    else:
+        model_pricing.warn_if_stale(model)
+    return p.input_per_mtok, p.output_per_mtok
 
 
 def estimate_cost(input_tokens: int, output_tokens: int, model: str) -> Tuple[float, float, float]:
@@ -91,15 +56,25 @@ def main():
     args = parser.parse_args()
 
     if args.list_models:
-        print("Bedrock models (USD per 1M tokens, input / output). On-demand, US East (N. Virginia):")
-        seen = set()
-        for name in sorted(BEDROCK_PRICING.keys()):
-            if name in seen:
+        print("Models (USD per 1M tokens, input / output).")
+        print("Bedrock rates are on-demand, US East (N. Virginia).\n")
+        for provider in ("bedrock", "anthropic"):
+            names = model_pricing.list_models(provider)
+            if not names:
                 continue
-            p = BEDROCK_PRICING[name]
-            print(f"  {name}: ${p[0]:.2f} / ${p[1]:.2f}")
-            seen.add(name)
-        print("\nPricing: https://aws.amazon.com/bedrock/pricing/")
+            label = "Bedrock (partner-operated)" if provider == "bedrock" \
+                else "Anthropic first-party API"
+            print(f"{label}:")
+            for name in names:
+                p = model_pricing.PRICING[name]
+                verified = f"verified {p.last_verified}" if p.last_verified else "UNVERIFIED"
+                print(
+                    f"  {name}: ${p.input_per_mtok:.2f} / ${p.output_per_mtok:.2f}"
+                    f"  ({verified})"
+                )
+            print()
+        model_pricing.warn_if_stale()
+        print("Pricing: https://aws.amazon.com/bedrock/pricing/")
         return 0
 
     if args.input_tokens <= 0 and args.output_tokens <= 0:

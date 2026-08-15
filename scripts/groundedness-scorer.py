@@ -49,6 +49,12 @@ import sys
 from collections import Counter
 from typing import Any, Dict, List, Optional, Tuple
 
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "groundedness-scorer"
+
 
 # ---------------------------------------------------------------------------
 # Optional imports
@@ -693,11 +699,11 @@ Examples:
     # JSON output
     if args.output:
         with open(args.output, "w") as f:
-            json.dump({
+            json.dump(toolkit_io.envelope({
                 "method": args.method,
                 "n_pairs": len(results),
                 "results": results,
-            }, f, indent=2)
+            }, TOOL), f, indent=2)
         print(f"\n📁 Results saved to {args.output}")
 
     return 0

@@ -35,10 +35,20 @@ Requirements:
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import json
 import math
 import sys
 from typing import Any, Dict, List, Optional, Tuple
+
+# Shared result envelope (provenance + machine-readable chaining).
+# See scripts/toolkit_io.py.
+import toolkit_io
+
+TOOL = "ltv-cac-calculator"
 
 
 # ---------------------------------------------------------------------------
@@ -246,7 +256,7 @@ def load_cohort_csv(path: str) -> Dict[str, List[float]]:
     """Load cohort revenue data from CSV. Returns {cohort_name: [monthly_revenues]}."""
     cohorts: Dict[str, List[float]] = {}
     with open(path, newline="", encoding="utf-8") as f:
-        reader = csv.DictReader(f)
+        reader = csv_columns.DictReader(f)
         fields = reader.fieldnames or []
         # First column is cohort name, rest are month_0, month_1, ...
         cohort_col = fields[0]
@@ -502,7 +512,7 @@ Examples:
         if cohort_results:
             report["cohort_analysis"] = cohort_results
         with open(args.output, "w") as f:
-            json.dump(report, f, indent=2)
+            json.dump(toolkit_io.envelope(report, TOOL), f, indent=2)
         print(f"\n📁 Report saved to {args.output}")
 
     return 0

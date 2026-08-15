@@ -7,6 +7,10 @@ Scores go/no-go readiness based on weighted evidence categories.
 
 import argparse
 import csv
+
+# Shared header matching — tolerates real-world column spellings
+# ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
+import csv_columns
 import json
 from pathlib import Path
 from typing import Dict, List
@@ -14,7 +18,7 @@ from typing import Dict, List
 
 def load_rows(path: str) -> List[Dict[str, str]]:
     with open(path, newline="", encoding="utf-8") as f:
-        return list(csv.DictReader(f))
+        return list(csv_columns.DictReader(f))
 
 
 def main() -> int:
