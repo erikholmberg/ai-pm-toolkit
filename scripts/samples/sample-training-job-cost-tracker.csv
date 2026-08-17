@@ -1,0 +1,13 @@
+job,model,team,gpu_type,gpu_count,hours,status,date
+ft-run-0140,support-classifier-v3,platform-ml,A100-80GB,8,14.5,success,2026-08-01
+ft-run-0141,support-classifier-v3,platform-ml,A100-80GB,8,3.0,failed,2026-08-02
+ft-run-0142,support-classifier-v3,platform-ml,A100-80GB,8,15.0,success,2026-08-03
+pretrain-x-0007,internal-embed-v2,search-ml,H100-80GB,32,40.0,success,2026-08-03
+pretrain-x-0008,internal-embed-v2,search-ml,H100-80GB,32,6.5,failed,2026-08-04
+sweep-lr-0031,support-classifier-v3,platform-ml,A10G,4,2.0,success,2026-08-04
+sweep-lr-0032,support-classifier-v3,platform-ml,A10G,4,2.0,success,2026-08-04
+sweep-lr-0033,support-classifier-v3,platform-ml,A10G,4,1.5,canceled,2026-08-04
+distill-small-0004,edge-router-v1,platform-ml,L4,2,8.0,success,2026-08-05
+distill-small-0005,edge-router-v1,platform-ml,L4,2,8.0,success,2026-08-06
+pretrain-x-0009,internal-embed-v2,search-ml,H100-80GB,32,41.0,success,2026-08-06
+ft-run-0143,support-classifier-v3,platform-ml,A100-80GB,8,0.5,failed,2026-08-07

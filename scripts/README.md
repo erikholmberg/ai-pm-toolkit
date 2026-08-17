@@ -76,6 +76,7 @@ Scripts with no sample data listed in this README are only `--help`-checked (rep
 | Can we trust an LLM-as-judge, and is our guardrail catching real violations? | [llm-judge-calibration-checker.py](llm-judge-calibration-checker.py), [guardrail-effectiveness-analyzer.py](guardrail-effectiveness-analyzer.py) |
 | Are we red-team-tested enough to launch, and is this prompt injection-risky? | [red-team-coverage-tracker.py](red-team-coverage-tracker.py), [prompt-injection-risk-scanner.py](prompt-injection-risk-scanner.py) |
 | Which models in our portfolio are about to be deprecated? | [model-deprecation-watch.py](model-deprecation-watch.py), [model-migration-estimator.py](model-migration-estimator.py) |
+| What is training/fine-tuning actually costing us, and how much is wasted on failed runs? | [training-job-cost-tracker.py](training-job-cost-tracker.py) |
 
 ---
 
@@ -255,6 +256,7 @@ python scripts/launch-readiness-score.py --csv gate.csv --per-area
 | [model-migration-estimator.py](model-migration-estimator.py) | Estimate effort/cost for model migration | — |
 | [model-deprecation-watch.py](model-deprecation-watch.py) | Track model sunset dates across your portfolio; prioritized migration queue by urgency × traffic × criticality | samples/sample-model-portfolio.csv |
 | [pipeline-health-monitor.py](pipeline-health-monitor.py) | ML pipeline health checks | samples/sample-pipeline-health-monitor.csv |
+| [training-job-cost-tracker.py](training-job-cost-tracker.py) | Training/fine-tuning job spend, wasted spend on failed runs, by GPU type and model/team | samples/sample-training-job-cost-tracker.csv |
 | [tech-debt-scorer.py](tech-debt-scorer.py) | Tech debt scoring | samples/sample-tech-debt-scorer.csv |
 | [metric-forecaster.py](metric-forecaster.py) | Simple metric forecasting | samples/sample-metric-forecaster.csv |
 
@@ -306,3 +308,4 @@ Useful when you know the topic but not the filename:
 | `reasoning-tokens`, `extended-thinking`, `context-window`, `compaction` | reasoning-token-budget-calculator.py, context-window-utilization-analyzer.py |
 | `judge`, `calibration`, `guardrail`, `red-team`, `injection`, `jailbreak` | llm-judge-calibration-checker.py, guardrail-effectiveness-analyzer.py, red-team-coverage-tracker.py, prompt-injection-risk-scanner.py |
 | `deprecation`, `sunset`, `model-portfolio` | model-deprecation-watch.py, model-migration-estimator.py |
+| `training-cost`, `gpu-hours`, `fine-tuning`, `wasted-spend` | training-job-cost-tracker.py |
