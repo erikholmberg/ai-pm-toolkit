@@ -75,6 +75,7 @@ Scripts with no sample data listed in this README are only `--help`-checked (rep
 | Is our AI agent actually succeeding at tasks, and which tools are flaky? | [agent-task-success-tracker.py](agent-task-success-tracker.py), [tool-use-reliability-scorer.py](tool-use-reliability-scorer.py) |
 | Can we trust an LLM-as-judge, and is our guardrail catching real violations? | [llm-judge-calibration-checker.py](llm-judge-calibration-checker.py), [guardrail-effectiveness-analyzer.py](guardrail-effectiveness-analyzer.py) |
 | Are we red-team-tested enough to launch, and is this prompt injection-risky? | [red-team-coverage-tracker.py](red-team-coverage-tracker.py), [prompt-injection-risk-scanner.py](prompt-injection-risk-scanner.py) |
+| Is our model's outcome disparate across demographic groups? | [bias-fairness-scorecard.py](bias-fairness-scorecard.py) |
 | Which models in our portfolio are about to be deprecated? | [model-deprecation-watch.py](model-deprecation-watch.py), [model-migration-estimator.py](model-migration-estimator.py) |
 | What is training/fine-tuning actually costing us, and how much is wasted on failed runs? | [training-job-cost-tracker.py](training-job-cost-tracker.py) |
 
@@ -214,6 +215,7 @@ python scripts/launch-readiness-score.py --csv gate.csv --per-area
 | [prompt-injection-risk-scanner.py](prompt-injection-risk-scanner.py) | Heuristic first-pass linter for prompt-injection risk patterns in system prompts/instructions | samples/sample-system-prompt-risky.txt |
 | [guardrail-effectiveness-analyzer.py](guardrail-effectiveness-analyzer.py) | Precision/recall/confusion matrix for a safety guardrail vs labeled actual violations, by category | samples/sample-guardrail-labels.csv |
 | [red-team-coverage-tracker.py](red-team-coverage-tracker.py) | Adversarial test coverage against a risk-category taxonomy (jailbreak, PII, bias, etc.); go/no-go per category | samples/sample-redteam-results.csv |
+| [bias-fairness-scorecard.py](bias-fairness-scorecard.py) | Group-fairness metrics from labeled predictions: selection-rate disparity (four-fifths rule), TPR/FPR gaps (equal opportunity/equalized odds) | samples/sample-bias-fairness-scorecard.csv |
 
 ### Strategy & prioritization
 | Script | Description | Sample CSV |
@@ -309,3 +311,4 @@ Useful when you know the topic but not the filename:
 | `judge`, `calibration`, `guardrail`, `red-team`, `injection`, `jailbreak` | llm-judge-calibration-checker.py, guardrail-effectiveness-analyzer.py, red-team-coverage-tracker.py, prompt-injection-risk-scanner.py |
 | `deprecation`, `sunset`, `model-portfolio` | model-deprecation-watch.py, model-migration-estimator.py |
 | `training-cost`, `gpu-hours`, `fine-tuning`, `wasted-spend` | training-job-cost-tracker.py |
+| `bias`, `fairness`, `disparate-impact`, `equal-opportunity`, `demographic-parity` | bias-fairness-scorecard.py |
