@@ -59,6 +59,40 @@ Only `id` and `created` are required — the intersection every consumer needs. 
 
 Run `fetch.py --describe issues` for the full alias list per column.
 
+### `llm_usage`
+
+One row per (date, model, feature). Feeds 1 script: `llm-usage-summary`.
+
+| column | kind | required | notes |
+|---|---|---|---|
+| `date` | date | yes | daily grain |
+| `model` | text | yes | as billed |
+| `feature` | text | | product surface, tag, or team |
+| `provider` | text | | anthropic, openai, bedrock… |
+| `requests` | number | | |
+| `input_tokens` | number | | alias: `prompt_tokens` |
+| `output_tokens` | number | | alias: `completion_tokens` |
+| `cached_input_tokens` | number | | matches `model_pricing.cost()` |
+| `cache_write_tokens` | number | | matches `model_pricing.cost()` |
+| `reasoning_tokens` | number | | where the provider reports it |
+| `cost_usd` | number | | what the provider billed |
+
+**This contract was designed, not derived** — and that's a real difference from `issues`.
+Nothing in `scripts/` read a usage table: the cost tools are estimators that take scalar
+assumptions (`--input-tokens`, `--requests-per-month`) and project forward. So there were
+no `_col()` alias lists to intersect, and no consumer for the self-test to check against.
+
+Two things keep it grounded rather than invented. `cached_input_tokens` and
+`cache_write_tokens` are the parameter names
+[`model_pricing.cost()`](../scripts/model_pricing.py) already takes, so a row prices
+itself by passing straight through. And `input_tokens` / `output_tokens` / `requests`
+match the estimator flags, so [`llm-usage-summary.py`](../scripts/llm-usage-summary.py)
+can print measured values you paste directly into them.
+
+A blank numeric cell means the provider never reported that field; `0` means it reported
+zero. Connectors must preserve that distinction — collapsing them makes a gateway with no
+cache breakdown look like one with a 0% hit rate.
+
 > Not this contract: `sprint-velocity-tracker`, `commitment-predictability-index`, and `sprint-burndown-checker` read *sprint-level aggregates*, and `status-duration-analyzer` reads a *transition log*. Those are separate shapes and get their own contracts when a connector needs them.
 
 ## Sources
@@ -67,6 +101,7 @@ Run `fetch.py --describe issues` for the full alias list per column.
 |---|---|---|
 | `csvfile` | `issues` | none |
 | `jira` | `issues` | `JIRA_HOST`, `JIRA_EMAIL`, `JIRA_API_TOKEN` |
+| `gateway` | `llm_usage` | per provider — see below |
 
 ### `csvfile`
 
@@ -126,6 +161,37 @@ saying how many.
 Endpoint note: Jira Cloud retired `/rest/api/3/search` for `/rest/api/3/search/jql` with
 token pagination; Data Center still serves the old one with `startAt`. The connector
 tries the new endpoint and falls back on 404/410, so both deployments work.
+
+### `gateway`
+
+Real LLM spend, per day, per model, per feature.
+
+```bash
+# LiteLLM proxy
+export LITELLM_BASE_URL=https://llm.internal.company.com LITELLM_API_KEY=sk-...
+python fetch.py gateway llm_usage --provider litellm --days 30 --out usage.csv
+
+# OpenRouter
+export OPENROUTER_API_KEY=sk-or-...
+python fetch.py gateway llm_usage --provider openrouter --days 30 --out usage.csv
+
+# A JSON or CSV export you already have — no network, no key
+python fetch.py gateway llm_usage --provider file --input export.json --out usage.csv
+
+python ../scripts/llm-usage-summary.py --csv usage.csv
+```
+
+**`file` is the provider that always works**, and it is the one to reach for first. The
+two API providers are written against documented endpoints, but gateway response shapes
+drift between releases and neither has been run against a live instance. The mapping
+layer is built for that: every field resolves through a list of alternative names, the
+record list is found by probing several envelope keys rather than assuming one, unknown
+keys are ignored, and `--raw PATH` dumps the untouched response so a mismatch is a
+five-minute fix in `FIELD_ALIASES` rather than a rewrite.
+
+Gateways return per-request logs; the contract wants daily rows. The connector rolls up
+to one row per (date, model, feature) before writing — a month of traffic becomes a few
+hundred rows, not millions. `--no-rollup` keeps one row per source record.
 
 ## Provenance
 

@@ -97,6 +97,7 @@ Scripts with no sample data listed in this README are only `--help`-checked (rep
 ### Cost & economics
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
+| [llm-usage-summary.py](llm-usage-summary.py) | **Actual** spend by model/feature/day from a usage export; re-derives cost from `model_pricing.py` and prints measured inputs for the estimators below | samples/sample-llm-usage.csv |
 | [bedrock-cost-calculator.py](bedrock-cost-calculator.py) | Bedrock inference cost from tokens and model | — |
 | [multi-model-cost-comparator.py](multi-model-cost-comparator.py) | Compare cost across Bedrock, OpenAI, Anthropic | — |
 | [prompt-cost-optimizer.py](prompt-cost-optimizer.py) | Estimate and optimize prompt cost by model/volume | samples/sample-prompt-v1.txt |

@@ -1,0 +1,3517 @@
+{
+ "data": [
+  {
+   "startTime": "2026-07-21T14:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 311,
+   "spend": 4.612129,
+   "usage": {
+    "prompt_tokens": 738003,
+    "completion_tokens": 215523,
+    "cache_read_input_tokens": 347802,
+    "cache_creation_input_tokens": 27824
+   }
+  },
+  {
+   "startTime": "2026-07-21T16:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 311,
+   "spend": 2.870607,
+   "usage": {
+    "prompt_tokens": 510040,
+    "completion_tokens": 97654,
+    "cache_read_input_tokens": 51801,
+    "cache_creation_input_tokens": 4144
+   }
+  },
+  {
+   "startTime": "2026-07-21T09:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 323,
+   "spend": 3.256581,
+   "usage": {
+    "prompt_tokens": 610147,
+    "completion_tokens": 100130,
+    "cache_read_input_tokens": 31586,
+    "cache_creation_input_tokens": 2526
+   }
+  },
+  {
+   "startTime": "2026-07-21T22:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 152,
+   "spend": 0.586773,
+   "usage": {
+    "prompt_tokens": 119320,
+    "completion_tokens": 101992,
+    "cache_read_input_tokens": 53133,
+    "cache_creation_input_tokens": 4250
+   }
+  },
+  {
+   "startTime": "2026-07-21T20:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 101,
+   "spend": 0.370856,
+   "usage": {
+    "prompt_tokens": 183719,
+    "completion_tokens": 53025,
+    "cache_read_input_tokens": 97484,
+    "cache_creation_input_tokens": 7798
+   }
+  },
+  {
+   "startTime": "2026-07-21T16:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 395,
+   "spend": 1.108593,
+   "usage": {
+    "prompt_tokens": 762745,
+    "completion_tokens": 110995,
+    "cache_read_input_tokens": 261408,
+    "cache_creation_input_tokens": 20912
+   }
+  },
+  {
+   "startTime": "2026-07-21T07:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 112,
+   "spend": 0.359704,
+   "usage": {
+    "prompt_tokens": 80752,
+    "completion_tokens": 17472,
+    "cache_read_input_tokens": 8447,
+    "cache_creation_input_tokens": 675
+   }
+  },
+  {
+   "startTime": "2026-07-21T18:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 387,
+   "spend": 2.850352,
+   "usage": {
+    "prompt_tokens": 255807,
+    "completion_tokens": 230265,
+    "cache_read_input_tokens": 45907,
+    "cache_creation_input_tokens": 3672
+   }
+  },
+  {
+   "startTime": "2026-07-21T15:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 180,
+   "spend": 1.183719,
+   "usage": {
+    "prompt_tokens": 299340,
+    "completion_tokens": 64620,
+    "cache_read_input_tokens": 105415,
+    "cache_creation_input_tokens": 8433
+   }
+  },
+  {
+   "startTime": "2026-07-22T08:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 82,
+   "spend": 0.638961,
+   "prompt_tokens": 160392,
+   "completion_tokens": 16974,
+   "cache_read_input_tokens": 40343,
+   "cache_creation_input_tokens": 3227
+  },
+  {
+   "startTime": "2026-07-22T10:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 288,
+   "spend": 1.913621,
+   "prompt_tokens": 497664,
+   "completion_tokens": 59040,
+   "cache_read_input_tokens": 193738,
+   "cache_creation_input_tokens": 15499
+  },
+  {
+   "startTime": "2026-07-22T18:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 197,
+   "spend": 2.18871,
+   "prompt_tokens": 325050,
+   "completion_tokens": 81755,
+   "cache_read_input_tokens": 5318,
+   "cache_creation_input_tokens": 425
+  },
+  {
+   "startTime": "2026-07-22T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 135,
+   "spend": 0.275542,
+   "prompt_tokens": 191700,
+   "completion_tokens": 31050,
+   "cache_read_input_tokens": 89259,
+   "cache_creation_input_tokens": 7140
+  },
+  {
+   "startTime": "2026-07-22T01:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 114,
+   "spend": 0.133885,
+   "prompt_tokens": 72276,
+   "completion_tokens": 13680,
+   "cache_read_input_tokens": 8487,
+   "cache_creation_input_tokens": 678
+  },
+  {
+   "startTime": "2026-07-22T18:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 320,
+   "spend": 1.198501,
+   "prompt_tokens": 437760,
+   "completion_tokens": 168320,
+   "cache_read_input_tokens": 101072,
+   "cache_creation_input_tokens": 8085
+  },
+  {
+   "startTime": "2026-07-22T09:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 181,
+   "spend": 1.562382,
+   "prompt_tokens": 397114,
+   "completion_tokens": 71676,
+   "cache_read_input_tokens": 73581,
+   "cache_creation_input_tokens": 5886
+  },
+  {
+   "startTime": "2026-07-22T03:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 250,
+   "spend": 1.610335,
+   "prompt_tokens": 157750,
+   "completion_tokens": 134750,
+   "cache_read_input_tokens": 65769,
+   "cache_creation_input_tokens": 5261
+  },
+  {
+   "startTime": "2026-07-22T14:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 148,
+   "spend": 0.73655,
+   "prompt_tokens": 163392,
+   "completion_tokens": 33004,
+   "cache_read_input_tokens": 984,
+   "cache_creation_input_tokens": 78
+  },
+  {
+   "startTime": "2026-07-23T16:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 329,
+   "spend": 4.286716,
+   "usage": {
+    "prompt_tokens": 316827,
+    "completion_tokens": 227668,
+    "cache_read_input_tokens": 32827,
+    "cache_creation_input_tokens": 2626
+   }
+  },
+  {
+   "startTime": "2026-07-23T12:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 177,
+   "spend": 1.58291,
+   "usage": {
+    "prompt_tokens": 371346,
+    "completion_tokens": 44958,
+    "cache_read_input_tokens": 85623,
+    "cache_creation_input_tokens": 6849
+   }
+  },
+  {
+   "startTime": "2026-07-23T00:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 139,
+   "spend": 1.478116,
+   "usage": {
+    "prompt_tokens": 195712,
+    "completion_tokens": 76450,
+    "cache_read_input_tokens": 106570,
+    "cache_creation_input_tokens": 8525
+   }
+  },
+  {
+   "startTime": "2026-07-23T00:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 218,
+   "spend": 0.759596,
+   "usage": {
+    "prompt_tokens": 516660,
+    "completion_tokens": 93958,
+    "cache_read_input_tokens": 283567,
+    "cache_creation_input_tokens": 22685
+   }
+  },
+  {
+   "startTime": "2026-07-23T19:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 187,
+   "spend": 0.592282,
+   "usage": {
+    "prompt_tokens": 183821,
+    "completion_tokens": 97801,
+    "cache_read_input_tokens": 100680,
+    "cache_creation_input_tokens": 8054
+   }
+  },
+  {
+   "startTime": "2026-07-23T06:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 375,
+   "spend": 0.476096,
+   "usage": {
+    "prompt_tokens": 301875,
+    "completion_tokens": 61125,
+    "cache_read_input_tokens": 164254,
+    "cache_creation_input_tokens": 13140
+   }
+  },
+  {
+   "startTime": "2026-07-23T10:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 306,
+   "spend": 0.964282,
+   "usage": {
+    "prompt_tokens": 345168,
+    "completion_tokens": 39474,
+    "cache_read_input_tokens": 146689,
+    "cache_creation_input_tokens": 11735
+   }
+  },
+  {
+   "startTime": "2026-07-23T06:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 231,
+   "spend": 1.22694,
+   "usage": {
+    "prompt_tokens": 321090,
+    "completion_tokens": 45045,
+    "cache_read_input_tokens": 13117,
+    "cache_creation_input_tokens": 1049
+   }
+  },
+  {
+   "startTime": "2026-07-23T11:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 378,
+   "spend": 3.177103,
+   "usage": {
+    "prompt_tokens": 719334,
+    "completion_tokens": 139104,
+    "cache_read_input_tokens": 6135,
+    "cache_creation_input_tokens": 490
+   }
+  },
+  {
+   "startTime": "2026-07-24T18:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 270,
+   "spend": 3.798169,
+   "prompt_tokens": 505980,
+   "completion_tokens": 157680,
+   "cache_read_input_tokens": 35404,
+   "cache_creation_input_tokens": 2832
+  },
+  {
+   "startTime": "2026-07-24T05:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 327,
+   "spend": 2.663955,
+   "prompt_tokens": 753408,
+   "completion_tokens": 84366,
+   "cache_read_input_tokens": 359066,
+   "cache_creation_input_tokens": 28725
+  },
+  {
+   "startTime": "2026-07-24T07:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 158,
+   "spend": 1.211663,
+   "prompt_tokens": 195288,
+   "completion_tokens": 55774,
+   "cache_read_input_tokens": 87838,
+   "cache_creation_input_tokens": 7027
+  },
+  {
+   "startTime": "2026-07-24T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 177,
+   "spend": 0.757396,
+   "prompt_tokens": 163548,
+   "completion_tokens": 121599,
+   "cache_read_input_tokens": 17683,
+   "cache_creation_input_tokens": 1414
+  },
+  {
+   "startTime": "2026-07-24T03:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 327,
+   "spend": 0.816038,
+   "prompt_tokens": 600372,
+   "completion_tokens": 65400,
+   "cache_read_input_tokens": 139167,
+   "cache_creation_input_tokens": 11133
+  },
+  {
+   "startTime": "2026-07-24T07:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 135,
+   "spend": 0.487537,
+   "prompt_tokens": 91665,
+   "completion_tokens": 86940,
+   "cache_read_input_tokens": 48534,
+   "cache_creation_input_tokens": 3882
+  },
+  {
+   "startTime": "2026-07-24T19:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 280,
+   "spend": 2.042527,
+   "prompt_tokens": 315280,
+   "completion_tokens": 154000,
+   "cache_read_input_tokens": 142835,
+   "cache_creation_input_tokens": 11426
+  },
+  {
+   "startTime": "2026-07-24T23:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 331,
+   "spend": 3.07447,
+   "prompt_tokens": 397200,
+   "completion_tokens": 215812,
+   "cache_read_input_tokens": 38325,
+   "cache_creation_input_tokens": 3066
+  },
+  {
+   "startTime": "2026-07-24T20:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 115,
+   "spend": 0.600603,
+   "prompt_tokens": 98670,
+   "completion_tokens": 40595,
+   "cache_read_input_tokens": 26010,
+   "cache_creation_input_tokens": 2080
+  },
+  {
+   "startTime": "2026-07-25T06:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 395,
+   "spend": 3.085638,
+   "usage": {
+    "prompt_tokens": 733910,
+    "completion_tokens": 77025,
+    "cache_read_input_tokens": 113110,
+    "cache_creation_input_tokens": 9048
+   }
+  },
+  {
+   "startTime": "2026-07-25T07:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 88,
+   "spend": 0.681611,
+   "usage": {
+    "prompt_tokens": 65208,
+    "completion_tokens": 34760,
+    "cache_read_input_tokens": 14755,
+    "cache_creation_input_tokens": 1180
+   }
+  },
+  {
+   "startTime": "2026-07-25T16:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 110,
+   "spend": 0.695897,
+   "usage": {
+    "prompt_tokens": 76450,
+    "completion_tokens": 33000,
+    "cache_read_input_tokens": 11855,
+    "cache_creation_input_tokens": 948
+   }
+  },
+  {
+   "startTime": "2026-07-25T14:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 372,
+   "spend": 0.669798,
+   "usage": {
+    "prompt_tokens": 323268,
+    "completion_tokens": 79608,
+    "cache_read_input_tokens": 64388,
+    "cache_creation_input_tokens": 5151
+   }
+  },
+  {
+   "startTime": "2026-07-25T04:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 249,
+   "spend": 1.173994,
+   "usage": {
+    "prompt_tokens": 484305,
+    "completion_tokens": 162846,
+    "cache_read_input_tokens": 155676,
+    "cache_creation_input_tokens": 12454
+   }
+  },
+  {
+   "startTime": "2026-07-25T11:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 382,
+   "spend": 0.466354,
+   "usage": {
+    "prompt_tokens": 256322,
+    "completion_tokens": 52716,
+    "cache_read_input_tokens": 66934,
+    "cache_creation_input_tokens": 5354
+   }
+  },
+  {
+   "startTime": "2026-07-25T02:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 239,
+   "spend": 0.631035,
+   "usage": {
+    "prompt_tokens": 159652,
+    "completion_tokens": 33699,
+    "cache_read_input_tokens": 52542,
+    "cache_creation_input_tokens": 4203
+   }
+  },
+  {
+   "startTime": "2026-07-25T02:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 326,
+   "spend": 1.944252,
+   "usage": {
+    "prompt_tokens": 240262,
+    "completion_tokens": 142788,
+    "cache_read_input_tokens": 42141,
+    "cache_creation_input_tokens": 3371
+   }
+  },
+  {
+   "startTime": "2026-07-25T01:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 118,
+   "spend": 1.178789,
+   "usage": {
+    "prompt_tokens": 180186,
+    "completion_tokens": 80122,
+    "cache_read_input_tokens": 36447,
+    "cache_creation_input_tokens": 2915
+   }
+  },
+  {
+   "startTime": "2026-07-26T21:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 146,
+   "spend": 1.85042,
+   "prompt_tokens": 324704,
+   "completion_tokens": 68474,
+   "cache_read_input_tokens": 62833,
+   "cache_creation_input_tokens": 5026
+  },
+  {
+   "startTime": "2026-07-26T00:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 322,
+   "spend": 3.070586,
+   "prompt_tokens": 244398,
+   "completion_tokens": 176134,
+   "cache_read_input_tokens": 126923,
+   "cache_creation_input_tokens": 10153
+  },
+  {
+   "startTime": "2026-07-26T12:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 335,
+   "spend": 1.965231,
+   "prompt_tokens": 593955,
+   "completion_tokens": 44890,
+   "cache_read_input_tokens": 204159,
+   "cache_creation_input_tokens": 16332
+  },
+  {
+   "startTime": "2026-07-26T02:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 274,
+   "spend": 0.540507,
+   "prompt_tokens": 491282,
+   "completion_tokens": 36168,
+   "cache_read_input_tokens": 164518,
+   "cache_creation_input_tokens": 13161
+  },
+  {
+   "startTime": "2026-07-26T13:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 126,
+   "spend": 0.285345,
+   "prompt_tokens": 240534,
+   "completion_tokens": 29988,
+   "cache_read_input_tokens": 131410,
+   "cache_creation_input_tokens": 10512
+  },
+  {
+   "startTime": "2026-07-26T17:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 249,
+   "spend": 1.012087,
+   "prompt_tokens": 347355,
+   "completion_tokens": 146412,
+   "cache_read_input_tokens": 84159,
+   "cache_creation_input_tokens": 6732
+  },
+  {
+   "startTime": "2026-07-26T19:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 122,
+   "spend": 1.288384,
+   "prompt_tokens": 202764,
+   "completion_tokens": 78812,
+   "cache_read_input_tokens": 3322,
+   "cache_creation_input_tokens": 265
+  },
+  {
+   "startTime": "2026-07-26T22:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 124,
+   "spend": 0.617378,
+   "prompt_tokens": 196416,
+   "completion_tokens": 17608,
+   "cache_read_input_tokens": 24870,
+   "cache_creation_input_tokens": 1989
+  },
+  {
+   "startTime": "2026-07-26T00:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 137,
+   "spend": 1.337077,
+   "prompt_tokens": 221666,
+   "completion_tokens": 84529,
+   "cache_read_input_tokens": 31189,
+   "cache_creation_input_tokens": 2495
+  },
+  {
+   "startTime": "2026-07-27T06:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 268,
+   "spend": 1.755266,
+   "usage": {
+    "prompt_tokens": 325888,
+    "completion_tokens": 71288,
+    "cache_read_input_tokens": 121548,
+    "cache_creation_input_tokens": 9723
+   }
+  },
+  {
+   "startTime": "2026-07-27T14:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 345,
+   "spend": 3.127765,
+   "usage": {
+    "prompt_tokens": 326715,
+    "completion_tokens": 162150,
+    "cache_read_input_tokens": 118595,
+    "cache_creation_input_tokens": 9487
+   }
+  },
+  {
+   "startTime": "2026-07-27T08:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 335,
+   "spend": 3.18501,
+   "usage": {
+    "prompt_tokens": 366490,
+    "completion_tokens": 152090,
+    "cache_read_input_tokens": 81586,
+    "cache_creation_input_tokens": 6526
+   }
+  },
+  {
+   "startTime": "2026-07-27T06:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 181,
+   "spend": 0.729756,
+   "usage": {
+    "prompt_tokens": 343538,
+    "completion_tokens": 101541,
+    "cache_read_input_tokens": 151858,
+    "cache_creation_input_tokens": 12148
+   }
+  },
+  {
+   "startTime": "2026-07-27T10:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 189,
+   "spend": 0.519965,
+   "usage": {
+    "prompt_tokens": 262143,
+    "completion_tokens": 65016,
+    "cache_read_input_tokens": 84071,
+    "cache_creation_input_tokens": 6725
+   }
+  },
+  {
+   "startTime": "2026-07-27T01:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 187,
+   "spend": 0.368615,
+   "usage": {
+    "prompt_tokens": 164186,
+    "completion_tokens": 48059,
+    "cache_read_input_tokens": 44832,
+    "cache_creation_input_tokens": 3586
+   }
+  },
+  {
+   "startTime": "2026-07-27T15:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 112,
+   "spend": 0.638431,
+   "usage": {
+    "prompt_tokens": 130592,
+    "completion_tokens": 32816,
+    "cache_read_input_tokens": 8104,
+    "cache_creation_input_tokens": 648
+   }
+  },
+  {
+   "startTime": "2026-07-27T16:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 220,
+   "spend": 1.669404,
+   "usage": {
+    "prompt_tokens": 228360,
+    "completion_tokens": 119460,
+    "cache_read_input_tokens": 48047,
+    "cache_creation_input_tokens": 3843
+   }
+  },
+  {
+   "startTime": "2026-07-27T19:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 332,
+   "spend": 2.590628,
+   "usage": {
+    "prompt_tokens": 656032,
+    "completion_tokens": 146744,
+    "cache_read_input_tokens": 258445,
+    "cache_creation_input_tokens": 20675
+   }
+  },
+  {
+   "startTime": "2026-07-28T08:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 311,
+   "spend": 1.658886,
+   "prompt_tokens": 390616,
+   "completion_tokens": 60956,
+   "cache_read_input_tokens": 178042,
+   "cache_creation_input_tokens": 14243
+  },
+  {
+   "startTime": "2026-07-28T09:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 391,
+   "spend": 2.987956,
+   "prompt_tokens": 267444,
+   "completion_tokens": 159137,
+   "cache_read_input_tokens": 83929,
+   "cache_creation_input_tokens": 6714
+  },
+  {
+   "startTime": "2026-07-28T06:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 368,
+   "spend": 2.009365,
+   "prompt_tokens": 235152,
+   "completion_tokens": 95312,
+   "cache_read_input_tokens": 52404,
+   "cache_creation_input_tokens": 4192
+  },
+  {
+   "startTime": "2026-07-28T04:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 92,
+   "spend": 0.359517,
+   "prompt_tokens": 200100,
+   "completion_tokens": 36064,
+   "cache_read_input_tokens": 26128,
+   "cache_creation_input_tokens": 2090
+  },
+  {
+   "startTime": "2026-07-28T20:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 104,
+   "spend": 0.281538,
+   "prompt_tokens": 196352,
+   "completion_tokens": 24752,
+   "cache_read_input_tokens": 48217,
+   "cache_creation_input_tokens": 3857
+  },
+  {
+   "startTime": "2026-07-28T21:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 354,
+   "spend": 1.277033,
+   "prompt_tokens": 687114,
+   "completion_tokens": 175938,
+   "cache_read_input_tokens": 362214,
+   "cache_creation_input_tokens": 28977
+  },
+  {
+   "startTime": "2026-07-28T22:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 181,
+   "spend": 1.501595,
+   "prompt_tokens": 182448,
+   "completion_tokens": 109686,
+   "cache_read_input_tokens": 25692,
+   "cache_creation_input_tokens": 2055
+  },
+  {
+   "startTime": "2026-07-28T01:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 85,
+   "spend": 0.861257,
+   "prompt_tokens": 182410,
+   "completion_tokens": 51255,
+   "cache_read_input_tokens": 53658,
+   "cache_creation_input_tokens": 4292
+  },
+  {
+   "startTime": "2026-07-28T17:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 171,
+   "spend": 0.979334,
+   "prompt_tokens": 181773,
+   "completion_tokens": 68058,
+   "cache_read_input_tokens": 77839,
+   "cache_creation_input_tokens": 6227
+  },
+  {
+   "startTime": "2026-07-29T22:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 346,
+   "spend": 2.862605,
+   "usage": {
+    "prompt_tokens": 561904,
+    "completion_tokens": 97918,
+    "cache_read_input_tokens": 121615,
+    "cache_creation_input_tokens": 9729
+   }
+  },
+  {
+   "startTime": "2026-07-29T23:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 194,
+   "spend": 1.838394,
+   "usage": {
+    "prompt_tokens": 150932,
+    "completion_tokens": 104760,
+    "cache_read_input_tokens": 77417,
+    "cache_creation_input_tokens": 6193
+   }
+  },
+  {
+   "startTime": "2026-07-29T20:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 278,
+   "spend": 3.000886,
+   "usage": {
+    "prompt_tokens": 240748,
+    "completion_tokens": 161518,
+    "cache_read_input_tokens": 60053,
+    "cache_creation_input_tokens": 4804
+   }
+  },
+  {
+   "startTime": "2026-07-29T16:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 83,
+   "spend": 0.368758,
+   "usage": {
+    "prompt_tokens": 113793,
+    "completion_tokens": 56689,
+    "cache_read_input_tokens": 35599,
+    "cache_creation_input_tokens": 2847
+   }
+  },
+  {
+   "startTime": "2026-07-29T06:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 255,
+   "spend": 0.860646,
+   "usage": {
+    "prompt_tokens": 394995,
+    "completion_tokens": 115770,
+    "cache_read_input_tokens": 141498,
+    "cache_creation_input_tokens": 11319
+   }
+  },
+  {
+   "startTime": "2026-07-29T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 130,
+   "spend": 0.404688,
+   "usage": {
+    "prompt_tokens": 270140,
+    "completion_tokens": 31980,
+    "cache_read_input_tokens": 31690,
+    "cache_creation_input_tokens": 2535
+   }
+  },
+  {
+   "startTime": "2026-07-29T10:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 124,
+   "spend": 1.047698,
+   "usage": {
+    "prompt_tokens": 153016,
+    "completion_tokens": 82956,
+    "cache_read_input_tokens": 82201,
+    "cache_creation_input_tokens": 6576
+   }
+  },
+  {
+   "startTime": "2026-07-29T02:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 214,
+   "spend": 1.229125,
+   "usage": {
+    "prompt_tokens": 443194,
+    "completion_tokens": 29104,
+    "cache_read_input_tokens": 84950,
+    "cache_creation_input_tokens": 6796
+   }
+  },
+  {
+   "startTime": "2026-07-29T08:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 99,
+   "spend": 0.747034,
+   "usage": {
+    "prompt_tokens": 148698,
+    "completion_tokens": 46530,
+    "cache_read_input_tokens": 45005,
+    "cache_creation_input_tokens": 3600
+   }
+  },
+  {
+   "startTime": "2026-07-30T02:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 329,
+   "spend": 2.110934,
+   "prompt_tokens": 216482,
+   "completion_tokens": 112847,
+   "cache_read_input_tokens": 96340,
+   "cache_creation_input_tokens": 7707
+  },
+  {
+   "startTime": "2026-07-30T10:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 299,
+   "spend": 2.549942,
+   "prompt_tokens": 669162,
+   "completion_tokens": 46345,
+   "cache_read_input_tokens": 63632,
+   "cache_creation_input_tokens": 5090
+  },
+  {
+   "startTime": "2026-07-30T23:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 151,
+   "spend": 1.012635,
+   "prompt_tokens": 236013,
+   "completion_tokens": 41072,
+   "cache_read_input_tokens": 129784,
+   "cache_creation_input_tokens": 10382
+  },
+  {
+   "startTime": "2026-07-30T15:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 345,
+   "spend": 1.45058,
+   "prompt_tokens": 800400,
+   "completion_tokens": 196650,
+   "cache_read_input_tokens": 416336,
+   "cache_creation_input_tokens": 33306
+  },
+  {
+   "startTime": "2026-07-30T14:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 376,
+   "spend": 0.895043,
+   "prompt_tokens": 756136,
+   "completion_tokens": 78208,
+   "cache_read_input_tokens": 315166,
+   "cache_creation_input_tokens": 25213
+  },
+  {
+   "startTime": "2026-07-30T17:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 349,
+   "spend": 1.11373,
+   "prompt_tokens": 608656,
+   "completion_tokens": 145533,
+   "cache_read_input_tokens": 278239,
+   "cache_creation_input_tokens": 22259
+  },
+  {
+   "startTime": "2026-07-30T17:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 164,
+   "spend": 1.489983,
+   "prompt_tokens": 273880,
+   "completion_tokens": 105944,
+   "cache_read_input_tokens": 127078,
+   "cache_creation_input_tokens": 10166
+  },
+  {
+   "startTime": "2026-07-30T19:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 211,
+   "spend": 1.454796,
+   "prompt_tokens": 261218,
+   "completion_tokens": 107610,
+   "cache_read_input_tokens": 137173,
+   "cache_creation_input_tokens": 10973
+  },
+  {
+   "startTime": "2026-07-30T16:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 186,
+   "spend": 0.817407,
+   "prompt_tokens": 227478,
+   "completion_tokens": 49104,
+   "cache_read_input_tokens": 121164,
+   "cache_creation_input_tokens": 9693
+  },
+  {
+   "startTime": "2026-07-31T17:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 219,
+   "spend": 3.128121,
+   "usage": {
+    "prompt_tokens": 388287,
+    "completion_tokens": 137751,
+    "cache_read_input_tokens": 42918,
+    "cache_creation_input_tokens": 3433
+   }
+  },
+  {
+   "startTime": "2026-07-31T00:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 138,
+   "spend": 0.753867,
+   "usage": {
+    "prompt_tokens": 224940,
+    "completion_tokens": 17250,
+    "cache_read_input_tokens": 74876,
+    "cache_creation_input_tokens": 5990
+   }
+  },
+  {
+   "startTime": "2026-07-31T17:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 355,
+   "spend": 3.888839,
+   "usage": {
+    "prompt_tokens": 244950,
+    "completion_tokens": 230040,
+    "cache_read_input_tokens": 123588,
+    "cache_creation_input_tokens": 9887
+   }
+  },
+  {
+   "startTime": "2026-07-31T05:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 368,
+   "spend": 1.444096,
+   "usage": {
+    "prompt_tokens": 312432,
+    "completion_tokens": 228896,
+    "cache_read_input_tokens": 16019,
+    "cache_creation_input_tokens": 1281
+   }
+  },
+  {
+   "startTime": "2026-07-31T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 113,
+   "spend": 0.490188,
+   "usage": {
+    "prompt_tokens": 192439,
+    "completion_tokens": 66557,
+    "cache_read_input_tokens": 43794,
+    "cache_creation_input_tokens": 3503
+   }
+  },
+  {
+   "startTime": "2026-07-31T10:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 217,
+   "spend": 0.842938,
+   "usage": {
+    "prompt_tokens": 239568,
+    "completion_tokens": 131068,
+    "cache_read_input_tokens": 64963,
+    "cache_creation_input_tokens": 5197
+   }
+  },
+  {
+   "startTime": "2026-07-31T03:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 302,
+   "spend": 3.151105,
+   "usage": {
+    "prompt_tokens": 685540,
+    "completion_tokens": 183314,
+    "cache_read_input_tokens": 197942,
+    "cache_creation_input_tokens": 15835
+   }
+  },
+  {
+   "startTime": "2026-07-31T04:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 178,
+   "spend": 0.651928,
+   "usage": {
+    "prompt_tokens": 259702,
+    "completion_tokens": 26700,
+    "cache_read_input_tokens": 132162,
+    "cache_creation_input_tokens": 10572
+   }
+  },
+  {
+   "startTime": "2026-07-31T00:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 91,
+   "spend": 0.431797,
+   "usage": {
+    "prompt_tokens": 61152,
+    "completion_tokens": 28938,
+    "cache_read_input_tokens": 5231,
+    "cache_creation_input_tokens": 418
+   }
+  },
+  {
+   "startTime": "2026-08-01T15:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 225,
+   "spend": 2.388539,
+   "prompt_tokens": 283275,
+   "completion_tokens": 108675,
+   "cache_read_input_tokens": 38088,
+   "cache_creation_input_tokens": 3047
+  },
+  {
+   "startTime": "2026-08-01T19:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 133,
+   "spend": 0.893613,
+   "prompt_tokens": 215859,
+   "completion_tokens": 32585,
+   "cache_read_input_tokens": 101141,
+   "cache_creation_input_tokens": 8091
+  },
+  {
+   "startTime": "2026-08-01T13:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 208,
+   "spend": 1.897272,
+   "prompt_tokens": 430352,
+   "completion_tokens": 66976,
+   "cache_read_input_tokens": 166009,
+   "cache_creation_input_tokens": 13280
+  },
+  {
+   "startTime": "2026-08-01T19:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 91,
+   "spend": 0.326412,
+   "prompt_tokens": 124579,
+   "completion_tokens": 49413,
+   "cache_read_input_tokens": 56540,
+   "cache_creation_input_tokens": 4523
+  },
+  {
+   "startTime": "2026-08-01T17:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 161,
+   "spend": 0.434715,
+   "prompt_tokens": 274022,
+   "completion_tokens": 52969,
+   "cache_read_input_tokens": 130190,
+   "cache_creation_input_tokens": 10415
+  },
+  {
+   "startTime": "2026-08-01T19:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 191,
+   "spend": 0.526826,
+   "prompt_tokens": 321644,
+   "completion_tokens": 65131,
+   "cache_read_input_tokens": 150591,
+   "cache_creation_input_tokens": 12047
+  },
+  {
+   "startTime": "2026-08-01T23:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 380,
+   "spend": 2.991572,
+   "prompt_tokens": 894520,
+   "completion_tokens": 98420,
+   "cache_read_input_tokens": 114464,
+   "cache_creation_input_tokens": 9157
+  },
+  {
+   "startTime": "2026-08-01T06:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 257,
+   "spend": 1.596345,
+   "prompt_tokens": 249290,
+   "completion_tokens": 113851,
+   "cache_read_input_tokens": 82694,
+   "cache_creation_input_tokens": 6615
+  },
+  {
+   "startTime": "2026-08-01T04:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 191,
+   "spend": 1.247512,
+   "prompt_tokens": 418863,
+   "completion_tokens": 60929,
+   "cache_read_input_tokens": 204467,
+   "cache_creation_input_tokens": 16357
+  },
+  {
+   "startTime": "2026-08-02T03:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 202,
+   "spend": 1.103856,
+   "usage": {
+    "prompt_tokens": 175942,
+    "completion_tokens": 42420,
+    "cache_read_input_tokens": 25111,
+    "cache_creation_input_tokens": 2008
+   }
+  },
+  {
+   "startTime": "2026-08-02T22:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 302,
+   "spend": 4.084472,
+   "usage": {
+    "prompt_tokens": 695808,
+    "completion_tokens": 166402,
+    "cache_read_input_tokens": 207908,
+    "cache_creation_input_tokens": 16632
+   }
+  },
+  {
+   "startTime": "2026-08-02T00:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 144,
+   "spend": 1.464876,
+   "usage": {
+    "prompt_tokens": 145440,
+    "completion_tokens": 76608,
+    "cache_read_input_tokens": 50234,
+    "cache_creation_input_tokens": 4018
+   }
+  },
+  {
+   "startTime": "2026-08-02T11:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 129,
+   "spend": 0.39159,
+   "usage": {
+    "prompt_tokens": 130419,
+    "completion_tokens": 62694,
+    "cache_read_input_tokens": 65373,
+    "cache_creation_input_tokens": 5229
+   }
+  },
+  {
+   "startTime": "2026-08-02T10:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 139,
+   "spend": 0.647391,
+   "usage": {
+    "prompt_tokens": 283977,
+    "completion_tokens": 88543,
+    "cache_read_input_tokens": 99126,
+    "cache_creation_input_tokens": 7930
+   }
+  },
+  {
+   "startTime": "2026-08-02T15:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 337,
+   "spend": 0.964185,
+   "usage": {
+    "prompt_tokens": 675348,
+    "completion_tokens": 105481,
+    "cache_read_input_tokens": 298209,
+    "cache_creation_input_tokens": 23856
+   }
+  },
+  {
+   "startTime": "2026-08-02T19:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 134,
+   "spend": 0.356239,
+   "usage": {
+    "prompt_tokens": 86966,
+    "completion_tokens": 21172,
+    "cache_read_input_tokens": 36447,
+    "cache_creation_input_tokens": 2915
+   }
+  },
+  {
+   "startTime": "2026-08-02T05:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 343,
+   "spend": 3.514248,
+   "usage": {
+    "prompt_tokens": 605052,
+    "completion_tokens": 209916,
+    "cache_read_input_tokens": 48770,
+    "cache_creation_input_tokens": 3901
+   }
+  },
+  {
+   "startTime": "2026-08-02T09:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 138,
+   "spend": 0.629632,
+   "usage": {
+    "prompt_tokens": 140346,
+    "completion_tokens": 40848,
+    "cache_read_input_tokens": 64856,
+    "cache_creation_input_tokens": 5188
+   }
+  },
+  {
+   "startTime": "2026-08-03T21:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 128,
+   "spend": 0.996974,
+   "prompt_tokens": 228736,
+   "completion_tokens": 23424,
+   "cache_read_input_tokens": 16914,
+   "cache_creation_input_tokens": 1353
+  },
+  {
+   "startTime": "2026-08-03T14:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 316,
+   "spend": 1.653308,
+   "prompt_tokens": 239528,
+   "completion_tokens": 69204,
+   "cache_read_input_tokens": 43056,
+   "cache_creation_input_tokens": 3444
+  },
+  {
+   "startTime": "2026-08-03T19:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 298,
+   "spend": 3.35859,
+   "prompt_tokens": 493190,
+   "completion_tokens": 143934,
+   "cache_read_input_tokens": 116661,
+   "cache_creation_input_tokens": 9332
+  },
+  {
+   "startTime": "2026-08-03T05:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 271,
+   "spend": 0.324952,
+   "prompt_tokens": 169917,
+   "completion_tokens": 43631,
+   "cache_read_input_tokens": 78900,
+   "cache_creation_input_tokens": 6312
+  },
+  {
+   "startTime": "2026-08-03T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 288,
+   "spend": 0.999821,
+   "prompt_tokens": 440352,
+   "completion_tokens": 140544,
+   "cache_read_input_tokens": 179062,
+   "cache_creation_input_tokens": 14324
+  },
+  {
+   "startTime": "2026-08-03T00:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 179,
+   "spend": 0.573933,
+   "prompt_tokens": 329002,
+   "completion_tokens": 51731,
+   "cache_read_input_tokens": 17154,
+   "cache_creation_input_tokens": 1372
+  },
+  {
+   "startTime": "2026-08-03T06:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 245,
+   "spend": 1.663084,
+   "prompt_tokens": 189385,
+   "completion_tokens": 130830,
+   "cache_read_input_tokens": 59339,
+   "cache_creation_input_tokens": 4747
+  },
+  {
+   "startTime": "2026-08-03T08:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 338,
+   "spend": 2.565962,
+   "prompt_tokens": 607386,
+   "completion_tokens": 158522,
+   "cache_read_input_tokens": 268860,
+   "cache_creation_input_tokens": 21508
+  },
+  {
+   "startTime": "2026-08-03T12:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 223,
+   "spend": 0.930816,
+   "prompt_tokens": 186874,
+   "completion_tokens": 63109,
+   "cache_read_input_tokens": 83729,
+   "cache_creation_input_tokens": 6698
+  },
+  {
+   "startTime": "2026-08-04T13:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 148,
+   "spend": 1.882656,
+   "usage": {
+    "prompt_tokens": 188700,
+    "completion_tokens": 99308,
+    "cache_read_input_tokens": 72109,
+    "cache_creation_input_tokens": 5768
+   }
+  },
+  {
+   "startTime": "2026-08-04T02:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 172,
+   "spend": 1.357244,
+   "usage": {
+    "prompt_tokens": 245960,
+    "completion_tokens": 56932,
+    "cache_read_input_tokens": 97756,
+    "cache_creation_input_tokens": 7820
+   }
+  },
+  {
+   "startTime": "2026-08-04T11:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 254,
+   "spend": 3.172196,
+   "usage": {
+    "prompt_tokens": 309118,
+    "completion_tokens": 152400,
+    "cache_read_input_tokens": 17148,
+    "cache_creation_input_tokens": 1371
+   }
+  },
+  {
+   "startTime": "2026-08-04T21:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 399,
+   "spend": 0.958319,
+   "usage": {
+    "prompt_tokens": 279699,
+    "completion_tokens": 142443,
+    "cache_read_input_tokens": 41993,
+    "cache_creation_input_tokens": 3359
+   }
+  },
+  {
+   "startTime": "2026-08-04T18:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 233,
+   "spend": 0.610747,
+   "usage": {
+    "prompt_tokens": 300803,
+    "completion_tokens": 79453,
+    "cache_read_input_tokens": 109151,
+    "cache_creation_input_tokens": 8732
+   }
+  },
+  {
+   "startTime": "2026-08-04T15:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 173,
+   "spend": 0.413664,
+   "usage": {
+    "prompt_tokens": 292543,
+    "completion_tokens": 34254,
+    "cache_read_input_tokens": 62685,
+    "cache_creation_input_tokens": 5014
+   }
+  },
+  {
+   "startTime": "2026-08-04T18:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 189,
+   "spend": 1.096957,
+   "usage": {
+    "prompt_tokens": 384804,
+    "completion_tokens": 45738,
+    "cache_read_input_tokens": 161216,
+    "cache_creation_input_tokens": 12897
+   }
+  },
+  {
+   "startTime": "2026-08-04T08:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 91,
+   "spend": 0.337512,
+   "usage": {
+    "prompt_tokens": 75985,
+    "completion_tokens": 20930,
+    "cache_read_input_tokens": 30875,
+    "cache_creation_input_tokens": 2470
+   }
+  },
+  {
+   "startTime": "2026-08-04T06:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 307,
+   "spend": 3.019677,
+   "usage": {
+    "prompt_tokens": 436554,
+    "completion_tokens": 195252,
+    "cache_read_input_tokens": 12114,
+    "cache_creation_input_tokens": 969
+   }
+  },
+  {
+   "startTime": "2026-08-05T08:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 272,
+   "spend": 1.347408,
+   "prompt_tokens": 169184,
+   "completion_tokens": 59840,
+   "cache_read_input_tokens": 24059,
+   "cache_creation_input_tokens": 1924
+  },
+  {
+   "startTime": "2026-08-05T16:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 254,
+   "spend": 3.585469,
+   "prompt_tokens": 438404,
+   "completion_tokens": 170942,
+   "cache_read_input_tokens": 122446,
+   "cache_creation_input_tokens": 9795
+  },
+  {
+   "startTime": "2026-08-05T20:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 370,
+   "spend": 3.094754,
+   "prompt_tokens": 863210,
+   "completion_tokens": 82140,
+   "cache_read_input_tokens": 302906,
+   "cache_creation_input_tokens": 24232
+  },
+  {
+   "startTime": "2026-08-05T05:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 119,
+   "spend": 0.269143,
+   "prompt_tokens": 205275,
+   "completion_tokens": 19754,
+   "cache_read_input_tokens": 43627,
+   "cache_creation_input_tokens": 3490
+  },
+  {
+   "startTime": "2026-08-05T17:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 277,
+   "spend": 0.676269,
+   "prompt_tokens": 433782,
+   "completion_tokens": 81161,
+   "cache_read_input_tokens": 204146,
+   "cache_creation_input_tokens": 16331
+  },
+  {
+   "startTime": "2026-08-05T15:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 392,
+   "spend": 0.929747,
+   "prompt_tokens": 713832,
+   "completion_tokens": 70168,
+   "cache_read_input_tokens": 168655,
+   "cache_creation_input_tokens": 13492
+  },
+  {
+   "startTime": "2026-08-05T09:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 295,
+   "spend": 2.662898,
+   "prompt_tokens": 348690,
+   "completion_tokens": 194405,
+   "cache_read_input_tokens": 76437,
+   "cache_creation_input_tokens": 6114
+  },
+  {
+   "startTime": "2026-08-05T08:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 267,
+   "spend": 1.986153,
+   "prompt_tokens": 450162,
+   "completion_tokens": 110004,
+   "cache_read_input_tokens": 119645,
+   "cache_creation_input_tokens": 9571
+  },
+  {
+   "startTime": "2026-08-05T07:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 367,
+   "spend": 2.622264,
+   "prompt_tokens": 433060,
+   "completion_tokens": 155241,
+   "cache_read_input_tokens": 6397,
+   "cache_creation_input_tokens": 511
+  },
+  {
+   "startTime": "2026-08-06T21:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 379,
+   "spend": 2.232414,
+   "usage": {
+    "prompt_tokens": 260373,
+    "completion_tokens": 106120,
+    "cache_read_input_tokens": 58543,
+    "cache_creation_input_tokens": 4683
+   }
+  },
+  {
+   "startTime": "2026-08-06T01:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 279,
+   "spend": 2.247235,
+   "usage": {
+    "prompt_tokens": 197532,
+    "completion_tokens": 123318,
+    "cache_read_input_tokens": 81304,
+    "cache_creation_input_tokens": 6504
+   }
+  },
+  {
+   "startTime": "2026-08-06T07:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 377,
+   "spend": 4.798527,
+   "usage": {
+    "prompt_tokens": 784160,
+    "completion_tokens": 168142,
+    "cache_read_input_tokens": 31701,
+    "cache_creation_input_tokens": 2536
+   }
+  },
+  {
+   "startTime": "2026-08-06T07:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 299,
+   "spend": 1.461583,
+   "usage": {
+    "prompt_tokens": 619528,
+    "completion_tokens": 182091,
+    "cache_read_input_tokens": 85499,
+    "cache_creation_input_tokens": 6839
+   }
+  },
+  {
+   "startTime": "2026-08-06T23:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 103,
+   "spend": 0.214433,
+   "usage": {
+    "prompt_tokens": 172113,
+    "completion_tokens": 22660,
+    "cache_read_input_tokens": 88724,
+    "cache_creation_input_tokens": 7097
+   }
+  },
+  {
+   "startTime": "2026-08-06T03:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 319,
+   "spend": 0.801421,
+   "usage": {
+    "prompt_tokens": 285505,
+    "completion_tokens": 118349,
+    "cache_read_input_tokens": 94785,
+    "cache_creation_input_tokens": 7582
+   }
+  },
+  {
+   "startTime": "2026-08-06T06:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 105,
+   "spend": 0.968481,
+   "usage": {
+    "prompt_tokens": 197190,
+    "completion_tokens": 57435,
+    "cache_read_input_tokens": 49421,
+    "cache_creation_input_tokens": 3953
+   }
+  },
+  {
+   "startTime": "2026-08-06T11:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 106,
+   "spend": 1.028054,
+   "usage": {
+    "prompt_tokens": 140980,
+    "completion_tokens": 69960,
+    "cache_read_input_tokens": 11997,
+    "cache_creation_input_tokens": 959
+   }
+  },
+  {
+   "startTime": "2026-08-06T08:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 306,
+   "spend": 2.212691,
+   "usage": {
+    "prompt_tokens": 271116,
+    "completion_tokens": 167076,
+    "cache_read_input_tokens": 67929,
+    "cache_creation_input_tokens": 5434
+   }
+  },
+  {
+   "startTime": "2026-08-07T23:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 378,
+   "spend": 5.013758,
+   "prompt_tokens": 754488,
+   "completion_tokens": 207522,
+   "cache_read_input_tokens": 151056,
+   "cache_creation_input_tokens": 12084
+  },
+  {
+   "startTime": "2026-08-07T23:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 351,
+   "spend": 2.756675,
+   "prompt_tokens": 796419,
+   "completion_tokens": 91260,
+   "cache_read_input_tokens": 417283,
+   "cache_creation_input_tokens": 33382
+  },
+  {
+   "startTime": "2026-08-07T09:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 145,
+   "spend": 1.780666,
+   "prompt_tokens": 157760,
+   "completion_tokens": 88740,
+   "cache_read_input_tokens": 9880,
+   "cache_creation_input_tokens": 790
+  },
+  {
+   "startTime": "2026-08-07T19:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 339,
+   "spend": 1.38544,
+   "prompt_tokens": 636981,
+   "completion_tokens": 165093,
+   "cache_read_input_tokens": 96257,
+   "cache_creation_input_tokens": 7700
+  },
+  {
+   "startTime": "2026-08-07T07:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 369,
+   "spend": 1.120002,
+   "prompt_tokens": 749439,
+   "completion_tokens": 115866,
+   "cache_read_input_tokens": 260958,
+   "cache_creation_input_tokens": 20876
+  },
+  {
+   "startTime": "2026-08-07T06:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 177,
+   "spend": 0.672765,
+   "prompt_tokens": 196293,
+   "completion_tokens": 112218,
+   "cache_read_input_tokens": 105771,
+   "cache_creation_input_tokens": 8461
+  },
+  {
+   "startTime": "2026-08-07T08:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 100,
+   "spend": 0.651534,
+   "prompt_tokens": 188600,
+   "completion_tokens": 18200,
+   "cache_read_input_tokens": 982,
+   "cache_creation_input_tokens": 78
+  },
+  {
+   "startTime": "2026-08-07T17:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 297,
+   "spend": 0.933671,
+   "prompt_tokens": 194535,
+   "completion_tokens": 46926,
+   "cache_read_input_tokens": 10963,
+   "cache_creation_input_tokens": 877
+  },
+  {
+   "startTime": "2026-08-07T05:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 222,
+   "spend": 0.710149,
+   "prompt_tokens": 166056,
+   "completion_tokens": 46176,
+   "cache_read_input_tokens": 83374,
+   "cache_creation_input_tokens": 6669
+  },
+  {
+   "startTime": "2026-08-08T11:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 361,
+   "spend": 3.638879,
+   "usage": {
+    "prompt_tokens": 389880,
+    "completion_tokens": 181222,
+    "cache_read_input_tokens": 103788,
+    "cache_creation_input_tokens": 8303
+   }
+  },
+  {
+   "startTime": "2026-08-08T04:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 187,
+   "spend": 1.888291,
+   "usage": {
+    "prompt_tokens": 241604,
+    "completion_tokens": 88077,
+    "cache_read_input_tokens": 65697,
+    "cache_creation_input_tokens": 5255
+   }
+  },
+  {
+   "startTime": "2026-08-08T19:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 118,
+   "spend": 1.066085,
+   "usage": {
+    "prompt_tokens": 264674,
+    "completion_tokens": 28556,
+    "cache_read_input_tokens": 65115,
+    "cache_creation_input_tokens": 5209
+   }
+  },
+  {
+   "startTime": "2026-08-08T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 189,
+   "spend": 0.715078,
+   "usage": {
+    "prompt_tokens": 285390,
+    "completion_tokens": 104706,
+    "cache_read_input_tokens": 117302,
+    "cache_creation_input_tokens": 9384
+   }
+  },
+  {
+   "startTime": "2026-08-08T19:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 157,
+   "spend": 0.368995,
+   "usage": {
+    "prompt_tokens": 212735,
+    "completion_tokens": 43489,
+    "cache_read_input_tokens": 76480,
+    "cache_creation_input_tokens": 6118
+   }
+  },
+  {
+   "startTime": "2026-08-08T05:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 246,
+   "spend": 1.033428,
+   "usage": {
+    "prompt_tokens": 293970,
+    "completion_tokens": 167526,
+    "cache_read_input_tokens": 122715,
+    "cache_creation_input_tokens": 9817
+   }
+  },
+  {
+   "startTime": "2026-08-08T14:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 298,
+   "spend": 2.559015,
+   "usage": {
+    "prompt_tokens": 577524,
+    "completion_tokens": 148404,
+    "cache_read_input_tokens": 184417,
+    "cache_creation_input_tokens": 14753
+   }
+  },
+  {
+   "startTime": "2026-08-08T18:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 245,
+   "spend": 2.104696,
+   "usage": {
+    "prompt_tokens": 186200,
+    "completion_tokens": 165620,
+    "cache_read_input_tokens": 8502,
+    "cache_creation_input_tokens": 680
+   }
+  },
+  {
+   "startTime": "2026-08-08T00:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 370,
+   "spend": 3.47675,
+   "usage": {
+    "prompt_tokens": 589040,
+    "completion_tokens": 219780,
+    "cache_read_input_tokens": 96825,
+    "cache_creation_input_tokens": 7746
+   }
+  },
+  {
+   "startTime": "2026-08-09T19:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 118,
+   "spend": 0.860268,
+   "prompt_tokens": 145730,
+   "completion_tokens": 39884,
+   "cache_read_input_tokens": 72992,
+   "cache_creation_input_tokens": 5839
+  },
+  {
+   "startTime": "2026-08-09T22:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 121,
+   "spend": 1.356747,
+   "prompt_tokens": 244783,
+   "completion_tokens": 52151,
+   "cache_read_input_tokens": 66610,
+   "cache_creation_input_tokens": 5328
+  },
+  {
+   "startTime": "2026-08-09T21:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 247,
+   "spend": 1.775079,
+   "prompt_tokens": 291213,
+   "completion_tokens": 65702,
+   "cache_read_input_tokens": 35036,
+   "cache_creation_input_tokens": 2802
+  },
+  {
+   "startTime": "2026-08-09T14:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 247,
+   "spend": 0.582541,
+   "prompt_tokens": 333450,
+   "completion_tokens": 59280,
+   "cache_read_input_tokens": 59135,
+   "cache_creation_input_tokens": 4730
+  },
+  {
+   "startTime": "2026-08-09T09:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 371,
+   "spend": 1.295769,
+   "prompt_tokens": 674478,
+   "completion_tokens": 150255,
+   "cache_read_input_tokens": 162479,
+   "cache_creation_input_tokens": 12998
+  },
+  {
+   "startTime": "2026-08-09T23:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 314,
+   "spend": 0.86671,
+   "prompt_tokens": 392500,
+   "completion_tokens": 108644,
+   "cache_read_input_tokens": 86261,
+   "cache_creation_input_tokens": 6900
+  },
+  {
+   "startTime": "2026-08-09T11:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 344,
+   "spend": 1.509871,
+   "prompt_tokens": 381152,
+   "completion_tokens": 70864,
+   "cache_read_input_tokens": 75823,
+   "cache_creation_input_tokens": 6065
+  },
+  {
+   "startTime": "2026-08-09T06:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 92,
+   "spend": 0.712578,
+   "prompt_tokens": 123648,
+   "completion_tokens": 48300,
+   "cache_read_input_tokens": 39770,
+   "cache_creation_input_tokens": 3181
+  },
+  {
+   "startTime": "2026-08-09T18:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 368,
+   "spend": 2.859319,
+   "prompt_tokens": 498272,
+   "completion_tokens": 190992,
+   "cache_read_input_tokens": 148140,
+   "cache_creation_input_tokens": 11851
+  },
+  {
+   "startTime": "2026-08-10T14:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 368,
+   "spend": 2.677173,
+   "usage": {
+    "prompt_tokens": 354384,
+    "completion_tokens": 110400,
+    "cache_read_input_tokens": 17491,
+    "cache_creation_input_tokens": 1399
+   }
+  },
+  {
+   "startTime": "2026-08-10T01:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 224,
+   "spend": 1.849213,
+   "usage": {
+    "prompt_tokens": 506688,
+    "completion_tokens": 31808,
+    "cache_read_input_tokens": 61654,
+    "cache_creation_input_tokens": 4932
+   }
+  },
+  {
+   "startTime": "2026-08-10T20:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 358,
+   "spend": 2.836536,
+   "usage": {
+    "prompt_tokens": 330792,
+    "completion_tokens": 151076,
+    "cache_read_input_tokens": 175825,
+    "cache_creation_input_tokens": 14066
+   }
+  },
+  {
+   "startTime": "2026-08-10T17:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 296,
+   "spend": 1.192213,
+   "usage": {
+    "prompt_tokens": 216376,
+    "completion_tokens": 200984,
+    "cache_read_input_tokens": 36353,
+    "cache_creation_input_tokens": 2908
+   }
+  },
+  {
+   "startTime": "2026-08-10T03:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 123,
+   "spend": 0.263869,
+   "usage": {
+    "prompt_tokens": 158055,
+    "completion_tokens": 24969,
+    "cache_read_input_tokens": 23787,
+    "cache_creation_input_tokens": 1902
+   }
+  },
+  {
+   "startTime": "2026-08-10T04:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 240,
+   "spend": 0.308957,
+   "usage": {
+    "prompt_tokens": 185520,
+    "completion_tokens": 35040,
+    "cache_read_input_tokens": 64703,
+    "cache_creation_input_tokens": 5176
+   }
+  },
+  {
+   "startTime": "2026-08-10T07:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 129,
+   "spend": 1.323955,
+   "usage": {
+    "prompt_tokens": 274383,
+    "completion_tokens": 71208,
+    "cache_read_input_tokens": 37041,
+    "cache_creation_input_tokens": 2963
+   }
+  },
+  {
+   "startTime": "2026-08-10T14:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 330,
+   "spend": 3.679964,
+   "usage": {
+    "prompt_tokens": 715110,
+    "completion_tokens": 215820,
+    "cache_read_input_tokens": 133005,
+    "cache_creation_input_tokens": 10640
+   }
+  },
+  {
+   "startTime": "2026-08-10T10:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 281,
+   "spend": 1.903214,
+   "usage": {
+    "prompt_tokens": 370077,
+    "completion_tokens": 130665,
+    "cache_read_input_tokens": 164314,
+    "cache_creation_input_tokens": 13145
+   }
+  },
+  {
+   "startTime": "2026-08-11T23:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 149,
+   "spend": 1.933325,
+   "prompt_tokens": 240039,
+   "completion_tokens": 92231,
+   "cache_read_input_tokens": 70940,
+   "cache_creation_input_tokens": 5675
+  },
+  {
+   "startTime": "2026-08-11T21:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 117,
+   "spend": 0.882636,
+   "prompt_tokens": 239850,
+   "completion_tokens": 19539,
+   "cache_read_input_tokens": 54166,
+   "cache_creation_input_tokens": 4333
+  },
+  {
+   "startTime": "2026-08-11T02:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 258,
+   "spend": 1.64843,
+   "prompt_tokens": 605526,
+   "completion_tokens": 31734,
+   "cache_read_input_tokens": 268398,
+   "cache_creation_input_tokens": 21471
+  },
+  {
+   "startTime": "2026-08-11T22:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 317,
+   "spend": 0.644876,
+   "prompt_tokens": 541436,
+   "completion_tokens": 45648,
+   "cache_read_input_tokens": 155999,
+   "cache_creation_input_tokens": 12479
+  },
+  {
+   "startTime": "2026-08-11T13:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 85,
+   "spend": 0.253886,
+   "prompt_tokens": 190655,
+   "completion_tokens": 19720,
+   "cache_read_input_tokens": 44210,
+   "cache_creation_input_tokens": 3536
+  },
+  {
+   "startTime": "2026-08-11T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 154,
+   "spend": 0.316014,
+   "prompt_tokens": 169862,
+   "completion_tokens": 44044,
+   "cache_read_input_tokens": 92584,
+   "cache_creation_input_tokens": 7406
+  },
+  {
+   "startTime": "2026-08-11T16:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 165,
+   "spend": 0.972538,
+   "prompt_tokens": 207405,
+   "completion_tokens": 54285,
+   "cache_read_input_tokens": 44411,
+   "cache_creation_input_tokens": 3552
+  },
+  {
+   "startTime": "2026-08-11T23:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 229,
+   "spend": 0.938996,
+   "prompt_tokens": 265869,
+   "completion_tokens": 41220,
+   "cache_read_input_tokens": 68938,
+   "cache_creation_input_tokens": 5515
+  },
+  {
+   "startTime": "2026-08-11T05:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 138,
+   "spend": 0.662447,
+   "prompt_tokens": 168498,
+   "completion_tokens": 38502,
+   "cache_read_input_tokens": 71908,
+   "cache_creation_input_tokens": 5752
+  },
+  {
+   "startTime": "2026-08-12T15:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 111,
+   "spend": 1.688581,
+   "usage": {
+    "prompt_tokens": 237762,
+    "completion_tokens": 65379,
+    "cache_read_input_tokens": 2245,
+    "cache_creation_input_tokens": 179
+   }
+  },
+  {
+   "startTime": "2026-08-12T11:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 98,
+   "spend": 0.672428,
+   "usage": {
+    "prompt_tokens": 121520,
+    "completion_tokens": 22638,
+    "cache_read_input_tokens": 13208,
+    "cache_creation_input_tokens": 1056
+   }
+  },
+  {
+   "startTime": "2026-08-12T15:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 191,
+   "spend": 1.795047,
+   "usage": {
+    "prompt_tokens": 344564,
+    "completion_tokens": 68951,
+    "cache_read_input_tokens": 113711,
+    "cache_creation_input_tokens": 9096
+   }
+  },
+  {
+   "startTime": "2026-08-12T08:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 384,
+   "spend": 1.177686,
+   "usage": {
+    "prompt_tokens": 630144,
+    "completion_tokens": 134016,
+    "cache_read_input_tokens": 153171,
+    "cache_creation_input_tokens": 12253
+   }
+  },
+  {
+   "startTime": "2026-08-12T17:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 286,
+   "spend": 0.825164,
+   "usage": {
+    "prompt_tokens": 272558,
+    "completion_tokens": 125554,
+    "cache_read_input_tokens": 93955,
+    "cache_creation_input_tokens": 7516
+   }
+  },
+  {
+   "startTime": "2026-08-12T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 325,
+   "spend": 1.227329,
+   "usage": {
+    "prompt_tokens": 762775,
+    "completion_tokens": 125450,
+    "cache_read_input_tokens": 203369,
+    "cache_creation_input_tokens": 16269
+   }
+  },
+  {
+   "startTime": "2026-08-12T02:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 255,
+   "spend": 2.555875,
+   "usage": {
+    "prompt_tokens": 497760,
+    "completion_tokens": 173400,
+    "cache_read_input_tokens": 211261,
+    "cache_creation_input_tokens": 16900
+   }
+  },
+  {
+   "startTime": "2026-08-12T06:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 327,
+   "spend": 2.725694,
+   "usage": {
+    "prompt_tokens": 773682,
+    "completion_tokens": 113142,
+    "cache_read_input_tokens": 169965,
+    "cache_creation_input_tokens": 13597
+   }
+  },
+  {
+   "startTime": "2026-08-12T16:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 148,
+   "spend": 1.2338,
+   "usage": {
+    "prompt_tokens": 331668,
+    "completion_tokens": 76072,
+    "cache_read_input_tokens": 178044,
+    "cache_creation_input_tokens": 14243
+   }
+  },
+  {
+   "startTime": "2026-08-13T07:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 220,
+   "spend": 1.6287,
+   "prompt_tokens": 486860,
+   "completion_tokens": 39380,
+   "cache_read_input_tokens": 176075,
+   "cache_creation_input_tokens": 14086
+  },
+  {
+   "startTime": "2026-08-13T14:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 85,
+   "spend": 1.13553,
+   "prompt_tokens": 203150,
+   "completion_tokens": 51255,
+   "cache_read_input_tokens": 101143,
+   "cache_creation_input_tokens": 8091
+  },
+  {
+   "startTime": "2026-08-13T05:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 206,
+   "spend": 2.636174,
+   "prompt_tokens": 424360,
+   "completion_tokens": 113506,
+   "cache_read_input_tokens": 141456,
+   "cache_creation_input_tokens": 11316
+  },
+  {
+   "startTime": "2026-08-13T16:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 292,
+   "spend": 0.907345,
+   "prompt_tokens": 268932,
+   "completion_tokens": 131108,
+   "cache_read_input_tokens": 21408,
+   "cache_creation_input_tokens": 1712
+  },
+  {
+   "startTime": "2026-08-13T01:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 147,
+   "spend": 0.504469,
+   "prompt_tokens": 279888,
+   "completion_tokens": 57624,
+   "cache_read_input_tokens": 79422,
+   "cache_creation_input_tokens": 6353
+  },
+  {
+   "startTime": "2026-08-13T04:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 157,
+   "spend": 0.51495,
+   "prompt_tokens": 278047,
+   "completion_tokens": 47414,
+   "cache_read_input_tokens": 208,
+   "cache_creation_input_tokens": 16
+  },
+  {
+   "startTime": "2026-08-13T22:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 145,
+   "spend": 0.941334,
+   "prompt_tokens": 111360,
+   "completion_tokens": 69600,
+   "cache_read_input_tokens": 16532,
+   "cache_creation_input_tokens": 1322
+  },
+  {
+   "startTime": "2026-08-13T02:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 350,
+   "spend": 2.623625,
+   "prompt_tokens": 279300,
+   "completion_tokens": 213850,
+   "cache_read_input_tokens": 106561,
+   "cache_creation_input_tokens": 8524
+  },
+  {
+   "startTime": "2026-08-13T06:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 380,
+   "spend": 3.833543,
+   "prompt_tokens": 650560,
+   "completion_tokens": 242440,
+   "cache_read_input_tokens": 108628,
+   "cache_creation_input_tokens": 8690
+  },
+  {
+   "startTime": "2026-08-14T14:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 293,
+   "spend": 1.51003,
+   "usage": {
+    "prompt_tokens": 291535,
+    "completion_tokens": 62409,
+    "cache_read_input_tokens": 125295,
+    "cache_creation_input_tokens": 10023
+   }
+  },
+  {
+   "startTime": "2026-08-14T15:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 186,
+   "spend": 2.194675,
+   "usage": {
+    "prompt_tokens": 125736,
+    "completion_tokens": 125736,
+    "cache_read_input_tokens": 28571,
+    "cache_creation_input_tokens": 2285
+   }
+  },
+  {
+   "startTime": "2026-08-14T12:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 160,
+   "spend": 2.00289,
+   "usage": {
+    "prompt_tokens": 368480,
+    "completion_tokens": 70080,
+    "cache_read_input_tokens": 64061,
+    "cache_creation_input_tokens": 5124
+   }
+  },
+  {
+   "startTime": "2026-08-14T21:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 118,
+   "spend": 0.37063,
+   "usage": {
+    "prompt_tokens": 205202,
+    "completion_tokens": 51094,
+    "cache_read_input_tokens": 112552,
+    "cache_creation_input_tokens": 9004
+   }
+  },
+  {
+   "startTime": "2026-08-14T03:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 114,
+   "spend": 0.217979,
+   "usage": {
+    "prompt_tokens": 152304,
+    "completion_tokens": 22344,
+    "cache_read_input_tokens": 57555,
+    "cache_creation_input_tokens": 4604
+   }
+  },
+  {
+   "startTime": "2026-08-14T03:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 281,
+   "spend": 1.206113,
+   "usage": {
+    "prompt_tokens": 557504,
+    "completion_tokens": 166352,
+    "cache_read_input_tokens": 228939,
+    "cache_creation_input_tokens": 18315
+   }
+  },
+  {
+   "startTime": "2026-08-14T15:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 307,
+   "spend": 1.88288,
+   "usage": {
+    "prompt_tokens": 191875,
+    "completion_tokens": 155342,
+    "cache_read_input_tokens": 75112,
+    "cache_creation_input_tokens": 6008
+   }
+  },
+  {
+   "startTime": "2026-08-14T00:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 201,
+   "spend": 1.974378,
+   "usage": {
+    "prompt_tokens": 241401,
+    "completion_tokens": 140097,
+    "cache_read_input_tokens": 15046,
+    "cache_creation_input_tokens": 1203
+   }
+  },
+  {
+   "startTime": "2026-08-14T12:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 185,
+   "spend": 1.259486,
+   "usage": {
+    "prompt_tokens": 344285,
+    "completion_tokens": 50875,
+    "cache_read_input_tokens": 54988,
+    "cache_creation_input_tokens": 4399
+   }
+  },
+  {
+   "startTime": "2026-08-15T12:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 356,
+   "spend": 3.592463,
+   "prompt_tokens": 760060,
+   "completion_tokens": 151300,
+   "cache_read_input_tokens": 398840,
+   "cache_creation_input_tokens": 31907
+  },
+  {
+   "startTime": "2026-08-15T06:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 364,
+   "spend": 3.044796,
+   "prompt_tokens": 715260,
+   "completion_tokens": 76076,
+   "cache_read_input_tokens": 100884,
+   "cache_creation_input_tokens": 8070
+  },
+  {
+   "startTime": "2026-08-15T08:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 272,
+   "spend": 2.409705,
+   "prompt_tokens": 570384,
+   "completion_tokens": 63104,
+   "cache_read_input_tokens": 103335,
+   "cache_creation_input_tokens": 8266
+  },
+  {
+   "startTime": "2026-08-15T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 368,
+   "spend": 1.306357,
+   "prompt_tokens": 574816,
+   "completion_tokens": 168912,
+   "cache_read_input_tokens": 141273,
+   "cache_creation_input_tokens": 11301
+  },
+  {
+   "startTime": "2026-08-15T04:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 127,
+   "spend": 0.242185,
+   "prompt_tokens": 102616,
+   "completion_tokens": 33528,
+   "cache_read_input_tokens": 35089,
+   "cache_creation_input_tokens": 2807
+  },
+  {
+   "startTime": "2026-08-15T14:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 171,
+   "spend": 0.407264,
+   "prompt_tokens": 165528,
+   "completion_tokens": 54207,
+   "cache_read_input_tokens": 36623,
+   "cache_creation_input_tokens": 2929
+  },
+  {
+   "startTime": "2026-08-15T01:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 383,
+   "spend": 2.679858,
+   "prompt_tokens": 781703,
+   "completion_tokens": 81196,
+   "cache_read_input_tokens": 43179,
+   "cache_creation_input_tokens": 3454
+  },
+  {
+   "startTime": "2026-08-15T02:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 160,
+   "spend": 1.182849,
+   "prompt_tokens": 136640,
+   "completion_tokens": 90240,
+   "cache_read_input_tokens": 30574,
+   "cache_creation_input_tokens": 2445
+  },
+  {
+   "startTime": "2026-08-15T04:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 254,
+   "spend": 2.274372,
+   "prompt_tokens": 580644,
+   "completion_tokens": 141478,
+   "cache_read_input_tokens": 296008,
+   "cache_creation_input_tokens": 23680
+  },
+  {
+   "startTime": "2026-08-16T12:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 185,
+   "spend": 1.521257,
+   "usage": {
+    "prompt_tokens": 401450,
+    "completion_tokens": 50135,
+    "cache_read_input_tokens": 181298,
+    "cache_creation_input_tokens": 14503
+   }
+  },
+  {
+   "startTime": "2026-08-16T23:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 327,
+   "spend": 3.568545,
+   "usage": {
+    "prompt_tokens": 417906,
+    "completion_tokens": 177234,
+    "cache_read_input_tokens": 143201,
+    "cache_creation_input_tokens": 11456
+   }
+  },
+  {
+   "startTime": "2026-08-16T07:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 285,
+   "spend": 2.803142,
+   "usage": {
+    "prompt_tokens": 528675,
+    "completion_tokens": 126825,
+    "cache_read_input_tokens": 285523,
+    "cache_creation_input_tokens": 22841
+   }
+  },
+  {
+   "startTime": "2026-08-16T06:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 391,
+   "spend": 0.853046,
+   "usage": {
+    "prompt_tokens": 658835,
+    "completion_tokens": 53958,
+    "cache_read_input_tokens": 94472,
+    "cache_creation_input_tokens": 7557
+   }
+  },
+  {
+   "startTime": "2026-08-16T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 255,
+   "spend": 1.026522,
+   "usage": {
+    "prompt_tokens": 313140,
+    "completion_tokens": 145605,
+    "cache_read_input_tokens": 18303,
+    "cache_creation_input_tokens": 1464
+   }
+  },
+  {
+   "startTime": "2026-08-16T03:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 184,
+   "spend": 0.620621,
+   "usage": {
+    "prompt_tokens": 302312,
+    "completion_tokens": 84640,
+    "cache_read_input_tokens": 131114,
+    "cache_creation_input_tokens": 10489
+   }
+  },
+  {
+   "startTime": "2026-08-16T17:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 393,
+   "spend": 2.906992,
+   "usage": {
+    "prompt_tokens": 809973,
+    "completion_tokens": 110826,
+    "cache_read_input_tokens": 113099,
+    "cache_creation_input_tokens": 9047
+   }
+  },
+  {
+   "startTime": "2026-08-16T16:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 232,
+   "spend": 1.676705,
+   "usage": {
+    "prompt_tokens": 399504,
+    "completion_tokens": 83288,
+    "cache_read_input_tokens": 77467,
+    "cache_creation_input_tokens": 6197
+   }
+  },
+  {
+   "startTime": "2026-08-16T16:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 342,
+   "spend": 1.531798,
+   "usage": {
+    "prompt_tokens": 304380,
+    "completion_tokens": 110124,
+    "cache_read_input_tokens": 165195,
+    "cache_creation_input_tokens": 13215
+   }
+  },
+  {
+   "startTime": "2026-08-17T06:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 180,
+   "spend": 1.085446,
+   "prompt_tokens": 316980,
+   "completion_tokens": 26460,
+   "cache_read_input_tokens": 109330,
+   "cache_creation_input_tokens": 8746
+  },
+  {
+   "startTime": "2026-08-17T13:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 122,
+   "spend": 0.931164,
+   "prompt_tokens": 107238,
+   "completion_tokens": 45140,
+   "cache_read_input_tokens": 28186,
+   "cache_creation_input_tokens": 2254
+  },
+  {
+   "startTime": "2026-08-17T11:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 250,
+   "spend": 1.363652,
+   "prompt_tokens": 318500,
+   "completion_tokens": 53250,
+   "cache_read_input_tokens": 162748,
+   "cache_creation_input_tokens": 13019
+  },
+  {
+   "startTime": "2026-08-17T23:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 216,
+   "spend": 0.534587,
+   "prompt_tokens": 334368,
+   "completion_tokens": 53352,
+   "cache_read_input_tokens": 83176,
+   "cache_creation_input_tokens": 6654
+  },
+  {
+   "startTime": "2026-08-17T02:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 149,
+   "spend": 0.626775,
+   "prompt_tokens": 162112,
+   "completion_tokens": 100724,
+   "cache_read_input_tokens": 48695,
+   "cache_creation_input_tokens": 3895
+  },
+  {
+   "startTime": "2026-08-17T10:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 366,
+   "spend": 0.784879,
+   "prompt_tokens": 417606,
+   "completion_tokens": 106872,
+   "cache_read_input_tokens": 208858,
+   "cache_creation_input_tokens": 16708
+  },
+  {
+   "startTime": "2026-08-17T00:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 387,
+   "spend": 1.459919,
+   "prompt_tokens": 347526,
+   "completion_tokens": 94815,
+   "cache_read_input_tokens": 178522,
+   "cache_creation_input_tokens": 14281
+  },
+  {
+   "startTime": "2026-08-17T18:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 227,
+   "spend": 2.133075,
+   "prompt_tokens": 454681,
+   "completion_tokens": 111684,
+   "cache_read_input_tokens": 60233,
+   "cache_creation_input_tokens": 4818
+  },
+  {
+   "startTime": "2026-08-17T17:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 265,
+   "spend": 2.165788,
+   "prompt_tokens": 609765,
+   "completion_tokens": 76585,
+   "cache_read_input_tokens": 62236,
+   "cache_creation_input_tokens": 4978
+  },
+  {
+   "startTime": "2026-08-18T21:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 119,
+   "spend": 0.720582,
+   "usage": {
+    "prompt_tokens": 182070,
+    "completion_tokens": 18088,
+    "cache_read_input_tokens": 40394,
+    "cache_creation_input_tokens": 3231
+   }
+  },
+  {
+   "startTime": "2026-08-18T20:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 150,
+   "spend": 1.551169,
+   "usage": {
+    "prompt_tokens": 184500,
+    "completion_tokens": 76500,
+    "cache_read_input_tokens": 62429,
+    "cache_creation_input_tokens": 4994
+   }
+  },
+  {
+   "startTime": "2026-08-18T01:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 88,
+   "spend": 0.627396,
+   "usage": {
+    "prompt_tokens": 81312,
+    "completion_tokens": 28512,
+    "cache_read_input_tokens": 18425,
+    "cache_creation_input_tokens": 1474
+   }
+  },
+  {
+   "startTime": "2026-08-18T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 153,
+   "spend": 0.637783,
+   "usage": {
+    "prompt_tokens": 257193,
+    "completion_tokens": 78795,
+    "cache_read_input_tokens": 16730,
+    "cache_creation_input_tokens": 1338
+   }
+  },
+  {
+   "startTime": "2026-08-18T07:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 168,
+   "spend": 0.751546,
+   "usage": {
+    "prompt_tokens": 216384,
+    "completion_tokens": 109536,
+    "cache_read_input_tokens": 15646,
+    "cache_creation_input_tokens": 1251
+   }
+  },
+  {
+   "startTime": "2026-08-18T01:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 370,
+   "spend": 0.661779,
+   "usage": {
+    "prompt_tokens": 473600,
+    "completion_tokens": 64380,
+    "cache_read_input_tokens": 167151,
+    "cache_creation_input_tokens": 13372
+   }
+  },
+  {
+   "startTime": "2026-08-18T15:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 154,
+   "spend": 1.372426,
+   "usage": {
+    "prompt_tokens": 219450,
+    "completion_tokens": 96866,
+    "cache_read_input_tokens": 72429,
+    "cache_creation_input_tokens": 5794
+   }
+  },
+  {
+   "startTime": "2026-08-18T09:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 256,
+   "spend": 2.401947,
+   "usage": {
+    "prompt_tokens": 369152,
+    "completion_tokens": 178688,
+    "cache_read_input_tokens": 153906,
+    "cache_creation_input_tokens": 12312
+   }
+  },
+  {
+   "startTime": "2026-08-18T03:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 328,
+   "spend": 2.57368,
+   "usage": {
+    "prompt_tokens": 508072,
+    "completion_tokens": 176464,
+    "cache_read_input_tokens": 230569,
+    "cache_creation_input_tokens": 18445
+   }
+  },
+  {
+   "startTime": "2026-08-19T16:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 369,
+   "spend": 4.431066,
+   "prompt_tokens": 307746,
+   "completion_tokens": 242802,
+   "cache_read_input_tokens": 55917,
+   "cache_creation_input_tokens": 4473
+  },
+  {
+   "startTime": "2026-08-19T01:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 301,
+   "spend": 1.78251,
+   "prompt_tokens": 439460,
+   "completion_tokens": 43344,
+   "cache_read_input_tokens": 77511,
+   "cache_creation_input_tokens": 6200
+  },
+  {
+   "startTime": "2026-08-19T19:14:00",
+   "model": "claude-sonnet-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 231,
+   "spend": 2.930318,
+   "prompt_tokens": 481635,
+   "completion_tokens": 130053,
+   "cache_read_input_tokens": 193908,
+   "cache_creation_input_tokens": 15512
+  },
+  {
+   "startTime": "2026-08-19T02:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "chat",
+   "request_count": 244,
+   "spend": 0.846274,
+   "prompt_tokens": 521916,
+   "completion_tokens": 105408,
+   "cache_read_input_tokens": 253352,
+   "cache_creation_input_tokens": 20268
+  },
+  {
+   "startTime": "2026-08-19T12:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "summarize",
+   "request_count": 205,
+   "spend": 0.747826,
+   "prompt_tokens": 175070,
+   "completion_tokens": 118285,
+   "cache_read_input_tokens": 23335,
+   "cache_creation_input_tokens": 1866
+  },
+  {
+   "startTime": "2026-08-19T07:14:00",
+   "model": "claude-haiku-4-5",
+   "custom_llm_provider": "anthropic",
+   "key_alias": "agent-runs",
+   "request_count": 106,
+   "spend": 0.248524,
+   "prompt_tokens": 166844,
+   "completion_tokens": 24062,
+   "cache_read_input_tokens": 48288,
+   "cache_creation_input_tokens": 3863
+  },
+  {
+   "startTime": "2026-08-19T02:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "chat",
+   "request_count": 359,
+   "spend": 2.530395,
+   "prompt_tokens": 440493,
+   "completion_tokens": 188475,
+   "cache_read_input_tokens": 227793,
+   "cache_creation_input_tokens": 18223
+  },
+  {
+   "startTime": "2026-08-19T05:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "summarize",
+   "request_count": 268,
+   "spend": 3.115378,
+   "prompt_tokens": 636232,
+   "completion_tokens": 181972,
+   "cache_read_input_tokens": 147460,
+   "cache_creation_input_tokens": 11796
+  },
+  {
+   "startTime": "2026-08-19T02:14:00",
+   "model": "gpt-4o",
+   "custom_llm_provider": "openai",
+   "key_alias": "agent-runs",
+   "request_count": 193,
+   "spend": 1.762413,
+   "prompt_tokens": 372490,
+   "completion_tokens": 106343,
+   "cache_read_input_tokens": 116120,
+   "cache_creation_input_tokens": 9289
+  },
+  {
+   "note": "malformed row with no model or date"
+  }
+ ]
+}

@@ -62,6 +62,11 @@ CONNECTOR_CASES: Dict[str, Dict[str, Any]] = {
         "args": ["--offline", "--with-started"],
         "min_rows": 6,
     },
+    "gateway": {
+        "dataset": "llm_usage",
+        "args": ["--offline"],
+        "min_rows": 30,
+    },
 }
 
 

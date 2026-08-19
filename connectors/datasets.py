@@ -361,7 +361,132 @@ ISSUES = Dataset(
 )
 
 
-DATASETS: Dict[str, Dataset] = {ISSUES.name: ISSUES}
+# --------------------------------------------------------------------------
+# llm_usage — one row per (date, model, feature)
+#
+# Unlike `issues`, this contract could NOT be derived from existing scripts:
+# nothing in scripts/ reads a usage table. The cost tools there are estimators
+# that take scalar assumptions (--input-tokens, --requests-per-month) and
+# project forward; none of them consumes actuals. So the names here are
+# designed, and grounded in the two vocabularies already in the repo rather
+# than invented fresh:
+#
+#   * `cached_input_tokens` and `cache_write_tokens` are the parameter names
+#     scripts/model_pricing.py:compute_cost() already uses, so a row can be
+#     priced by passing it straight through.
+#   * `input_tokens` / `output_tokens` / `requests` match the --input-tokens,
+#     --output-tokens, and --requests-per-month flags the estimators take, so
+#     the summary script can print numbers you paste directly into them.
+#
+# Aliases cover what gateways actually emit: OpenAI-lineage APIs say
+# prompt_tokens / completion_tokens, and every provider spells the cache
+# fields differently.
+# --------------------------------------------------------------------------
+
+_USAGE_CONSUMERS = ("llm-usage-summary",)
+
+LLM_USAGE = Dataset(
+    name="llm_usage",
+    description="LLM spend and token usage, one row per date + model + feature.",
+    consumers=_USAGE_CONSUMERS,
+    notes=(
+        "Rows are aggregates, not individual calls: a gateway that returns raw "
+        "request logs should roll them up to one row per (date, model, "
+        "feature) before writing. `cost_usd` is what the provider billed; the "
+        "summary script re-derives cost from model_pricing.py and reports the "
+        "gap, which is how markup or stale pricing shows up."
+    ),
+    columns=(
+        Column(
+            name="date",
+            description="Usage date (ISO 8601).",
+            kind="date",
+            required=True,
+            aliases=("day", "period", "timestamp", "start_time", "starttime"),
+            consumers=_USAGE_CONSUMERS,
+        ),
+        Column(
+            name="model",
+            description="Model id as billed.",
+            required=True,
+            aliases=("model_name", "model_id", "engine", "deployment"),
+            consumers=_USAGE_CONSUMERS,
+        ),
+        Column(
+            name="feature",
+            description="Product surface, tag, or team the spend belongs to.",
+            aliases=("tag", "app", "project", "team", "user", "key_alias", "label"),
+            consumers=_USAGE_CONSUMERS,
+        ),
+        Column(
+            name="provider",
+            description="Upstream provider (anthropic, openai, bedrock...).",
+            aliases=("provider_name", "vendor", "upstream"),
+        ),
+        Column(
+            name="requests",
+            description="Number of calls.",
+            kind="number",
+            aliases=("calls", "count", "request_count", "n"),
+            consumers=_USAGE_CONSUMERS,
+        ),
+        Column(
+            name="input_tokens",
+            description="Uncached input tokens billed.",
+            kind="number",
+            aliases=("prompt_tokens", "tokens_in", "input", "prompt"),
+            consumers=_USAGE_CONSUMERS,
+        ),
+        Column(
+            name="output_tokens",
+            description="Output tokens billed.",
+            kind="number",
+            aliases=("completion_tokens", "tokens_out", "output", "completion"),
+            consumers=_USAGE_CONSUMERS,
+        ),
+        Column(
+            name="cached_input_tokens",
+            description="Input tokens served from cache (billed at read rate).",
+            kind="number",
+            aliases=(
+                "cache_read_tokens",
+                "cache_read_input_tokens",
+                "cached_tokens",
+                "cache_read",
+                "prompt_cache_read_tokens",
+            ),
+            consumers=_USAGE_CONSUMERS,
+        ),
+        Column(
+            name="cache_write_tokens",
+            description="Input tokens written to cache (billed at write rate).",
+            kind="number",
+            aliases=(
+                "cache_creation_input_tokens",
+                "cache_write",
+                "cache_creation_tokens",
+                "prompt_cache_write_tokens",
+            ),
+            consumers=_USAGE_CONSUMERS,
+        ),
+        Column(
+            name="reasoning_tokens",
+            description="Reasoning/thinking tokens, where the provider reports them.",
+            kind="number",
+            aliases=("thinking_tokens", "reasoning"),
+        ),
+        Column(
+            name="cost_usd",
+            description="Cost billed by the provider, USD.",
+            kind="number",
+            aliases=("cost", "spend", "total_cost", "usd", "amount", "usage"),
+            consumers=_USAGE_CONSUMERS,
+        ),
+    ),
+)
+
+
+DATASETS: Dict[str, Dataset] = {ISSUES.name: ISSUES, LLM_USAGE.name: LLM_USAGE}
 
 
 def names() -> List[str]:
