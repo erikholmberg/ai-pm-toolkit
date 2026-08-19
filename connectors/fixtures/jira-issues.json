@@ -1,0 +1,434 @@
+[
+  {
+    "nextPageToken": "CAEaBnBhZ2Uy",
+    "isLast": false,
+    "issues": [
+      {
+        "key": "PLAT-101",
+        "id": "101",
+        "fields": {
+          "summary": "Rate limit dashboard",
+          "status": {
+            "name": "Done",
+            "statusCategory": {
+              "key": "done"
+            }
+          },
+          "issuetype": {
+            "name": "Story"
+          },
+          "priority": {
+            "name": "High"
+          },
+          "assignee": {
+            "displayName": "Dana Okafor",
+            "emailAddress": "Dana Okafor@example.com"
+          },
+          "created": "2026-01-12T09:14:22.000-0500",
+          "updated": "2026-02-03T11:02:10.000-0500",
+          "resolutiondate": "2026-02-03T11:02:10.000-0500",
+          "components": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "observability"
+            }
+          ],
+          "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Surface per-tier TPM headroom so we stop guessing at quota increases."
+                  }
+                ]
+              }
+            ]
+          },
+          "customfield_10024": 5,
+          "customfield_10020": [
+            {
+              "id": 41,
+              "name": "Sprint 41",
+              "state": "closed"
+            }
+          ]
+        },
+        "changelog": {
+          "histories": [
+            {
+              "created": "2026-01-19T10:02:00.000-0500",
+              "items": [
+                {
+                  "field": "status",
+                  "fromString": "To Do",
+                  "toString": "In Progress"
+                }
+              ]
+            },
+            {
+              "created": "2026-02-03T11:02:10.000-0500",
+              "items": [
+                {
+                  "field": "status",
+                  "fromString": "In Review",
+                  "toString": "Done"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "key": "PLAT-102",
+        "id": "102",
+        "fields": {
+          "summary": "Fix token counter overflow",
+          "status": {
+            "name": "Done",
+            "statusCategory": {
+              "key": "done"
+            }
+          },
+          "issuetype": {
+            "name": "Bug"
+          },
+          "priority": {
+            "name": "Highest"
+          },
+          "assignee": {
+            "displayName": "Sam Reyes",
+            "emailAddress": "Sam Reyes@example.com"
+          },
+          "created": "2026-01-15T14:20:05.000-0500",
+          "updated": "2026-01-28T16:45:00.000-0500",
+          "resolutiondate": "2026-01-28T16:45:00.000-0500",
+          "components": [
+            {
+              "name": "platform"
+            }
+          ],
+          "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Counts above 2^31 wrap negative on the summary endpoint."
+                  }
+                ]
+              }
+            ]
+          },
+          "customfield_10024": 3,
+          "customfield_10020": [
+            {
+              "id": 41,
+              "name": "Sprint 41",
+              "state": "closed"
+            }
+          ]
+        },
+        "changelog": {
+          "histories": [
+            {
+              "created": "2026-01-16T09:00:00.000-0500",
+              "items": [
+                {
+                  "field": "status",
+                  "fromString": "To Do",
+                  "toString": "In Progress"
+                }
+              ]
+            },
+            {
+              "created": "2026-01-28T16:45:00.000-0500",
+              "items": [
+                {
+                  "field": "status",
+                  "fromString": "In Progress",
+                  "toString": "Done"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "key": "PLAT-103",
+        "id": "103",
+        "fields": {
+          "summary": "Eval run diff spike",
+          "status": {
+            "name": "In Review",
+            "statusCategory": {
+              "key": "indeterminate"
+            }
+          },
+          "issuetype": {
+            "name": "Task"
+          },
+          "priority": {
+            "name": "Medium"
+          },
+          "assignee": {
+            "displayName": "Dana Okafor",
+            "emailAddress": "Dana Okafor@example.com"
+          },
+          "created": "2026-01-20T10:00:00.000-0500",
+          "updated": "2026-02-18T09:30:00.000-0500",
+          "resolutiondate": null,
+          "components": [
+            {
+              "name": "evals"
+            }
+          ],
+          "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Compare two eval runs case by case instead of on aggregate score."
+                  }
+                ]
+              }
+            ]
+          },
+          "customfield_10024": 8,
+          "customfield_10020": [
+            {
+              "id": 41,
+              "name": "Sprint 41",
+              "state": "closed"
+            },
+            {
+              "id": 42,
+              "name": "Sprint 42",
+              "state": "active"
+            }
+          ]
+        },
+        "changelog": {
+          "histories": [
+            {
+              "created": "2026-02-02T08:00:00.000-0500",
+              "items": [
+                {
+                  "field": "status",
+                  "fromString": "To Do",
+                  "toString": "In Progress"
+                }
+              ]
+            },
+            {
+              "created": "2026-02-16T14:00:00.000-0500",
+              "items": [
+                {
+                  "field": "status",
+                  "fromString": "In Progress",
+                  "toString": "In Review"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "key": "PLAT-104",
+        "id": "104",
+        "fields": {
+          "summary": "Backlog grooming automation",
+          "status": {
+            "name": "To Do",
+            "statusCategory": {
+              "key": "indeterminate"
+            }
+          },
+          "issuetype": {
+            "name": "Story"
+          },
+          "priority": null,
+          "assignee": null,
+          "created": "2026-02-08T15:30:00.000-0500",
+          "updated": "2026-02-08T15:30:00.000-0500",
+          "resolutiondate": null,
+          "components": [],
+          "description": null,
+          "customfield_10024": 2,
+          "customfield_10020": [
+            {
+              "id": 42,
+              "name": "Sprint 42",
+              "state": "active"
+            }
+          ]
+        },
+        "changelog": {
+          "histories": []
+        }
+      }
+    ]
+  },
+  {
+    "isLast": true,
+    "issues": [
+      {
+        "key": "PLAT-105",
+        "id": "105",
+        "fields": {
+          "summary": "Connector base class",
+          "status": {
+            "name": "In Progress",
+            "statusCategory": {
+              "key": "indeterminate"
+            }
+          },
+          "issuetype": {
+            "name": "Story"
+          },
+          "priority": {
+            "name": "High"
+          },
+          "assignee": {
+            "displayName": "Jules Mbeki",
+            "emailAddress": "Jules Mbeki@example.com"
+          },
+          "created": "2026-02-02T08:45:00.000-0500",
+          "updated": "2026-02-17T13:15:00.000-0500",
+          "resolutiondate": null,
+          "components": [
+            {
+              "name": "platform"
+            }
+          ],
+          "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Shared config, retries, and provenance for every source."
+                  }
+                ]
+              }
+            ]
+          },
+          "customfield_10024": 5,
+          "customfield_10020": [
+            {
+              "id": 42,
+              "name": "Sprint 42",
+              "state": "active"
+            }
+          ]
+        },
+        "changelog": {
+          "histories": [
+            {
+              "created": "2026-02-10T11:30:00.000-0500",
+              "items": [
+                {
+                  "field": "status",
+                  "fromString": "To Do",
+                  "toString": "In Progress"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      {
+        "key": "PLAT-106",
+        "id": "106",
+        "fields": {
+          "summary": "Gateway usage export",
+          "status": {
+            "name": "Done",
+            "statusCategory": {
+              "key": "done"
+            }
+          },
+          "issuetype": {
+            "name": "Story"
+          },
+          "priority": {
+            "name": "Medium"
+          },
+          "assignee": {
+            "displayName": "Sam Reyes",
+            "emailAddress": "Sam Reyes@example.com"
+          },
+          "created": "2026-01-11T11:11:00.000-0500",
+          "updated": "2026-02-14T17:00:00.000-0500",
+          "resolutiondate": "2026-02-14T17:00:00.000-0500",
+          "components": [
+            {
+              "name": "platform"
+            },
+            {
+              "name": "cost"
+            }
+          ],
+          "description": {
+            "type": "doc",
+            "version": 1,
+            "content": [
+              {
+                "type": "paragraph",
+                "content": [
+                  {
+                    "type": "text",
+                    "text": "Daily token spend per model and per feature."
+                  }
+                ]
+              }
+            ]
+          },
+          "customfield_10024": 13,
+          "customfield_10020": [
+            "com.atlassian.greenhopper.service.sprint.Sprint@1a2b[id=41,name=Sprint 41,state=CLOSED]"
+          ]
+        },
+        "changelog": {
+          "histories": [
+            {
+              "created": "2026-01-14T09:15:00.000-0500",
+              "items": [
+                {
+                  "field": "status",
+                  "fromString": "To Do",
+                  "toString": "In Progress"
+                }
+              ]
+            },
+            {
+              "created": "2026-02-14T17:00:00.000-0500",
+              "items": [
+                {
+                  "field": "status",
+                  "fromString": "In Progress",
+                  "toString": "Done"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+]

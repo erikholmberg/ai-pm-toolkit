@@ -66,6 +66,7 @@ Run `fetch.py --describe issues` for the full alias list per column.
 | source | provides | config |
 |---|---|---|
 | `csvfile` | `issues` | none |
+| `jira` | `issues` | `JIRA_HOST`, `JIRA_EMAIL`, `JIRA_API_TOKEN` |
 
 ### `csvfile`
 
@@ -84,6 +85,47 @@ Mapping precedence, most specific first:
 3. the aliases declared in `datasets.py`
 
 Useful flags: `--drop-extras` (emit only contract columns; unmapped source columns pass through by default), `--strict` (exit non-zero if a required column can't be mapped instead of warning).
+
+### `jira`
+
+Pulls issues from Jira Cloud or Data Center over JQL. Uses the same environment
+variables the [jira-pm-assistant MCP server](../mcps/servers/jira-pm-assistant/) documents.
+
+```bash
+export JIRA_HOST=yourcompany.atlassian.net
+export JIRA_EMAIL=you@company.com
+export JIRA_API_TOKEN=...
+
+python fetch.py jira issues --project PLAT --out issues.csv
+python fetch.py jira issues --project PLAT --updated-since 2026-01-01 --with-started --out issues.csv
+python fetch.py jira issues --jql "project = PLAT AND sprint in openSprints()" --out issues.csv
+python fetch.py jira issues --offline --out issues.csv    # replay the fixture, no network
+```
+
+Three parts of this are more than a field rename, and each exists because the naive
+version returns a plausible wrong answer instead of an error:
+
+**Custom field discovery.** Story points and sprint live under a `customfield_NNNNN` id
+that differs per instance — a hardcoded id reads blank everywhere else, silently. The
+connector asks `/rest/api/3/field` for the id by name and records what it found in the
+sidecar. Override with `--points-field`, `--sprint-field`, `--field canonical=id`, or a
+`--profile` JSON file.
+
+**ADF flattening.** API v3 returns `description` as an Atlassian Document Format tree.
+Written straight to CSV that becomes an unreadable JSON blob in one cell, so it's walked
+back to plain text.
+
+**`started` from the changelog.** Jira has no started field, and three consuming scripts
+want one — without it `blocker-wait-summary` reports wait == lead time for every ticket,
+which is a real number that means something else. `--with-started` expands each issue's
+status history and takes the first transition into an *in-progress status category*
+(not a hardcoded name list — every team renames these). Costs an extra changelog
+expansion, so it's opt-in. Issues with no such transition get a blank and a warning
+saying how many.
+
+Endpoint note: Jira Cloud retired `/rest/api/3/search` for `/rest/api/3/search/jql` with
+token pagination; Data Center still serves the old one with `startAt`. The connector
+tries the new endpoint and falls back on 404/410, so both deployments work.
 
 ## Provenance
 

@@ -9,7 +9,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
 | [**scripts/**](./scripts/) | 115 Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy, agentic AI & orchestration, AI safety & red-teaming — plus shared modules for [pricing](./scripts/model_pricing.py), [CSV headers](./scripts/csv_columns.py), [result envelope](./scripts/toolkit_io.py), and a [smoke test](./scripts/smoke-test.py) that runs all 111 scripts against real sample data. See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
-| [**connectors/**](./connectors/) | Pull data from Jira, exports, and other systems into the CSV shapes `scripts/` already reads — canonical [dataset contracts](./connectors/datasets.py), a [one-command CLI](./connectors/fetch.py), and a [self-test](./connectors/self-test.py) that verifies each connector's output actually feeds its consuming scripts. See [connectors/README.md](./connectors/README.md). |
+| [**connectors/**](./connectors/) | Pull data from Jira (API or CSV export) and other systems into the CSV shapes `scripts/` already reads — canonical [dataset contracts](./connectors/datasets.py), a [one-command CLI](./connectors/fetch.py), and a [self-test](./connectors/self-test.py) that verifies each connector's output actually feeds its consuming scripts. See [connectors/README.md](./connectors/README.md). |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | MCP servers for Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, product analytics, and Calendar/meetings ([mcps/README.md](./mcps/README.md)) |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -157,7 +157,7 @@ pm-toolkit/
 │   ├── datasets.py           # Canonical dataset contracts (the column shapes scripts read)
 │   ├── fetch.py              # CLI: fetch.py <source> <dataset> --out FILE
 │   ├── base.py               # Shared config, retries, normalization, provenance sidecar
-│   ├── sources/              # One module per system (csvfile; Jira and gateway next)
+│   ├── sources/              # One module per system (csvfile, jira; gateway next)
 │   ├── profiles/             # Per-instance field mappings (e.g. Jira custom field IDs)
 │   └── fixtures/             # Recorded responses for offline runs and self-test
 ├── frameworks/               # Prioritization, ML lifecycle, build vs. buy, deprecation playbook, SPACE

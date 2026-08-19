@@ -1,0 +1,6 @@
+[
+  {"id": "summary", "name": "Summary", "custom": false, "schema": {"type": "string"}},
+  {"id": "customfield_10024", "name": "Story Points", "custom": true, "schema": {"type": "number", "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float"}},
+  {"id": "customfield_10020", "name": "Sprint", "custom": true, "schema": {"type": "array", "custom": "com.atlassian.greenhopper.service.sprint.gh-sprint"}},
+  {"id": "customfield_10099", "name": "Story Point Estimate", "custom": true, "schema": {"type": "number", "custom": "com.atlassian.jira.plugin.system.customfieldtypes:float"}}
+]

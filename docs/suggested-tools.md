@@ -35,13 +35,13 @@ Ideas for new **scripts** and **MCP servers** that would complement the existing
 
 The manual-input pattern is the toolkit's real ceiling, not the script count. 115 tools that each need a hand-built CSV get used once; the same tools reading from a real system get used weekly.
 
-**Step 1 implemented:** [connectors/](../connectors/) — canonical dataset contracts, the `fetch.py` CLI, the shared `base.py`, and the no-auth `csvfile` connector that normalizes a Jira/Linear export into canonical shape. Verified end to end: `connectors/self-test.py` runs all 7 `issues` consumers against connector output.
+**Steps 1–2 implemented:** [connectors/](../connectors/) — canonical dataset contracts, the `fetch.py` CLI, the shared `base.py`, the no-auth `csvfile` connector, and the `jira` connector (custom-field discovery, ADF flattening, changelog-derived `started`, Cloud + Data Center pagination). Verified end to end: `connectors/self-test.py` runs both connectors' output through all 7 `issues` consumers and prints a per-source column coverage matrix.
 
 | Step | Connector | Status |
 |------|-----------|--------|
 | 1 | Contracts + base + CLI + `csvfile` | ✅ Implemented — `issues` contract feeds 7 scripts |
-| 2 | **Jira → `issues`** | Next — highest fan-out; reuses `JIRA_*` env vars from [jira-pm-assistant](../mcps/servers/jira-pm-assistant/) |
-| 3 | **AI gateway → `llm_usage`** | Highest new value — turns ~8 cost scripts from estimators into actuals |
+| 2 | **Jira → `issues`** | ✅ Implemented — reuses `JIRA_*` env vars from [jira-pm-assistant](../mcps/servers/jira-pm-assistant/); needed no contract change |
+| 3 | **AI gateway → `llm_usage`** | Next — highest new value; turns ~8 cost scripts from estimators into actuals |
 | 4 | **Linear → `issues`** | The contract test: if this forces a change to `issues`, the contract was wrong |
 
 Contracts still to define: `llm_usage`, `incidents`, `eval_cases`, `events`. Derive each one's column names from the consuming scripts' existing `_col()` alias lists, as [connectors/datasets.py](../connectors/datasets.py) does for `issues` — designing names fresh produces a contract you then have to edit scripts to satisfy.

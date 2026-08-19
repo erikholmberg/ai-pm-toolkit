@@ -21,6 +21,7 @@ __all__ = ["names", "load", "describe_all", "UnknownConnectorError"]
 # name -> "module path:class name"
 _SOURCES: Dict[str, str] = {
     "csvfile": "sources.csvfile:CsvFileConnector",
+    "jira": "sources.jira:JiraConnector",
 }
 
 

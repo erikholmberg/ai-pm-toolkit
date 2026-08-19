@@ -26,6 +26,7 @@ Requirements:
 """
 
 import argparse
+import csv
 import json
 import re
 import subprocess
@@ -54,6 +55,11 @@ CONNECTOR_CASES: Dict[str, Dict[str, Any]] = {
     "csvfile": {
         "dataset": "issues",
         "args": ["--input", str(FIXTURES / "sample-jira-export.csv")],
+        "min_rows": 6,
+    },
+    "jira": {
+        "dataset": "issues",
+        "args": ["--offline", "--with-started"],
         "min_rows": 6,
     },
 }
@@ -104,9 +110,18 @@ def test_connector(name: str, case: Dict[str, Any], verbose: bool) -> Dict[str, 
             result["failures"].append(f"fetch failed (exit {code}): {output.strip()}")
             return result
 
-        rows = sum(1 for _ in out.open(encoding="utf-8")) - 1
+        with out.open(encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            data = list(reader)
+        rows = len(data)
         result["fetch"] = "ok"
         result["rows"] = rows
+        # A column present but blank in every row is not really provided; the
+        # coverage matrix should say so rather than imply parity that isn't there.
+        result["columns"] = sorted(
+            c for c in (reader.fieldnames or [])
+            if any(str(r.get(c, "")).strip() for r in data)
+        )
         if rows < case.get("min_rows", 1):
             result["failures"].append(
                 f"fetch produced {rows} rows, expected >= {case.get('min_rows', 1)}"
@@ -159,6 +174,62 @@ def test_connector(name: str, case: Dict[str, Any], verbose: bool) -> Dict[str, 
     return result
 
 
+def _report_coverage(results: List[Dict[str, Any]]) -> int:
+    """Compare what each connector fills in, per dataset.
+
+    This is the cross-source check the whole contract exists for: two sources
+    are interchangeable only if a script asking for `done` gets the same thing
+    from both. Divergence — a column no connector populates, or a column
+    outside the contract — is a failure. Sources legitimately differ in
+    *coverage* (a CSV export has no changelog, so no `started`), and that is
+    reported as information, not a failure.
+    """
+    by_dataset: Dict[str, List[Dict[str, Any]]] = {}
+    for result in results:
+        if result["fetch"] == "ok":
+            by_dataset.setdefault(result["dataset"], []).append(result)
+
+    failures = 0
+    for dataset, group in sorted(by_dataset.items()):
+        spec = datasets.get(dataset)
+        canonical = spec.column_names()
+        print(f"\n  coverage — {dataset}")
+        width = max(len(c) for c in canonical) + 2
+        header = "".join(f"{r['connector'][:9]:<11}" for r in group)
+        print(f"    {'column':<{width}}{header}")
+        for column in canonical:
+            marks = "".join(
+                ("  yes      " if column in r.get("columns", []) else "  -        ")
+                for r in group
+            )
+            print(f"    {column:<{width}}{marks}")
+
+        for result in group:
+            extras = [c for c in result.get("columns", []) if spec.get_column(c) is None]
+            # Passing a source column through unchanged is a feature, so extras
+            # alone aren't a fault. An extra whose *name is an alias* of a
+            # canonical column is: it means the connector left data sitting in
+            # a column no script will look at, while the canonical column it
+            # belonged in stays empty. That is the silent-zero failure again,
+            # one level up.
+            shadowed = [
+                (c, spec.resolve_header(c)) for c in extras if spec.resolve_header(c)
+            ]
+            passthrough = [c for c in extras if not spec.resolve_header(c)]
+            for column, canonical in shadowed:
+                failures += 1
+                print(
+                    f"    FAIL {result['connector']}: column {column!r} is an "
+                    f"alias of canonical '{canonical}' but was left unmapped"
+                )
+            if passthrough:
+                print(
+                    f"    note {result['connector']}: {len(passthrough)} source "
+                    f"column(s) passed through: {', '.join(passthrough[:6])}"
+                )
+    return failures
+
+
 def main(argv: List[str]) -> int:
     parser = argparse.ArgumentParser(
         description="Verify each connector's output actually feeds its consuming scripts.",
@@ -193,6 +264,8 @@ def main(argv: List[str]) -> int:
             print(f"    FAIL {failure}")
 
     failed = sum(len(r["failures"]) for r in results)
+    failed += _report_coverage(results)
+
     print("\n" + "-" * 70)
     if untested:
         # Reported, not hidden: a registered connector with no case is an

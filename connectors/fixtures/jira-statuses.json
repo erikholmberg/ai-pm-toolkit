@@ -1,0 +1,7 @@
+[
+  {"id": "1", "name": "To Do", "statusCategory": {"key": "new", "name": "To Do"}},
+  {"id": "2", "name": "In Progress", "statusCategory": {"key": "indeterminate", "name": "In Progress"}},
+  {"id": "3", "name": "In Review", "statusCategory": {"key": "indeterminate", "name": "In Progress"}},
+  {"id": "4", "name": "Done", "statusCategory": {"key": "done", "name": "Done"}},
+  {"id": "5", "name": "Blocked", "statusCategory": {"key": "new", "name": "To Do"}}
+]
