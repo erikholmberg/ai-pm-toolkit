@@ -8,7 +8,8 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
-| [**scripts/**](./scripts/) | 109 Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy, agentic AI & orchestration, AI safety & red-teaming — plus shared modules for [pricing](./scripts/model_pricing.py), [CSV headers](./scripts/csv_columns.py), [result envelope](./scripts/toolkit_io.py), and a [smoke test](./scripts/smoke-test.py) that runs every script against real sample data (109/109 pass). See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
+| [**scripts/**](./scripts/) | 115 Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy, agentic AI & orchestration, AI safety & red-teaming — plus shared modules for [pricing](./scripts/model_pricing.py), [CSV headers](./scripts/csv_columns.py), [result envelope](./scripts/toolkit_io.py), and a [smoke test](./scripts/smoke-test.py) that runs all 111 scripts against real sample data. See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
+| [**connectors/**](./connectors/) | Pull data from Jira, exports, and other systems into the CSV shapes `scripts/` already reads — canonical [dataset contracts](./connectors/datasets.py), a [one-command CLI](./connectors/fetch.py), and a [self-test](./connectors/self-test.py) that verifies each connector's output actually feeds its consuming scripts. See [connectors/README.md](./connectors/README.md). |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | MCP servers for Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, product analytics, and Calendar/meetings ([mcps/README.md](./mcps/README.md)) |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
@@ -29,6 +30,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 - **Prompts** → [prompts/README.md](./prompts/README.md): index by category; files are `prompts/*/*.prompt.md`.
 - **Templates** → [templates/](./templates/): PRD, OKR, RICE, technical spec, DX assessment, etc.
 - **MCPs** → [mcps/README.md](./mcps/README.md): Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, Product Analytics. **Task-based routing** → [docs/tool-picker.md](./docs/tool-picker.md).
+- **Connectors** → [connectors/README.md](./connectors/README.md): `fetch.py --list` for sources, `fetch.py --describe issues` for a column contract.
 - **Evals** → [evals/scripts/README.md](./evals/scripts/README.md): eval harness, regression runner, cost calculator.
 
 ## 🎯 Quick Start
@@ -127,8 +129,17 @@ python scripts/launch-checklist.py --name "Agent Copilot" --type backend --csv g
   result, so a number in a deck can be traced back to what produced it:
   `python scripts/toolkit_io.py results.json`.
 - **Every script runs, not just `--help`s.** `scripts/samples/` has real sample data for
-  all 109 scripts, and [scripts/smoke-test.py](./scripts/smoke-test.py) runs each one
+  all 111 scripts, and [scripts/smoke-test.py](./scripts/smoke-test.py) runs each one
   against it and checks it actually produces output: `python scripts/smoke-test.py`.
+  Install [requirements.txt](./scripts/requirements.txt) first — 5 scripts need `scipy`
+  or `textblob` and are reported as failures without them.
+- **Connectors are checked the same way**, but end to end: `python connectors/self-test.py`
+  fetches from a fixture and then runs every script the dataset contract claims to feed,
+  failing if any of them reads zero rows.
+
+- **Where the data came from** is recorded too. `connectors/fetch.py` writes a
+  `.meta.json` sidecar beside every CSV it produces — source, column mapping, row count,
+  timestamp — so a number traces back past the script to the query that fed it.
 
 ## 🗂️ Directory Structure
 
@@ -142,6 +153,13 @@ pm-toolkit/
 │   └── developer-community/  # AI accelerator resources
 ├── templates/                # RICE, OKRs, technical specs, prompt library management
 ├── scripts/                  # See scripts/README.md for categorized index and sample CSVs
+├── connectors/
+│   ├── datasets.py           # Canonical dataset contracts (the column shapes scripts read)
+│   ├── fetch.py              # CLI: fetch.py <source> <dataset> --out FILE
+│   ├── base.py               # Shared config, retries, normalization, provenance sidecar
+│   ├── sources/              # One module per system (csvfile; Jira and gateway next)
+│   ├── profiles/             # Per-instance field mappings (e.g. Jira custom field IDs)
+│   └── fixtures/             # Recorded responses for offline runs and self-test
 ├── frameworks/               # Prioritization, ML lifecycle, build vs. buy, deprecation playbook, SPACE
 ├── mcps/
 │   ├── guides/               # Setup and use case documentation

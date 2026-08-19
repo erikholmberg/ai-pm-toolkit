@@ -1,0 +1,24 @@
+{
+  "_comment": [
+    "Per-instance field mapping for a Jira CSV export: canonical column -> source header.",
+    "Story points live in a different customfield ID on every Jira instance, which is",
+    "exactly why this is config and not code. Check your export's header row and edit.",
+    "Headers are matched case- and punctuation-insensitively, so 'Issue key' and",
+    "'issue_key' are equivalent here."
+  ],
+  "columns": {
+    "id": "Issue key",
+    "summary": "Summary",
+    "status": "Status",
+    "type": "Issue Type",
+    "priority": "Priority",
+    "assignee": "Assignee",
+    "points": "Custom field (Story Points)",
+    "created": "Created",
+    "updated": "Updated",
+    "done": "Resolved",
+    "sprint": "Sprint",
+    "component": "Component/s",
+    "description": "Description"
+  }
+}

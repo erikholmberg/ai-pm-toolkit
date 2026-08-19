@@ -1,0 +1,7 @@
+Issue key,Summary,Issue Type,Status,Priority,Assignee,Custom field (Story Points),Created,Updated,Resolved,Sprint,Component/s,Reporter,Labels
+PLAT-101,Rate limit dashboard,Story,Done,High,dana,5,12/Jan/26 09:14 AM,03/Feb/26 11:02 AM,03/Feb/26 11:02 AM,Sprint 41,platform,erik,observability
+PLAT-102,Fix token counter overflow,Bug,Done,Highest,sam,3,15/Jan/26 02:20 PM,28/Jan/26 04:45 PM,28/Jan/26 04:45 PM,Sprint 41,platform,erik,
+PLAT-103,Eval run diff spike,Task,In Progress,Medium,dana,8,20/Jan/26 10:00 AM,18/Feb/26 09:30 AM,,Sprint 42,evals,priya,
+PLAT-104,Connector base class,Story,In Progress,High,jules,5,02/Feb/26 08:45 AM,17/Feb/26 01:15 PM,,Sprint 42,platform,erik,
+PLAT-105,Backlog grooming automation,Story,To Do,Low,,2,08/Feb/26 03:30 PM,08/Feb/26 03:30 PM,,Sprint 42,tooling,priya,
+PLAT-106,Gateway usage export,Story,Done,Medium,sam,13,11/Jan/26 11:11 AM,14/Feb/26 05:00 PM,14/Feb/26 05:00 PM,Sprint 41,platform,erik,cost
