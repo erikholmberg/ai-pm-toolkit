@@ -194,6 +194,7 @@ python scripts/launch-readiness-score.py --csv gate.csv --per-area
 | Script | Description | Sample CSV |
 |--------|-------------|------------|
 | [eval-label-economics.py](eval-label-economics.py) | Gold-set size & labeling cost for target CI width on pass rate, precision, or recall | — |
+| [eval-run-diff.py](eval-run-diff.py) | Compare two eval runs case by case — paired wins/losses, McNemar significance, per-category regressions, and the regressed case ids | samples/sample-eval-run-v1.csv, samples/sample-eval-run-v2.csv |
 | [eval-score-trend.py](eval-score-trend.py) | Eval score over time, chart | samples/sample-eval-runs.csv |
 | [hallucination-safety-trend.py](hallucination-safety-trend.py) | Hallucination/safety metric trend | samples/sample-hallucination-safety.csv |
 | [data-drift-detector.py](data-drift-detector.py) | Drift between baseline and current dataset | — |

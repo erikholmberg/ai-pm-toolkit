@@ -14,7 +14,7 @@ Usage:
 Formula: n = (z^2 * p * (1-p)) / E^2  for infinite population; finite population correction optional.
 
 Requirements:
-    pip install scipy
+    None (stdlib only).
 """
 
 import argparse
@@ -22,11 +22,18 @@ import math
 import sys
 from typing import Optional
 
-try:
-    from scipy import stats
-    SCIPY_AVAILABLE = True
-except ImportError:
-    SCIPY_AVAILABLE = False
+from statistics import NormalDist
+
+
+def _norm_ppf(p: float) -> float:
+    """Inverse normal CDF (the quantile function).
+
+    This was scipy's `stats.norm.ppf` — the only thing this script ever used
+    scipy for, and the reason a clean checkout failed until someone ran
+    `pip install scipy`. The stdlib has computed the same quantity since
+    Python 3.8 at the same precision: ppf(0.975) is 1.959963985 either way.
+    """
+    return NormalDist().inv_cdf(p)
 
 
 def sample_size(
@@ -41,11 +48,9 @@ def sample_size(
     n = (z^2 * p * (1-p)) / E^2. Use p=0.5 for conservative (largest) n.
     If population is given, apply finite population correction: n_adj = n / (1 + (n-1)/N).
     """
-    if not SCIPY_AVAILABLE:
-        raise RuntimeError("scipy is required. Run: pip install scipy")
     if not 0 < margin < 1 or not 0 < confidence < 1 or not 0 <= proportion <= 1:
         return 0
-    z = stats.norm.ppf(1 - (1 - confidence) / 2)
+    z = _norm_ppf(1 - (1 - confidence) / 2)
     p = proportion
     n = (z * z * p * (1 - p)) / (margin * margin)
     n = math.ceil(n)
@@ -98,9 +103,6 @@ def main():
         return 1
     if not 0 <= args.proportion <= 1:
         print("Error: --proportion must be in [0, 1]", file=sys.stderr)
-        return 1
-    if not SCIPY_AVAILABLE:
-        print("Error: scipy required. Run: pip install scipy", file=sys.stderr)
         return 1
 
     n = sample_size(args.margin, args.confidence, args.proportion, args.population)

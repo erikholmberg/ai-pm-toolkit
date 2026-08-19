@@ -20,7 +20,7 @@ Usage:
     python eval-label-economics.py --mode recall --margin 0.05 --proportion 0.7 --prevalence 0.2 --cost-per-label 0
 
 Requirements:
-    pip install scipy
+    None (stdlib only).
 """
 
 from __future__ import annotations
@@ -30,11 +30,18 @@ import math
 import sys
 from typing import Optional
 
-try:
-    from scipy import stats
-    SCIPY_AVAILABLE = True
-except ImportError:
-    SCIPY_AVAILABLE = False
+from statistics import NormalDist
+
+
+def _norm_ppf(p: float) -> float:
+    """Inverse normal CDF (the quantile function).
+
+    This was scipy's `stats.norm.ppf` — the only thing this script ever used
+    scipy for, and the reason a clean checkout failed until someone ran
+    `pip install scipy`. The stdlib has computed the same quantity since
+    Python 3.8 at the same precision: ppf(0.975) is 1.959963985 either way.
+    """
+    return NormalDist().inv_cdf(p)
 
 
 def sample_size_proportion(
@@ -46,7 +53,7 @@ def sample_size_proportion(
     """Sample size for estimating a proportion within ±margin at confidence."""
     if not 0 < margin < 1 or not 0 < confidence < 1 or not 0 <= proportion <= 1:
         return 0
-    z = stats.norm.ppf(1 - (1 - confidence) / 2)
+    z = _norm_ppf(1 - (1 - confidence) / 2)
     p = proportion
     n = (z * z * p * (1 - p)) / (margin * margin)
     n = max(1, math.ceil(n))
@@ -138,9 +145,6 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    if not SCIPY_AVAILABLE:
-        print("Error: scipy required. Run: pip install scipy", file=sys.stderr)
-        return 1
     if not 0 < args.margin < 1:
         print("Error: --margin must be in (0, 1)", file=sys.stderr)
         return 1

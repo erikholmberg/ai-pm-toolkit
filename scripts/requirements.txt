@@ -6,6 +6,11 @@ pandas>=2.0.0
 numpy>=1.24.0
 
 # Statistics
+# Optional. Only 4 scripts still need scipy, for distributions the stdlib
+# lacks: cohort-comparison-tool and velocity-trend-analyzer (Student's t),
+# data-drift-detector (Kolmogorov-Smirnov), adoption-funnel-analyzer.
+# All four degrade gracefully without it. Everything that needed only the
+# inverse normal CDF now uses statistics.NormalDist from the stdlib.
 scipy>=1.10.0
 statsmodels>=0.14.0
 

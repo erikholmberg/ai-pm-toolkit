@@ -11,7 +11,7 @@ Usage:
     python confidence-interval-calculator.py --n 200 --mean 4.2 --std 1.1
 
 Requirements:
-    pip install scipy (for Wilson and mean CI).
+    None (stdlib only).
 """
 
 import argparse
@@ -19,11 +19,18 @@ import math
 import sys
 from typing import Optional, Tuple
 
-try:
-    from scipy import stats
-    SCIPY_AVAILABLE = True
-except ImportError:
-    SCIPY_AVAILABLE = False
+from statistics import NormalDist
+
+
+def _norm_ppf(p: float) -> float:
+    """Inverse normal CDF (the quantile function).
+
+    This was scipy's `stats.norm.ppf` — the only thing this script ever used
+    scipy for, and the reason a clean checkout failed until someone ran
+    `pip install scipy`. The stdlib has computed the same quantity since
+    Python 3.8 at the same precision: ppf(0.975) is 1.959963985 either way.
+    """
+    return NormalDist().inv_cdf(p)
 
 
 def wilson_ci(
@@ -42,11 +49,9 @@ def wilson_ci(
     Returns:
         (lower, upper) bounds.
     """
-    if not SCIPY_AVAILABLE:
-        raise RuntimeError("scipy is required. Run: pip install scipy")
     if n <= 0:
         return (0.0, 1.0)
-    z = stats.norm.ppf(1 - (1 - confidence) / 2)
+    z = _norm_ppf(1 - (1 - confidence) / 2)
     z2 = z * z
     denom = 1 + z2 / n
     center = (p + z2 / (2 * n)) / denom
@@ -74,11 +79,9 @@ def mean_ci(
     Returns:
         (lower, upper) bounds.
     """
-    if not SCIPY_AVAILABLE:
-        raise RuntimeError("scipy is required. Run: pip install scipy")
     if n <= 0 or std < 0:
         return (mean, mean)
-    z = stats.norm.ppf(1 - (1 - confidence) / 2)
+    z = _norm_ppf(1 - (1 - confidence) / 2)
     se = std / math.sqrt(n)
     return (mean - z * se, mean + z * se)
 
@@ -126,9 +129,6 @@ def main():
         if not 0 <= args.proportion <= 1:
             print("Error: --proportion must be in [0, 1]", file=sys.stderr)
             return 1
-        if not SCIPY_AVAILABLE:
-            print("Error: scipy required. Run: pip install scipy", file=sys.stderr)
-            return 1
         low, high = wilson_ci(args.n, args.proportion, args.confidence)
         pct = args.confidence * 100
         print("\n" + "=" * 60)
@@ -144,9 +144,6 @@ def main():
     if args.mean is not None and args.std is not None:
         if args.std < 0:
             print("Error: --std must be >= 0", file=sys.stderr)
-            return 1
-        if not SCIPY_AVAILABLE:
-            print("Error: scipy required. Run: pip install scipy", file=sys.stderr)
             return 1
         low, high = mean_ci(args.n, args.mean, args.std, args.confidence)
         pct = args.confidence * 100

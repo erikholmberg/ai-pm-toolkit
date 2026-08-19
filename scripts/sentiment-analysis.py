@@ -18,6 +18,7 @@ Requirements:
 
 import argparse
 import csv
+import sys
 
 # Shared header matching — tolerates real-world column spellings
 # ("Duration (Minutes)" == "duration_minutes"). See scripts/csv_columns.py.
@@ -40,7 +41,11 @@ try:
     TEXTBLOB_AVAILABLE = True
 except ImportError:
     TEXTBLOB_AVAILABLE = False
-    print("⚠️  textblob or pandas not installed. Install with: pip install textblob pandas")
+    print(
+        "⚠️  textblob or pandas not installed. "
+        "Install with: pip install textblob pandas",
+        file=sys.stderr,
+    )
 
 
 @dataclass
@@ -313,10 +318,10 @@ def main():
     args = parser.parse_args()
     
     if not TEXTBLOB_AVAILABLE:
-        print("\n❌ Required packages not installed.")
-        print("   Run: pip install textblob pandas")
-        print("   Then: python -m textblob.download_corpora")
-        return
+        print("\n❌ Required packages not installed.", file=sys.stderr)
+        print("   Run: pip install textblob pandas", file=sys.stderr)
+        print("   Then: python -m textblob.download_corpora", file=sys.stderr)
+        return 1
     
     if args.text:
         # Single text analysis
@@ -329,15 +334,15 @@ def main():
         # File-based analysis
         filepath = Path(args.file)
         if not filepath.exists():
-            print(f"❌ File not found: {args.file}")
-            return
+            print(f"❌ File not found: {args.file}", file=sys.stderr)
+            return 1
         
         print(f"\n⏳ Loading feedback from {args.file}...")
         feedback_list = load_from_csv(args.file)
         
         if not feedback_list:
-            print("❌ No feedback found in file")
-            return
+            print("❌ No feedback found in file", file=sys.stderr)
+            return 1
         
         print(f"✅ Loaded {len(feedback_list)} feedback items")
         print("⏳ Analyzing...")
@@ -354,7 +359,9 @@ def main():
     else:
         interactive_mode()
 
+    return 0
+
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())
 

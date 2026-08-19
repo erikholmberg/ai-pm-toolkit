@@ -55,7 +55,6 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
-import datasets
 from base import Connector, ConnectorError, FetchResult, normalize_date
 
 # Field name candidates, most specific first. Gateways disagree on all of these

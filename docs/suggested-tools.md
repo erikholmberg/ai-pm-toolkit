@@ -55,8 +55,9 @@ Re-ranked after building the connector layer, which changed what's feedable:
 | Script | Why | Status |
 |---|---|---|
 | **prompt-cache-roi** | Hit rate as an *output*, not an input; prices the write premium `prompt-cost-optimizer` ignores | ✅ Implemented — second `llm_usage` consumer |
-| **eval-run-diff** | Case-level win/loss/tie + McNemar between two eval runs; `eval-score-trend` only compares aggregates | Biggest remaining gap; would define the per-case eval contract |
+| **eval-run-diff** | Case-level win/loss/tie + McNemar between two eval runs; `eval-score-trend` only compares aggregates | ✅ Implemented — stdlib stats, `--fail-on-regression` CI gate |
 | **rate-limit-headroom-planner** | TPM/RPM headroom vs forecast traffic — now feedable from `llm_usage` actuals | Next |
+| **eval_cases contract** | `eval-run-diff` now anchors the per-case shape (case_id, score, category); a Braintrust or LangSmith connector could feed it | Open |
 | **human-review-queue-sizer** | Reviewers needed for HITL escalations; `agent-task-success-tracker` reports the rate but nothing sizes the humans | Open |
 | **ai-governance-mapper** | Feature → AI Act risk tier → obligation checklist that `audit-checklist-summary` can score | Open |
 

@@ -70,6 +70,9 @@ EXPLICIT_ARGS: Dict[str, List[str]] = {
                                    "--weights", "samples/sample-model-selection-weights.csv"],
     "data-drift-detector": ["--baseline", "samples/sample-drift-baseline.csv",
                              "--current", "samples/sample-drift-current.csv"],
+    "eval-run-diff": ["--baseline", "samples/sample-eval-run-v1.csv",
+                       "--candidate", "samples/sample-eval-run-v2.csv",
+                       "--pass-threshold", "0.7"],
     # CSV plus required scalar flags the generic detector can't guess.
     "alert-threshold-calculator": ["--csv", "samples/sample-alert-threshold-calculator.csv",
                                     "--column", "p99_ms"],

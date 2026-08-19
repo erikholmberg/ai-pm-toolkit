@@ -12,18 +12,25 @@ Usage:
     python experiment-duration-calculator.py --sample-size 5000 --daily-visitors 3000
 
 Requirements:
-    pip install scipy
+    None (stdlib only).
 """
 
 import math
 import argparse
 from typing import Tuple
 
-try:
-    from scipy import stats
-    SCIPY_AVAILABLE = True
-except ImportError:
-    SCIPY_AVAILABLE = False
+from statistics import NormalDist
+
+
+def _norm_ppf(p: float) -> float:
+    """Inverse normal CDF (the quantile function).
+
+    This was scipy's `stats.norm.ppf` — the only thing this script ever used
+    scipy for, and the reason a clean checkout failed until someone ran
+    `pip install scipy`. The stdlib has computed the same quantity since
+    Python 3.8 at the same precision: ppf(0.975) is 1.959963985 either way.
+    """
+    return NormalDist().inv_cdf(p)
 
 
 def calculate_sample_size(
@@ -37,16 +44,14 @@ def calculate_sample_size(
     Required sample size per variant for an A/B test.
     Same formula as ab-test-calculator.py.
     """
-    if not SCIPY_AVAILABLE:
-        raise RuntimeError("scipy is required. Run: pip install scipy")
     p1 = baseline_rate
     p2 = baseline_rate * (1 + minimum_detectable_effect)
     p_pooled = (p1 + p2) / 2
     if two_tailed:
-        z_alpha = stats.norm.ppf(1 - alpha / 2)
+        z_alpha = _norm_ppf(1 - alpha / 2)
     else:
-        z_alpha = stats.norm.ppf(1 - alpha)
-    z_beta = stats.norm.ppf(power)
+        z_alpha = _norm_ppf(1 - alpha)
+    z_beta = _norm_ppf(power)
     numerator = (
         z_alpha * math.sqrt(2 * p_pooled * (1 - p_pooled))
         + z_beta * math.sqrt(p1 * (1 - p1) + p2 * (1 - p2))
@@ -146,9 +151,6 @@ def main():
     elif args.baseline is not None and args.mde is not None:
         if not 0 < args.baseline < 1 or not args.mde > 0:
             print("Error: --baseline must be in (0,1) and --mde must be positive")
-            return 1
-        if not SCIPY_AVAILABLE:
-            print("Error: scipy required. Run: pip install scipy")
             return 1
         sample_per_variant = calculate_sample_size(
             args.baseline, args.mde, args.alpha, args.power
