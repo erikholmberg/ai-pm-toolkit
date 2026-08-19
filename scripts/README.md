@@ -101,6 +101,7 @@ Scripts with no sample data listed in this README are only `--help`-checked (rep
 | [bedrock-cost-calculator.py](bedrock-cost-calculator.py) | Bedrock inference cost from tokens and model | — |
 | [multi-model-cost-comparator.py](multi-model-cost-comparator.py) | Compare cost across Bedrock, OpenAI, Anthropic | — |
 | [prompt-cost-optimizer.py](prompt-cost-optimizer.py) | Estimate and optimize prompt cost by model/volume | samples/sample-prompt-v1.txt |
+| [prompt-cache-roi.py](prompt-cache-roi.py) | Whether prompt caching pays for itself — measured hit rate and savings from `llm_usage`, or projected from traffic, TTL, and concurrency | samples/sample-llm-usage.csv |
 | [ai-unit-economics-calculator.py](ai-unit-economics-calculator.py) | Cost per request, revenue per user, unit economics | — |
 | [ai-initiative-roi-calculator.py](ai-initiative-roi-calculator.py) | Payback for AI projects (dev + inference vs benefit) | — |
 | [ltv-cac-calculator.py](ltv-cac-calculator.py) | LTV, CAC, payback | samples/sample-ltv-cac-calculator.csv |

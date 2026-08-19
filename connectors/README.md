@@ -61,7 +61,7 @@ Run `fetch.py --describe issues` for the full alias list per column.
 
 ### `llm_usage`
 
-One row per (date, model, feature). Feeds 1 script: `llm-usage-summary`.
+One row per (date, model, feature). Feeds 2 scripts: `llm-usage-summary`, `prompt-cache-roi`.
 
 | column | kind | required | notes |
 |---|---|---|---|
@@ -92,6 +92,11 @@ can print measured values you paste directly into them.
 A blank numeric cell means the provider never reported that field; `0` means it reported
 zero. Connectors must preserve that distinction — collapsing them makes a gateway with no
 cache breakdown look like one with a 0% hit rate.
+
+`prompt-cache-roi.py` was added as a **second, independent consumer**, and the contract
+needed no changes to accept it. That is the same check Linear will apply to `issues`: a
+contract with one consumer and one producer is unfalsified, because nothing has yet tried
+to disagree with it.
 
 > Not this contract: `sprint-velocity-tracker`, `commitment-predictability-index`, and `sprint-burndown-checker` read *sprint-level aggregates*, and `status-duration-analyzer` reads a *transition log*. Those are separate shapes and get their own contracts when a connector needs them.
 

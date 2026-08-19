@@ -383,7 +383,7 @@ ISSUES = Dataset(
 # fields differently.
 # --------------------------------------------------------------------------
 
-_USAGE_CONSUMERS = ("llm-usage-summary",)
+_USAGE_CONSUMERS = ("llm-usage-summary", "prompt-cache-roi")
 
 LLM_USAGE = Dataset(
     name="llm_usage",

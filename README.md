@@ -8,7 +8,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 |---------|-------------|
 | [**prompts/**](./prompts/) | AI-assisted prompts for core PM tasks, AI/ML work, and developer communities |
 | [**templates/**](./templates/) | PRD, postmortem, OKRs, RICE, technical specs, prioritization, prompt library management |
-| [**scripts/**](./scripts/) | 116 Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy, agentic AI & orchestration, AI safety & red-teaming — plus shared modules for [pricing](./scripts/model_pricing.py), [CSV headers](./scripts/csv_columns.py), [result envelope](./scripts/toolkit_io.py), and a [smoke test](./scripts/smoke-test.py) that runs all 112 scripts against real sample data. See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
+| [**scripts/**](./scripts/) | 117 Python utilities by category: experiments, cost/ROI, delivery & velocity, adoption & health, incidents/SLO, feedback & support, risk & governance, launch, evals, strategy, agentic AI & orchestration, AI safety & red-teaming — plus shared modules for [pricing](./scripts/model_pricing.py), [CSV headers](./scripts/csv_columns.py), [result envelope](./scripts/toolkit_io.py), and a [smoke test](./scripts/smoke-test.py) that runs all 113 scripts against real sample data. See [scripts/README.md](./scripts/README.md) for the full index and sample CSVs. |
 | [**connectors/**](./connectors/) | Pull data from Jira (API or CSV export) and AI gateways (LiteLLM, OpenRouter) into the CSV shapes `scripts/` already reads — canonical [dataset contracts](./connectors/datasets.py), a [one-command CLI](./connectors/fetch.py), and a [self-test](./connectors/self-test.py) that verifies each connector's output actually feeds its consuming scripts. See [connectors/README.md](./connectors/README.md). |
 | [**frameworks/**](./frameworks/) | Prioritization, ML product lifecycle, build vs. buy, AI feature deprecation, SPACE (team health) |
 | [**mcps/**](./mcps/) | MCP servers for Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, product analytics, and Calendar/meetings ([mcps/README.md](./mcps/README.md)) |
@@ -129,7 +129,7 @@ python scripts/launch-checklist.py --name "Agent Copilot" --type backend --csv g
   result, so a number in a deck can be traced back to what produced it:
   `python scripts/toolkit_io.py results.json`.
 - **Every script runs, not just `--help`s.** `scripts/samples/` has real sample data for
-  all 112 scripts, and [scripts/smoke-test.py](./scripts/smoke-test.py) runs each one
+  all 113 scripts, and [scripts/smoke-test.py](./scripts/smoke-test.py) runs each one
   against it and checks it actually produces output: `python scripts/smoke-test.py`.
   Install [requirements.txt](./scripts/requirements.txt) first — 5 scripts need `scipy`
   or `textblob` and are reported as failures without them.

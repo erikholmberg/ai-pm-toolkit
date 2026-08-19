@@ -48,6 +48,29 @@ Contracts still to define: `incidents`, `eval_cases`, `events`. Derive each one'
 
 ---
 
+## Scripts still worth adding
+
+Re-ranked after building the connector layer, which changed what's feedable:
+
+| Script | Why | Status |
+|---|---|---|
+| **prompt-cache-roi** | Hit rate as an *output*, not an input; prices the write premium `prompt-cost-optimizer` ignores | ✅ Implemented — second `llm_usage` consumer |
+| **eval-run-diff** | Case-level win/loss/tie + McNemar between two eval runs; `eval-score-trend` only compares aggregates | Biggest remaining gap; would define the per-case eval contract |
+| **rate-limit-headroom-planner** | TPM/RPM headroom vs forecast traffic — now feedable from `llm_usage` actuals | Next |
+| **human-review-queue-sizer** | Reviewers needed for HITL escalations; `agent-task-success-tracker` reports the rate but nothing sizes the humans | Open |
+| **ai-governance-mapper** | Feature → AI Act risk tier → obligation checklist that `audit-checklist-summary` can score | Open |
+
+### Contract audit
+
+Checked against real `_col()` consumers before building anything:
+
+- **`incidents`** — build it. Three consumers: `incident-rate-trend`, `error-budget-burn-rate`, `dora-metrics-calculator`.
+- **`eval_runs`** — build it. `eval-score-trend` and `hallucination-safety-trend` read an identical (run_id, date, metric, value) shape.
+- **`events`** — **don't**. Nothing reads raw events; `retention-curve-analyzer`, `feature-adoption-trend`, and `adoption-funnel-analyzer` all consume pre-aggregated shapes. A raw event connector would deliver into a vacuum, the same trap `llm_usage` hit.
+- **`eval_cases`** — is really two contracts. `llm-judge-calibration-checker` (human_score, judge_score), `guardrail-effectiveness-analyzer` (actual_violation, flagged), and `groundedness-scorer` (response, reference) have incompatible columns.
+
+---
+
 ## Quick wins
 
 - **Scripts:** Multi-model cost comparator and confidence interval calculator (small, high reuse).
