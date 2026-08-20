@@ -60,7 +60,7 @@ CONNECTOR_CASES: Dict[str, Dict[str, Any]] = {
     "jira": {
         "dataset": "issues",
         "args": ["--offline", "--with-started"],
-        "min_rows": 6,
+        "min_rows": 42,
     },
     "gateway": {
         "dataset": "llm_usage",
