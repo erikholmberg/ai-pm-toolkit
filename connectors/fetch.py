@@ -26,6 +26,7 @@ Requirements:
 
 import argparse
 import sys
+import textwrap
 from typing import List
 
 import datasets
@@ -145,8 +146,13 @@ def main(argv: List[str]) -> int:
     for warning in meta["warnings"]:
         print(f"  warning: {warning}")
     if meta["rows"]:
+        # Wrapped: seven script paths on one line runs past 240 columns, which
+        # wraps into an unreadable block in any normal terminal.
         spec = datasets.get(args.dataset)
-        print(f"\nFeeds: {', '.join('scripts/' + c + '.py' for c in spec.consumers)}")
+        consumers = [f"{c}.py" for c in spec.consumers]
+        print(f"\nFeeds {len(consumers)} script(s) in scripts/:")
+        for line in textwrap.wrap(", ".join(consumers), width=68):
+            print(f"  {line}")
     return 0
 
 
