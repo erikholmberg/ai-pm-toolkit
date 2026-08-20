@@ -2,6 +2,16 @@
 
 A comprehensive collection of prompts, templates, tools, and frameworks for Product Managers working with AI/ML products.
 
+<p align="center">
+  <img src="./docs/demo.gif" alt="Pulling issues from Jira into the canonical shape, then running a cycle-time analysis" width="100%">
+</p>
+
+<p align="center">
+  <em>Pull from a real system into the shape every script reads, then analyze — no hand-built CSV.<br>
+  Runs against the bundled fixture, so it reproduces from a clean clone with no credentials.
+  Regenerate with <code>vhs docs/demo.tape</code>.</em>
+</p>
+
 ## 📚 What's Inside
 
 | Section | Description |
