@@ -210,7 +210,7 @@ If you use **Amazon Bedrock**, see:
 
 ## 🤝 Contributing
 
-This toolkit is open for contributions. See [CONTRIBUTING.md](CONTRIBUTING.md) for where to add scripts, prompts, and templates so the repo stays easy to navigate. Then open a PR.
+This is primarily a personal toolkit, shared in case it's useful to others. It isn't actively looking for outside contributions, and PRs aren't reviewed on any schedule (or at all). If you want to change or extend something here, fork it — see [CONTRIBUTING.md](CONTRIBUTING.md) for how the repo is organized.
 
 ## 📄 License
 

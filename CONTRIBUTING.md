@@ -1,6 +1,8 @@
 # Contributing
 
-Thanks for considering contributing. A few pointers so the toolkit stays easy to navigate:
+This is primarily a personal toolkit. It isn't actively looking for outside contributions — PRs may go unreviewed indefinitely. If you want to change or extend something here, the best path is to fork the repo.
+
+The rest of this doc documents how it's organized, in case that's useful for your own fork.
 
 ## Where things go
 
@@ -18,6 +20,6 @@ Thanks for considering contributing. A few pointers so the toolkit stays easy to
 - `python script.py --help` should show usage and main options.
 - If the script reads CSV, add a small `sample-<topic>.csv` in `scripts/samples/` and reference it in `scripts/README.md`.
 
-## Submitting changes
+## Forking
 
-Open a PR with your changes. For new scripts, add an entry to the right category in `scripts/README.md` (and a sample CSV if applicable).
+Fork the repo and change whatever you need. For new scripts, add an entry to the right category in `scripts/README.md` (and a sample CSV if applicable) so your fork stays navigable the same way this one is.
