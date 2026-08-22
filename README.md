@@ -3,6 +3,11 @@
 A comprehensive collection of prompts, templates, tools, and frameworks for Product Managers working with AI/ML products.
 
 <p align="center">
+  <a href="https://github.com/erikholmberg/ai-pm-toolkit/actions/workflows/ci.yml"><img src="https://github.com/erikholmberg/ai-pm-toolkit/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+</p>
+
+<p align="center">
   <img src="./docs/demo.gif" alt="Pulling issues from Jira into the canonical shape, then running a cycle-time analysis" width="100%">
 </p>
 
