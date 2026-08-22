@@ -2,8 +2,8 @@
 # Install with: pip install -r requirements.txt
 
 # Data analysis
-pandas>=2.0.0
-numpy>=1.24.0
+pandas>=3.0.5
+numpy>=2.5.2
 
 # Statistics
 # Optional. Only 4 scripts still need scipy, for distributions the stdlib
@@ -11,31 +11,31 @@ numpy>=1.24.0
 # data-drift-detector (Kolmogorov-Smirnov), adoption-funnel-analyzer.
 # All four degrade gracefully without it. Everything that needed only the
 # inverse normal CDF now uses statistics.NormalDist from the stdlib.
-scipy>=1.10.0
-statsmodels>=0.14.0
+scipy>=1.18.0
+statsmodels>=0.14.6
 
 # Visualization
-matplotlib>=3.7.0
-seaborn>=0.12.0
+matplotlib>=3.11.1
+seaborn>=0.13.2
 
 # NLP / Sentiment Analysis
-textblob>=0.17.0
-nltk>=3.8.0
+textblob>=0.20.1
+nltk>=3.10.3
 
 # HTTP requests (for API integrations)
-requests>=2.28.0
+requests>=2.34.2
 
 # Jupyter notebooks
-jupyter>=1.0.0
-ipykernel>=6.0.0
+jupyter>=1.1.1
+ipykernel>=7.3.0
 
 # Utilities
-python-dateutil>=2.8.0
-tqdm>=4.65.0
+python-dateutil>=2.9.0.post0
+tqdm>=4.70.0
 
 # LLM APIs (for evaluation scripts)
-openai>=1.0.0
-anthropic>=0.18.0
+openai>=3.3.1
+anthropic>=0.124.0
 
 # Eval metrics (BLEU, ROUGE)
 rouge-score>=0.1.2
