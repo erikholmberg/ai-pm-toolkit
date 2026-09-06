@@ -29,6 +29,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 | [**mcps/**](./mcps/) | MCP servers for Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, product analytics, and Calendar/meetings ([mcps/README.md](./mcps/README.md)) |
 | [**agents/**](./agents/) | System prompts, rules, and patterns for AI agents |
 | [**evals/**](./evals/) | Evaluation frameworks, scripts, and metrics for AI products |
+| [**metrics/**](./metrics/) | KPI frameworks: measuring success for internal platforms, plus links to AI product metrics ([metrics/README.md](./metrics/README.md)) |
 | [**learning/**](./learning/) | AI/ML fundamentals, [AWS Bedrock for PMs](./learning/aws-bedrock-for-pms.md), glossary, resources |
 | [**strategy/**](./strategy/) | AI product strategy, pricing, go-to-market (see [strategy/README.md](./strategy/README.md)) |
 | [**governance/**](./governance/) | Responsible AI, ethics, bias detection, risk assessment |
@@ -47,6 +48,7 @@ A comprehensive collection of prompts, templates, tools, and frameworks for Prod
 - **MCPs** → [mcps/README.md](./mcps/README.md): Jira, Confluence, GitHub, Slack, Notion, Braintrust, LangSmith, Product Analytics. **Task-based routing** → [docs/tool-picker.md](./docs/tool-picker.md).
 - **Connectors** → [connectors/README.md](./connectors/README.md): `fetch.py --list` for sources, `fetch.py --describe issues` for a column contract.
 - **Evals** → [evals/scripts/README.md](./evals/scripts/README.md): eval harness, regression runner, cost calculator.
+- **KPIs / metrics** → [metrics/README.md](./metrics/README.md): platform KPIs (no-baseline measurement), pointer to AI product metrics.
 
 ## 🎯 Quick Start
 
@@ -192,6 +194,7 @@ pm-toolkit/
 │   ├── scripts/              # Eval harness, eval summary report generator
 │   ├── templates/            # Eval planning docs
 │   └── metrics/              # AI product metrics guide
+├── metrics/                  # Platform KPIs and measurement guides
 ├── learning/                 # AI/ML fundamentals, glossary, resources
 ├── strategy/                 # AI product strategy frameworks
 ├── governance/               # Responsible AI checklist

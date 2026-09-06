@@ -36,6 +36,7 @@ Use this page when you know **what you want to do**, not which file or server to
 |--------|------------|
 | A/B sample size, duration, interpretation | `scripts/ab-test-calculator.py`, `experiment-duration-calculator.py`, `experiment-result-interpreter.py` |
 | Feature adoption, funnels, retention | [scripts/README.md](../scripts/README.md) (Adoption, health & retention) |
+| Define KPIs for an internal platform or a brand-new capability | [metrics/platform-kpis.md](../metrics/platform-kpis.md) |
 | Incidents, SLOs, error budget | [scripts/README.md](../scripts/README.md) (Incidents, SLO & reliability) |
 | Product analytics (events, funnels, cohorts) | MCP [product-analytics-pm-tools](../mcps/servers/product-analytics-pm-tools/) |
 | LLM eval runs and experiments | MCP [braintrust-pm-tools](../mcps/servers/braintrust-pm-tools/), [langsmith-pm-tools](../mcps/servers/langsmith-pm-tools/); [evals/](../evals/) |
