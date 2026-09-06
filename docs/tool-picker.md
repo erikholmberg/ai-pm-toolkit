@@ -49,6 +49,7 @@ Use this page when you know **what you want to do**, not which file or server to
 |--------|------------|
 | Model selection (e.g. Bedrock) | [prompts/ai-ml/bedrock-model-selection.prompt.md](../prompts/ai-ml/bedrock-model-selection.prompt.md), [learning/aws-bedrock-for-pms.md](../learning/aws-bedrock-for-pms.md) |
 | Model cards, system design, MLOps | [prompts/ai-ml/](../prompts/README.md), [templates/technical-spec-ml.md](../templates/technical-spec-ml.md) |
+| Decide whether an AI feature is ready to ship | [evals/frameworks/ship-decision-framework.md](../evals/frameworks/ship-decision-framework.md), [launch/ai-feature-launch-checklist.md](../launch/ai-feature-launch-checklist.md) |
 | Responsible AI / ethics checks | [prompts/ai-ml/ai-ethics-evaluator.prompt.md](../prompts/ai-ml/ai-ethics-evaluator.prompt.md), [governance/](../governance/) |
 
 ---

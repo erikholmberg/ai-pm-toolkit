@@ -13,6 +13,8 @@ Frameworks, scripts, and templates for evaluating AI/ML products.
 
 **Templates:** [eval-plan-template.md](./templates/eval-plan-template.md), [golden-dataset-template.md](./templates/golden-dataset-template.md)
 
+**Frameworks:** [llm-eval-framework.md](./frameworks/llm-eval-framework.md) (how to score), [ship-decision-framework.md](./frameworks/ship-decision-framework.md) (what to do with the scores), [bedrock-eval-guide.md](./frameworks/bedrock-eval-guide.md)
+
 ## Why Evals Matter
 
 As an AI PM, you need to:
@@ -51,7 +53,11 @@ Use scripts in [scripts/](./scripts/) or your preferred eval framework.
 
 See [scripts/README.md](./scripts/README.md) for usage instructions (if present).
 
-### 5. Report Results
+### 5. Decide
+
+Eval results are an input to a decision, not the decision. Use [frameworks/ship-decision-framework.md](./frameworks/ship-decision-framework.md) to set the quality bar before you run, read the results past the average, and translate them into a ship/no-ship call and a rollout rung.
+
+### 6. Report Results
 
 Use [eval-summary-report.py](./scripts/eval-summary-report.py) to generate a one-page Markdown summary from eval results:
 

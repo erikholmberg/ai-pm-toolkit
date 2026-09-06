@@ -1,6 +1,6 @@
 # AI Feature Launch Checklist
 
-Comprehensive checklist for launching AI-powered features.
+Comprehensive checklist for launching AI-powered features. For the decision that comes *before* this checklist — whether the eval results justify shipping at all — see [evals/frameworks/ship-decision-framework.md](../evals/frameworks/ship-decision-framework.md).
 
 ---
 
@@ -14,7 +14,7 @@ Comprehensive checklist for launching AI-powered features.
 - [ ] Error states implemented
 
 ### Quality Validation
-- [ ] Eval results meet quality bar
+- [ ] Eval results meet quality bar ([ship-decision-framework.md](../evals/frameworks/ship-decision-framework.md))
 - [ ] Quality consistent across user segments
 - [ ] Bias testing completed
 - [ ] Safety review completed
@@ -59,7 +59,7 @@ Comprehensive checklist for launching AI-powered features.
 
 ### Stakeholder Alignment
 - [ ] Launch date confirmed
-- [ ] Go/no-go criteria defined
+- [ ] Go/no-go criteria defined (pre-registered, not set after seeing results)
 - [ ] Rollback criteria defined
 - [ ] Stakeholders briefed
 
